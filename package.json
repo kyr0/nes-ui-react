@@ -24,7 +24,8 @@
     "clean": "rimraf dist",
     "prebuild": "sass src/scss/nes-ui.scss:dist/nes-ui.css",
     "build": "ts-node build.ts",
-    "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs"
+    "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs",
+    "deploy": "npm publish"
   },
   "repository": {
     "type": "git",
