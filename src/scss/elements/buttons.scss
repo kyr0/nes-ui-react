@@ -1,0 +1,301 @@
+.button-wrapper,
+.icon-button-wrapper {
+  height: fit-content;
+  @include pixel-borders(
+    $corner-size: 1,
+    $border-size: 4px,
+    $border-color: #000,
+    $border-inset-color: false
+  );
+  display: flex;
+  margin-right: 1em;
+
+  &.is-inverted {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 4px,
+      $border-color: #fff,
+      $border-inset-color: false
+    );
+  }
+}
+
+@mixin btn-style($color, $background, $hover-background, $shadow) {
+  color: $color;
+  background-color: $background;
+
+  &::after {
+    position: absolute;
+    top: -$border-size;
+    right: -$border-size;
+    bottom: -$border-size;
+    left: -$border-size;
+    content: '';
+    box-shadow: inset -4px -4px $shadow;
+  }
+
+  &:hover {
+    color: $color;
+    text-decoration: none;
+    background-color: $hover-background;
+
+    &::after {
+      box-shadow: inset -4px -4px $shadow;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba($shadow, 0.3);
+  }
+
+  &:active:not(.btn-disabled)::after {
+    box-shadow: inset 4px 4px $shadow;
+  }
+}
+
+// Default style
+.btn,
+.icon-btn {
+  @include rounded-corners();
+  position: relative;
+  display: inline-block;
+  padding-left: 2px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  padding-right: 4px;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: $cursor-click-url, pointer;
+  user-select: none;
+
+  & .text {
+    margin: 0;
+    color: #fff !important;
+    margin-left: 4px;
+    margin-top: 2px;
+
+    &:first-child {
+      margin-right: 4px;
+    }
+  }
+
+  &:active:not(.btn-disabled) {
+    & .text {
+      margin-top: -2px;
+      margin-left: 2px;
+
+      &:first-child {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  @include btn-style(
+    $base-color,
+    map-get($default-colors, 'normal'),
+    map-get($default-colors, 'hover'),
+    map-get($default-colors, 'shadow')
+  );
+
+  &:focus {
+    outline: 0;
+  }
+  &:active:not(.btn-disabled) {
+    padding-left: 4px;
+    padding-right: 2px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+  }
+
+  &.btn-disabled,
+  &.btn-disabled:hover,
+  &.btn-disabled:focus {
+    color: $base-color;
+    cursor: not-allowed;
+    background-color: map-get($disabled-colors, 'normal');
+    opacity: 0.6;
+  }
+
+  &.btn-disabled:hover::after {
+    box-shadow: inset -4px -4px map-get($disabled-colors, 'shadow');
+  }
+
+  // Other styles
+  // prettier-ignore
+  $types:
+    "primary" $background-color map-get($primary-colors, "normal") map-get($primary-colors, "hover") map-get($primary-colors, "shadow"),
+    "success" $background-color map-get($success-colors, "normal") map-get($success-colors, "hover") map-get($success-colors, "shadow"),
+    "warning" $base-color map-get($warning-colors, "normal") map-get($warning-colors, "hover") map-get($warning-colors, "shadow"),
+    "error" $background-color map-get($error-colors, "normal") map-get($error-colors, "hover") map-get($error-colors, "shadow");
+
+  @each $type in $types {
+    &.btn-#{nth($type, 1)} {
+      @include btn-style(
+        nth($type, 2),
+        nth($type, 3),
+        nth($type, 4),
+        nth($type, 5)
+      );
+    }
+  }
+
+  input[type='file'] {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &.is-size-small {
+    font-size: 75%;
+    padding-left: 2px;
+    padding-right: 4px;
+    padding-top: 0px;
+    padding-bottom: 4px;
+
+    &:active:not(.btn-disabled) {
+      padding-left: 3px;
+      padding-right: 3px;
+      padding-top: 1px;
+      padding-bottom: 3px;
+    }
+  }
+
+  &.is-size-large {
+    font-size: 125%;
+    padding-left: 2px;
+    padding-right: 4px;
+    padding-top: 0px;
+    padding-bottom: 4px;
+
+    &:active:not(.btn-disabled) {
+      padding-left: 3px;
+      padding-right: 3px;
+      padding-top: 1px;
+      padding-bottom: 3px;
+    }
+  }
+}
+
+button,
+.btn,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  &:focus,
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+// --- icon button
+
+.button-wrapper,
+.icon-button-wrapper {
+  @include pixel-borders(
+    $corner-size: 1,
+    $border-size: 4px,
+    $border-color: #000,
+    $border-inset-color: false
+  );
+  display: inline-block;
+  margin-right: 1em;
+
+  &.is-inverted {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 4px,
+      $border-color: #000,
+      $border-inset-color: false
+    );
+
+    // if media prefers dark mode
+    @media (prefers-color-scheme: dark) {
+      @include pixel-borders(
+        $corner-size: 1,
+        $border-size: 4px,
+        $border-color: #fff,
+        $border-inset-color: false
+      );
+    }
+  }
+}
+
+@mixin btn-style($color, $background, $hover-background, $shadow) {
+  color: $color;
+  background-color: $background;
+
+  &::after {
+    position: absolute;
+    top: -$border-size;
+    right: -$border-size;
+    bottom: -$border-size;
+    left: -$border-size;
+    content: '';
+    box-shadow: inset -4px -4px $shadow;
+  }
+
+  &:hover {
+    color: $color;
+    text-decoration: none;
+    background-color: $hover-background;
+
+    &::after {
+      box-shadow: inset -4px -4px $shadow;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba($shadow, 0.3);
+  }
+
+  &:active:not(.btn-disabled)::after {
+    box-shadow: inset 4px 4px $shadow;
+  }
+}
+
+// Default style
+// padding: 6px 8px;
+.icon-btn {
+  padding: 0;
+  padding-bottom: 4px;
+  padding-right: 4px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  &.is-size-small {
+    padding-bottom: 4px;
+    padding-right: 4px;
+  }
+
+  & * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .pixelicon {
+    position: relative;
+    left: -2px;
+    top: -2px;
+  }
+
+  &:active:not(.btn-disabled) {
+    padding: 0;
+    padding-top: 4px;
+    padding-left: 4px;
+
+    &.is-size-small {
+      padding-top: 4px;
+      padding-left: 4px;
+    }
+
+    & .pixelicon:not(.btn-disabled) {
+      position: relative;
+      left: -4px;
+      top: -4px;
+    }
+  }
+}

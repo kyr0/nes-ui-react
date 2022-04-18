@@ -1,0 +1,22 @@
+.anchor {
+  @include pixel-borders(
+    $corner-size: 1,
+    $border-size: 2px,
+    $border-color: map-get($primary-colors, 'normal'),
+    $border-inset-color: false
+  );
+
+  padding: 3px;
+  padding-left: 4px;
+  padding-top: 4px;
+  background-color: map-get($primary-colors, 'normal');
+  color: #fff;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: map-get($primary-colors, 'hover');
+    //text-shadow: 2px 2px #000;
+    text-decoration: underline;
+    color: #fff;
+  }
+}

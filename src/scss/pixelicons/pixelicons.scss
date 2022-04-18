@@ -1,0 +1,43 @@
+$icon-size-small: 16px;
+$icon-size-medium: 24px;
+$icon-size-large: 32px;
+
+$pixelicon-color: #fff;
+
+@media (prefers-color-scheme: dark) {
+  $pixelicon-color: #000;
+}
+
+.pixelicon-wrapper {
+  display: block;
+}
+
+.pixelicon {
+  display: inline-block;
+
+  & * {
+    display: block;
+  }
+
+  &.is-size-medium {
+    width: $icon-size-medium;
+    height: $icon-size-medium;
+  }
+
+  &.is-size-large {
+    width: $icon-size-large;
+    height: $icon-size-large;
+  }
+
+  &.is-size-small {
+    width: $icon-size-small;
+    height: $icon-size-small;
+  }
+}
+
+// pixelart https://www.pixelartcss.com/
+// replace: rgba(255, 255, 255, 1)
+// by: $pixelicon-color
+@import 'icons/checkmark-24.scss';
+@import 'icons/arrow-up-16.scss';
+@import 'icons/close-8.scss';

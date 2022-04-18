@@ -1,0 +1,71 @@
+.toolbar-wrapper {
+  &.has-rounded-corners {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 4px,
+      $border-color: #999,
+      $border-inset-color: false
+    );
+
+    @media (prefers-color-scheme: dark) {
+      @include pixel-borders(
+        $corner-size: 1,
+        $border-size: 4px,
+        $border-color: #333,
+        $border-inset-color: false
+      );
+    }
+  }
+
+  &.is-borderless {
+    border: none;
+  }
+}
+
+.toolbar {
+  display: flex;
+  margin: 0;
+  padding: 4px;
+  flex-direction: row;
+  align-items: center;
+  background-color: #eee;
+
+  @include pixel-borders(
+    $corner-size: 0,
+    $border-size: 4px,
+    $border-color: #666,
+    $border-inset-color: false
+  );
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #222;
+    @include pixel-borders(
+      $corner-size: 0,
+      $border-size: 4px,
+      $border-color: #666,
+      $border-inset-color: false
+    );
+  }
+  border-radius: 0 !important;
+
+  > * {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .icon-button-wrapper,
+  .button-wrapper {
+    border: none;
+    margin-right: 4px;
+    display: flex;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.is-borderless {
+    border: none;
+  }
+}

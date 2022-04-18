@@ -1,0 +1,54 @@
+{
+  "name": "nes-ui-react",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.1.1",
+  "description": "A design system that paints the web in 8 bits.",
+  "keywords": [
+    "NES",
+    "retro",
+    "ui",
+    "components",
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "pixel art",
+    "design system"
+  ],
+  "source": "./src/index.tsx",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "sass src/scss/nes-ui.scss:dist/nes-ui.css",
+    "build": "ts-node build.ts",
+    "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyr0/nes-ui-react.git"
+  },
+  "author": "Aron Homberg <info@aron-homberg.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyr0/nes-ui-react/issues"
+  },
+  "homepage": "https://github.com/kyr0/nes-ui-react#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "@types/react": "^17.0.38",
+    "rimraf": "^3.0.2",
+    "sass": "^1.50.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.36"
+  }
+}

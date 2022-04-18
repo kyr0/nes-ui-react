@@ -1,0 +1,35 @@
+hr {
+  background-color: $base-color;
+  border-color: $base-color;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #fff;
+    border-color: #fff;
+  }
+  height: 4px;
+
+  &.is-disabled {
+    background-color: map-get($disabled-colors, 'normal');
+    border-color: map-get($disabled-colors, 'normal');
+  }
+
+  &.is-warning {
+    background-color: map-get($warning-colors, 'normal');
+    border-color: map-get($warning-colors, 'normal');
+  }
+
+  &.is-primary {
+    background-color: map-get($primary-colors, 'normal');
+    border-color: map-get($primary-colors, 'normal');
+  }
+
+  &.is-error {
+    background-color: map-get($error-colors, 'normal');
+    border-color: map-get($error-colors, 'normal');
+  }
+
+  &.is-success {
+    background-color: map-get($success-colors, 'normal');
+    border-color: map-get($success-colors, 'normal');
+  }
+}

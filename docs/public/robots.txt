@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://chiptunes.daw.rocks
+
+# Sitemaps
+Sitemap: https://chiptunes.daw.rocks/sitemap.xml

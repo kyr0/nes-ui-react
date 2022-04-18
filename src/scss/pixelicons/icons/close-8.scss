@@ -1,0 +1,11 @@
+// designed in 8x8 because 2x upscale
+.pixelicon-close-8 {
+  box-shadow: 4px 4px 0 0 $pixelicon-color, 14px 4px 0 0 $pixelicon-color,
+    6px 6px 0 0 $pixelicon-color, 12px 6px 0 0 $pixelicon-color,
+    8px 8px 0 0 $pixelicon-color, 10px 8px 0 0 $pixelicon-color,
+    8px 10px 0 0 $pixelicon-color, 10px 10px 0 0 $pixelicon-color,
+    6px 12px 0 0 $pixelicon-color, 12px 12px 0 0 $pixelicon-color,
+    4px 14px 0 0 $pixelicon-color, 14px 14px 0 0 $pixelicon-color;
+  height: 2px;
+  width: 2px;
+}

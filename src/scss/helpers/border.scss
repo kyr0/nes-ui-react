@@ -1,0 +1,75 @@
+.pixel-border {
+  border-radius: 15px;
+  @include pixel-borders(
+    $corner-size: 1,
+    $border-size: 4px,
+    $border-color: $base-color,
+    $border-inset-color: false
+  );
+
+  @media (prefers-color-scheme: dark) {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 4px,
+      $border-color: #fff,
+      $border-inset-color: false
+    );
+  }
+}
+
+.pixel-border-2 {
+  border-radius: 32px;
+  @include pixel-borders(
+    $corner-size: 2,
+    $border-size: 4px,
+    $border-color: $base-color,
+    $border-inset-color: false
+  );
+
+  @media (prefers-color-scheme: dark) {
+    @include pixel-borders(
+      $corner-size: 2,
+      $border-size: 4px,
+      $border-color: #fff,
+      $border-inset-color: false
+    );
+  }
+}
+
+.pixel-border-2x {
+  border-radius: 0 !important;
+  @include pixel-borders(
+    $corner-size: 1,
+    $border-size: 8px,
+    $border-color: $base-color,
+    $border-inset-color: false
+  );
+
+  @media (prefers-color-scheme: dark) {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 8px,
+      $border-color: #fff,
+      $border-inset-color: false
+    );
+  }
+}
+
+.pixel-border-2x-2 {
+  border-radius: 0 !important;
+  @include pixel-borders(
+    $corner-size: 2,
+    $border-size: 8px,
+    $border-color: $base-color,
+    $border-inset-color: false
+  );
+
+  @media (prefers-color-scheme: dark) {
+    @include pixel-borders(
+      $corner-size: 2,
+      $border-size: 8px,
+      $border-color: #fff,
+      $border-inset-color: false
+    );
+  }
+}

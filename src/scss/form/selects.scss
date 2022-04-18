@@ -1,0 +1,123 @@
+.select {
+  // prettier-ignore
+  $dropdown: (
+    (1,1,1,1,1,1,1),
+    (1,1,1,1,1,1,1),
+    (0,1,1,1,1,1,0),
+    (0,1,1,1,1,1,0),
+    (0,0,1,1,1,0,0),
+    (0,0,0,1,0,0,0),
+  );
+  $dropdown-color: ($base-color, map-get($default-colors, 'shadow'));
+
+  outline: none !important;
+  position: relative;
+  width: calc(100% - #{2 * $border-size});
+  margin: 4px;
+
+  select {
+    width: 100%;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    cursor: $cursor-click-url, pointer;
+    border-radius: 0;
+    outline-color: map-get($default-colors, 'hover');
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 1em;
+
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 2px,
+      $border-color: $base-color,
+      $border-inset-color: false
+    );
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      outline: none;
+    }
+
+    &:invalid {
+      color: map-get($disabled-colors, shadow);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    $dropdown-color: $background-color;
+
+    select {
+      color: $background-color;
+      background-color: $base-color;
+
+      @include pixel-borders(
+        $corner-size: 1,
+        $border-size: 2px,
+        $border-color: #fff,
+        $border-inset-color: false
+      );
+    }
+  }
+
+  &.is-disabled {
+    @extend .is-disable;
+    color: map-get($disabled-colors, 'normal');
+    cursor: not-allowed;
+  }
+
+  &::after {
+    @include pixelize(2px, $dropdown, $dropdown-color);
+    transform: scale(0.75);
+    position: absolute;
+    top: calc(50% - 11px);
+    right: 24px;
+    pointer-events: none;
+    content: '';
+  }
+
+  option {
+    padding: 0.25em;
+  }
+
+  // prettier-ignore
+  $types:
+    "dark" map-get($default-colors, "normal") map-get($default-colors, "hover"),
+    "success" map-get($success-colors, "normal") map-get($success-colors, "hover"),
+    "warning" map-get($warning-colors, "normal") map-get($warning-colors, "hover"),
+    "error" map-get($error-colors, "normal") map-get($error-colors, "hover"),
+    "disable" map-get($disabled-colors, "normal") map-get($disabled-colors, "shadow");
+
+  @each $type in $types {
+    &.is-#{nth($type, 1)} {
+      $color: nth($type, 2);
+
+      &::after {
+        color: $color;
+      }
+
+      select {
+        @include pixel-borders(
+          $corner-size: 1,
+          $border-size: 2px,
+          $border-color: $color,
+          $border-inset-color: false
+        );
+
+        outline-color: nth($type, 3);
+      }
+    }
+  }
+}
+
+.select.is-multiple {
+  &::after {
+    display: none;
+  }
+
+  select {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+}

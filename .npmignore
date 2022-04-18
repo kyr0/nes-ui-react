@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+__test__
+docs
+src
+tsconfig.json
+tsconfig.types.json
+yarn.lock

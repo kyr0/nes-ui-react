@@ -1,0 +1,84 @@
+.modal {
+  padding: 4px;
+  border-width: $border-size;
+  display: block;
+  width: 80vw;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  &.is-rounded {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 4px,
+      $border-color: #000,
+      $border-inset-color: false
+    );
+
+    @media (prefers-color-scheme: dark) {
+      @include pixel-borders(
+        $corner-size: 1,
+        $border-size: 4px,
+        $border-color: #fff,
+        $border-inset-color: false
+      );
+    }
+  }
+
+  color: $base-color;
+  background-color: #fff;
+  border-color: $background-color;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #fff;
+  }
+
+  &:not(.is-rounded)::before {
+    position: absolute;
+    top: -$border-size * 2;
+    right: -$border-size * 2;
+    bottom: -$border-size * 2;
+    left: -$border-size * 2;
+    z-index: -1;
+    content: '';
+    border: $border-size solid #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: $background-color;
+    background-color: $base-color;
+    border-color: $background-color;
+
+    &:not(.is-rounded)::before {
+      position: absolute;
+      top: -$border-size * 2;
+      right: -$border-size * 2;
+      bottom: -$border-size * 2;
+      left: -$border-size * 2;
+      z-index: -1;
+      content: '';
+      border: $border-size solid #fff;
+    }
+  }
+  border-radius: none;
+  z-index: 10000;
+  top: 100px;
+  position: fixed;
+}
+
+.modal-backdrop {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000077;
+}
+
+.modal-content {
+  margin: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

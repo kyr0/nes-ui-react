@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  background-color: #00000033;
+  border-bottom: 4px solid #00000033;
+  color: $base-color;
+
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+  }
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  * {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
