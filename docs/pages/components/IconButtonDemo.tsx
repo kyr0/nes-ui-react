@@ -1,5 +1,5 @@
 import { Row, Container, IconButton, PixelIcon, Br, Text } from "../../dist";
-import { emptyCallback } from "../function/emptyCallback";
+import emptyCallback from "../../function/emptyCallback";
 
 export const IconButtonDemo = () => (
     <>
@@ -43,3 +43,4 @@ export const IconButtonDemo = () => (
       </Row>
     </>
 )
+export default IconButtonDemo

@@ -27,3 +27,5 @@ export const ProgressDemo = () => {
 
     )
 }
+
+export default ProgressDemo

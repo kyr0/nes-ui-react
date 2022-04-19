@@ -24,3 +24,4 @@ export const ListDemo = () => (
         </Row>
     </Container>
 )
+export default ListDemo

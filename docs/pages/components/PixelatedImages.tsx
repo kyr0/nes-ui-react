@@ -18,3 +18,4 @@ export const PixelatedImages = () => (
         </Container>
     </Col>
 )
+export default PixelatedImages

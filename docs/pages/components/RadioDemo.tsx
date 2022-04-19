@@ -10,3 +10,4 @@ export const RadioDemo = () => (
         <Radio name="foo1" value="yes" label="Disabled" checked disabled />
     </Container>
 )
+export default RadioDemo

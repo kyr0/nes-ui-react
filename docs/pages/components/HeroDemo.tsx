@@ -14,3 +14,4 @@ export const HeroDemo = () => (
         </Hero>
     </>
 )
+export default HeroDemo

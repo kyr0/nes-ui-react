@@ -20,3 +20,4 @@ export const BadgeDmeo = () => (
 
     </>
 )
+export default BadgeDmeo

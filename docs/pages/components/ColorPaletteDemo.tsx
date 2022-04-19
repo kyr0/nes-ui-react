@@ -17,3 +17,4 @@ export const ColorPaletteDemo = () => (
       
     </>
 )
+export default ColorPaletteDemo

@@ -1,5 +1,5 @@
 import { Text, Row, Heading, Br, Toolbar, IconButton, PixelIcon, Separator, Spacer } from "../../dist";
-import { emptyCallback } from "../function/emptyCallback";
+import emptyCallback from "../../function/emptyCallback";
 
 export const ToolbarDemo = () => (
     <Row>
@@ -56,3 +56,4 @@ export const ToolbarDemo = () => (
         </Toolbar>
     </Row>
 )
+export default ToolbarDemo;

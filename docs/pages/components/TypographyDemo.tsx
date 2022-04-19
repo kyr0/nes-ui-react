@@ -50,3 +50,4 @@ export const TypographyDemo = () => (
         </Container>
     </>
 )
+export default TypographyDemo

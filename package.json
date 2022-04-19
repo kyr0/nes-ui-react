@@ -26,7 +26,10 @@
     "build": "ts-node build.ts",
     "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs",
     "watch": "run-when-changed --watch ./src --exec yarn build",
-    "deploy": "npm publish"
+    "deploy": "npm publish",
+    "prebuild:docs": "rimraf docs/out",
+    "build:docs": "yarn build",
+    "postbuild:docs": "yarn --cwd docs build && yarn --cwd docs export"
   },
   "repository": {
     "type": "git",

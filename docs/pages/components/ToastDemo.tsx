@@ -18,3 +18,4 @@ export const ToastDemo = () => (
         </Toast>
     </Container>
 )
+export default ToastDemo

@@ -9,3 +9,4 @@ export const CheckboxDemo = () => (
         <Checkbox name="bar1" value="yes" label="Disabled" checked disabled /> 
     </Container>
 )
+export default CheckboxDemo

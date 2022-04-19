@@ -28,3 +28,4 @@ export const InputDemo = () => (
         </form>
     </Container>
 )
+export default InputDemo

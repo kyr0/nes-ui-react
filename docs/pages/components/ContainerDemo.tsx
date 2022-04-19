@@ -11,7 +11,7 @@ export const ContainerDemo = () => (
         <Container align='right' title='&lt;Container align="right"&gt;'>title + content aligned right</Container>
 
         <Br />
-        
+
         <Container align='left' title='&lt;Container roundedCorners alignTitle="center"&gt;' roundedCorners alignTitle="center">
           rounded corners, title aligned center, but content aligned left (default)
         </Container>
@@ -19,3 +19,4 @@ export const ContainerDemo = () => (
         <Br size="large" />
     </>
 )
+export default ContainerDemo

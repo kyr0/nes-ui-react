@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Text, Row, Heading, Br, Menu, IconButton, PixelIcon, Separator, Button } from "../../dist";
-import { emptyCallback } from "../function/emptyCallback";
+import emptyCallback from "../../function/emptyCallback";
 
 export const MenuDemo = () => {
 
@@ -62,3 +62,5 @@ export const MenuDemo = () => {
         </Row>
     )
 }
+
+export default MenuDemo

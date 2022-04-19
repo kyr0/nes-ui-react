@@ -55,3 +55,5 @@ export const GridDemo = () => (
 
     </>
 )
+
+export default GridDemo

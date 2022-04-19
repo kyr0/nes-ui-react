@@ -61,3 +61,4 @@ export const TableDemo = () => (
         </Row>
     </Container>
 )
+export default TableDemo

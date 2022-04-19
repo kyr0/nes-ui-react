@@ -11,3 +11,4 @@ export const HrDemo = () => (
         <Hr />
     </>
 )
+export default HrDemo

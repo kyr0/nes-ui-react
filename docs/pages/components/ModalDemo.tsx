@@ -52,3 +52,4 @@ export const ModalDemo = () => {
         </Row>
     )
 }
+export default ModalDemo

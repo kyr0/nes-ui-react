@@ -28,3 +28,4 @@ export const PixelIconDemo = () => (
         </Container>
     </Col>
 )
+export default PixelIconDemo

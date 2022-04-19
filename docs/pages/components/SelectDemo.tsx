@@ -54,3 +54,4 @@ export const SelectDemo = () => (
         </Row>
     </Container>
 )
+export default SelectDemo

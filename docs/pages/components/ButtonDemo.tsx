@@ -1,5 +1,5 @@
 import { Row, Container, Button, Br, Text } from "../../dist";
-import { emptyCallback } from "../function/emptyCallback";
+import emptyCallback from "../../function/emptyCallback";
 
 export const ButtonDemo = () => (
     <Row>
@@ -25,3 +25,5 @@ export const ButtonDemo = () => (
         </Container>
     </Row>
 )
+
+export default ButtonDemo

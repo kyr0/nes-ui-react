@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://chiptunes.daw.rocks
+Host: https://nes-ui-react.web.app
 
 # Sitemaps
-Sitemap: https://chiptunes.daw.rocks/sitemap.xml
+Sitemap: https://nes-ui-react.web.app/sitemap.xml
