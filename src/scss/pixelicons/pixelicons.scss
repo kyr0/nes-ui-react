@@ -8,28 +8,28 @@ $pixelicon-color: #fff;
   $pixelicon-color: #000;
 }
 
-.pixelicon-wrapper {
+.nes-ui-pixelicon-wrapper {
   display: block;
 }
 
-.pixelicon {
+.nes-ui-pixelicon {
   display: inline-block;
 
   & * {
     display: block;
   }
 
-  &.is-size-medium {
+  &.nes-ui-is-size-medium {
     width: $icon-size-medium;
     height: $icon-size-medium;
   }
 
-  &.is-size-large {
+  &.nes-ui-is-size-large {
     width: $icon-size-large;
     height: $icon-size-large;
   }
 
-  &.is-size-small {
+  &.nes-ui-is-size-small {
     width: $icon-size-small;
     height: $icon-size-small;
   }

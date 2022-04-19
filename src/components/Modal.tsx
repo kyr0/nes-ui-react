@@ -10,10 +10,10 @@ export interface ModalProps extends StyleProps, React.PropsWithChildren<any>, Id
 
 export const Modal = ({ id, open, backdrop, children, style, className, onClose, backdropClose }: ModalProps) => (
     <>
-        <dialog id={id} className={`modal is-rounded ${className || ''}`} style={{ ...style, display: open ? 'block' : 'none' }}>
+        <dialog id={id} className={`nes-ui-modal nes-ui-is-rounded ${className || ''}`} style={{ ...style, display: open ? 'block' : 'none' }}>
             {children}
         </dialog>
-        {backdrop !== false && <div className="modal-backdrop" style={{ ...style, display: open ? 'block' : 'none' }} onClick={backdropClose !== false && onClose ? onClose : () => {}} />}
+        {backdrop !== false && <div className="nes-ui-modal-backdrop" style={{ ...style, display: open ? 'block' : 'none' }} onClick={backdropClose !== false && onClose ? onClose : () => {}} />}
     </>
 )
 

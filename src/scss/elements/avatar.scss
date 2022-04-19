@@ -4,27 +4,27 @@
   width: $size;
   height: $size;
 
-  &.is-rounded {
+  &.nes-ui-is-rounded {
     border-radius: 50px;
   }
 
-  &.is-pixelated {
+  &.nes-ui-is-pixelated {
     -ms-interpolation-mode: nearest-neighbor;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
-  }
+  } 
 }
-.avatar {
+.nes-ui-avatar {
   @include img-style(2px);
 
-  &.is-small {
+  &.nes-ui-is-small {
     @include img-style(1px);
   }
-  &.is-medium {
+  &.nes-ui-is-medium {
     @include img-style(3px);
   }
-  &.is-large {
+  &.nes-ui-is-large {
     @include img-style(4px);
   }
 }

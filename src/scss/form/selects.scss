@@ -1,4 +1,4 @@
-.select {
+.nes-ui-select {
   // prettier-ignore
   $dropdown: (
     (1,1,1,1,1,1,1),
@@ -61,8 +61,8 @@
     }
   }
 
-  &.is-disabled {
-    @extend .is-disable;
+  &.nes-ui-is-disabled {
+    @extend .nes-ui-is-disable;
     color: map-get($disabled-colors, 'normal');
     cursor: not-allowed;
   }
@@ -90,7 +90,7 @@
     "disable" map-get($disabled-colors, "normal") map-get($disabled-colors, "shadow");
 
   @each $type in $types {
-    &.is-#{nth($type, 1)} {
+    &.nes-ui-is-#{nth($type, 1)} {
       $color: nth($type, 2);
 
       &::after {
@@ -111,7 +111,7 @@
   }
 }
 
-.select.is-multiple {
+.nes-ui-select.nes-ui-is-multiple {
   &::after {
     display: none;
   }

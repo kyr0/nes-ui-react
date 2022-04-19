@@ -1,4 +1,4 @@
-hr {
+hr.nes-ui-hr {
   background-color: $base-color;
   border-color: $base-color;
 
@@ -8,27 +8,27 @@ hr {
   }
   height: 4px;
 
-  &.is-disabled {
+  &.nes-ui-is-disabled {
     background-color: map-get($disabled-colors, 'normal');
     border-color: map-get($disabled-colors, 'normal');
   }
 
-  &.is-warning {
+  &.nes-ui-is-warning {
     background-color: map-get($warning-colors, 'normal');
     border-color: map-get($warning-colors, 'normal');
   }
 
-  &.is-primary {
+  &.nes-ui-is-primary {
     background-color: map-get($primary-colors, 'normal');
     border-color: map-get($primary-colors, 'normal');
   }
 
-  &.is-error {
+  &.nes-ui-is-error {
     background-color: map-get($error-colors, 'normal');
     border-color: map-get($error-colors, 'normal');
   }
 
-  &.is-success {
+  &.nes-ui-is-success {
     background-color: map-get($success-colors, 'normal');
     border-color: map-get($success-colors, 'normal');
   }

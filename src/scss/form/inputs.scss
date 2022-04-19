@@ -1,5 +1,5 @@
-.input,
-.textarea {
+.nes-ui-input,
+.nes-ui-textarea {
   @mixin border-style($border, $outline) {
     @include compact-border-image($border);
   }
@@ -26,7 +26,7 @@
     color: $background-color;
     background-color: $base-color;
   }
-  &.is-disabled {
+  &.nes-ui-is-disabled {
     @include border-style(
       map-get($disabled-colors, 'normal'),
       map-get($disabled-colors, 'shadow')
@@ -35,27 +35,27 @@
     color: map-get($disabled-colors, 'normal');
     cursor: not-allowed;
   }
-  &.is-warning {
+  &.nes-ui-is-warning {
     @include border-style(
       map-get($warning-colors, 'normal'),
       map-get($warning-colors, 'hover')
     );
   }
-  &.is-error {
+  &.nes-ui-is-error {
     @include border-style(
       map-get($error-colors, 'normal'),
       map-get($error-colors, 'hover')
     );
   }
 
-  &.is-success {
+  &.nes-ui-is-success {
     @include border-style(
       map-get($success-colors, 'normal'),
       map-get($success-colors, 'hover')
     );
   }
 
-  &.is-primary {
+  &.nes-ui-is-primary {
     @include border-style(
       map-get($primary-colors, 'normal'),
       map-get($primary-colors, 'hover')
@@ -63,17 +63,19 @@
   }
 }
 
-.field {
+.nes-ui-field {
   > label {
     display: block;
     margin-top: 1.5em;
   }
-  .input,
-  .textarea {
+
+  .nes-ui-input,
+
+  .nes-ui-textarea {
     display: block;
   }
 
-  &.is-inline {
+  &.nes-ui-is-inline {
     display: flex;
     align-items: center;
 
@@ -85,8 +87,8 @@
       text-align: right;
     }
 
-    .input,
-    .textarea {
+    .nes-ui-input,
+    .nes-ui-textarea {
       flex-basis: 0;
       flex-grow: 5;
     }
@@ -94,7 +96,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .field.is-inline {
+  .nes-ui-field.nes-ui-is-inline {
     display: block;
 
     > label {
@@ -102,7 +104,7 @@
       text-align: left;
     }
 
-    .input {
+    .nes-ui-input {
       max-width: 100%;
     }
   }

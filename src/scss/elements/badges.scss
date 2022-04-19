@@ -81,7 +81,7 @@
 }
 
 // Default style
-.badge {
+.nes-ui-badge {
   $em: 0.75em;
   position: relative;
   display: inline-block;
@@ -112,20 +112,20 @@
   }
 
   @each $type in $types {
-    &.is-split {
-      & span.is-#{nth($type, 1)} {
+    &.nes-ui-is-split {
+      & span.nes-ui-is-#{nth($type, 1)} {
         @include badge-style(nth($type, 2), nth($type, 3), is-split);
       }
     }
 
-    &.is-icon {
+    &.nes-ui-is-icon {
       width: $em * 7;
-      & span.is-#{nth($type, 1)} {
+      & span.nes-ui-is-#{nth($type, 1)} {
         @include badge-style(nth($type, 2), nth($type, 3), is-icon);
       }
     }
 
-    & span.is-#{nth($type, 1)} {
+    & span.nes-ui-is-#{nth($type, 1)} {
       @include badge-style(nth($type, 2), nth($type, 3));
     }
   }

@@ -33,8 +33,8 @@ export const Select = (props: SelectProps) => {
     return (
         <>
             <label htmlFor={props.id || props.htmlFor}>{props.label}</label>
-            <div className={`select ${props.multiple ? 'is-multiple': ''} ${props.color ? 'is-' + props.color : ''} ${props.className || ''}`}>
-                <select value={value} onChange={props.disabled ? () => {} : onValueChange} disabled={props.disabled} className={`${props.disabled ? 'is-disabled' : ''}`} multiple={props.multiple} required={props.required} id={props.id || props.htmlFor}>
+            <div className={`nes-ui-select ${props.multiple ? 'nes-ui-is-multiple' : ''} ${props.color ? 'nes-ui-is-' + props.color : ''} ${props.className || ''}`}>
+                <select value={value} onChange={props.disabled ? () => {} : onValueChange} disabled={props.disabled} className={`${props.disabled ? 'nes-ui-is-disabled' : ''}`} multiple={props.multiple} required={props.required} id={props.id || props.htmlFor}>
                     {props.children}
                 </select>
             </div>

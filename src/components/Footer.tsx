@@ -5,5 +5,5 @@ export interface FooterProps extends StyleProps, IdProps, React.PropsWithChildre
 }
 
 export const Footer = ({ id, style, className, children }: FooterProps) => (
-    <footer id={id} className={`footer ${className || ''}`} style={style}>{children}</footer>
+    <footer id={id} className={`nes-ui-footer ${className || ''}`} style={style}>{children}</footer>
 )

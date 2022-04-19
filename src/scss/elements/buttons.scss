@@ -1,5 +1,5 @@
-.button-wrapper,
-.icon-button-wrapper {
+.nes-ui-button-wrapper,
+.nes-ui-icon-button-wrapper {
   height: fit-content;
   @include pixel-borders(
     $corner-size: 1,
@@ -10,7 +10,7 @@
   display: flex;
   margin-right: 1em;
 
-  &.is-inverted {
+  &.nes-ui-is-inverted {
     @include pixel-borders(
       $corner-size: 1,
       $border-size: 4px,
@@ -48,14 +48,14 @@
     box-shadow: 0 0 0 4px rgba($shadow, 0.3);
   }
 
-  &:active:not(.btn-disabled)::after {
+  &:active:not(.nes-ui-btn-disabled)::after {
     box-shadow: inset 4px 4px $shadow;
   }
 }
 
 // Default style
-.btn,
-.icon-btn {
+.nes-ui-btn,
+.nes-ui-icon-btn {
   @include rounded-corners();
   position: relative;
   display: inline-block;
@@ -69,7 +69,7 @@
   cursor: $cursor-click-url, pointer;
   user-select: none;
 
-  & .text {
+  & .nes-ui-text {
     margin: 0;
     color: #fff !important;
     margin-left: 4px;
@@ -80,8 +80,8 @@
     }
   }
 
-  &:active:not(.btn-disabled) {
-    & .text {
+  &:active:not(.nes-ui-btn-disabled) {
+    & .nes-ui-text {
       margin-top: -2px;
       margin-left: 2px;
 
@@ -101,23 +101,23 @@
   &:focus {
     outline: 0;
   }
-  &:active:not(.btn-disabled) {
+  &:active:not(.nes-ui-btn-disabled) {
     padding-left: 4px;
     padding-right: 2px;
     padding-top: 4px;
     padding-bottom: 2px;
   }
 
-  &.btn-disabled,
-  &.btn-disabled:hover,
-  &.btn-disabled:focus {
+  &.nes-ui-btn-disabled,
+  &.nes-ui-btn-disabled:hover,
+  &.nes-ui-btn-disabled:focus {
     color: $base-color;
     cursor: not-allowed;
     background-color: map-get($disabled-colors, 'normal');
     opacity: 0.6;
   }
 
-  &.btn-disabled:hover::after {
+  &.nes-ui-btn-disabled:hover::after {
     box-shadow: inset -4px -4px map-get($disabled-colors, 'shadow');
   }
 
@@ -130,7 +130,7 @@
     "error" $background-color map-get($error-colors, "normal") map-get($error-colors, "hover") map-get($error-colors, "shadow");
 
   @each $type in $types {
-    &.btn-#{nth($type, 1)} {
+    &.nes-ui-btn-#{nth($type, 1)} {
       @include btn-style(
         nth($type, 2),
         nth($type, 3),
@@ -146,14 +146,14 @@
     opacity: 0;
   }
 
-  &.is-size-small {
+  &.nes-ui-is-size-small {
     font-size: 75%;
     padding-left: 2px;
     padding-right: 4px;
     padding-top: 0px;
     padding-bottom: 4px;
 
-    &:active:not(.btn-disabled) {
+    &:active:not(.nes-ui-btn-disabled) {
       padding-left: 3px;
       padding-right: 3px;
       padding-top: 1px;
@@ -161,14 +161,14 @@
     }
   }
 
-  &.is-size-large {
+  &.nes-ui-is-size-large {
     font-size: 125%;
     padding-left: 2px;
     padding-right: 4px;
     padding-top: 0px;
     padding-bottom: 4px;
 
-    &:active:not(.btn-disabled) {
+    &:active:not(.nes-ui-btn-disabled) {
       padding-left: 3px;
       padding-right: 3px;
       padding-top: 1px;
@@ -178,7 +178,7 @@
 }
 
 button,
-.btn,
+.nes-ui-btn,
 input[type='submit'],
 input[type='reset'],
 input[type='button'] {
@@ -191,8 +191,8 @@ input[type='button'] {
 
 // --- icon button
 
-.button-wrapper,
-.icon-button-wrapper {
+.nes-ui-button-wrapper,
+.nes-ui-icon-button-wrapper {
   @include pixel-borders(
     $corner-size: 1,
     $border-size: 4px,
@@ -202,7 +202,7 @@ input[type='button'] {
   display: inline-block;
   margin-right: 1em;
 
-  &.is-inverted {
+  &.nes-ui-is-inverted {
     @include pixel-borders(
       $corner-size: 1,
       $border-size: 4px,
@@ -250,14 +250,14 @@ input[type='button'] {
     box-shadow: 0 0 0 4px rgba($shadow, 0.3);
   }
 
-  &:active:not(.btn-disabled)::after {
+  &:active:not(.nes-ui-btn-disabled)::after {
     box-shadow: inset 4px 4px $shadow;
   }
 }
 
 // Default style
 // padding: 6px 8px;
-.icon-btn {
+.nes-ui-icon-btn {
   padding: 0;
   padding-bottom: 4px;
   padding-right: 4px;
@@ -265,7 +265,7 @@ input[type='button'] {
   display: flex;
   align-items: center;
 
-  &.is-size-small {
+  &.nes-ui-is-size-small {
     padding-bottom: 4px;
     padding-right: 4px;
   }
@@ -276,23 +276,23 @@ input[type='button'] {
     align-items: center;
   }
 
-  & .pixelicon {
+  & .nes-ui-pixelicon {
     position: relative;
     left: -2px;
     top: -2px;
   }
 
-  &:active:not(.btn-disabled) {
+  &:active:not(.nes-ui-btn-disabled) {
     padding: 0;
     padding-top: 4px;
     padding-left: 4px;
 
-    &.is-size-small {
+    &.nes-ui-is-size-small {
       padding-top: 4px;
       padding-left: 4px;
     }
 
-    & .pixelicon:not(.btn-disabled) {
+    & .pixelicon:not(.nes-ui-btn-disabled) {
       position: relative;
       left: -4px;
       top: -4px;

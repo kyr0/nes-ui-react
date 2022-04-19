@@ -6,8 +6,8 @@ export interface ListProps extends StyleProps, React.PropsWithChildren<any>, IdP
 }
 
 export const List = ({ id, style, children, styleType }: ListProps) => (
-    <div className="lists">
-        <ul id={id} className={`list is-${styleType || 'disc'}`} style={style}>
+    <div className="nes-ui-lists">
+        <ul id={id} className={`nes-ui-list nes-ui-is-${styleType || 'disc'}`} style={style}>
             {children}
         </ul>
     </div>

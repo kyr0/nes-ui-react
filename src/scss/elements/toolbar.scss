@@ -1,5 +1,5 @@
-.toolbar-wrapper {
-  &.has-rounded-corners {
+.nes-ui-toolbar-wrapper {
+  &.nes-ui-has-rounded-corners {
     @include pixel-borders(
       $corner-size: 1,
       $border-size: 4px,
@@ -17,12 +17,12 @@
     }
   }
 
-  &.is-borderless {
+  &.nes-ui-is-borderless {
     border: none;
   }
 }
 
-.toolbar {
+.nes-ui-toolbar {
   display: flex;
   margin: 0;
   padding: 4px;
@@ -54,8 +54,8 @@
     display: flex;
   }
 
-  .icon-button-wrapper,
-  .button-wrapper {
+  .nes-ui-icon-button-wrapper,
+  .nes-ui-button-wrapper {
     border: none;
     margin-right: 4px;
     display: flex;
@@ -65,7 +65,7 @@
     }
   }
 
-  &.is-borderless {
+  &.nes-ui-is-borderless {
     border: none;
   }
 }

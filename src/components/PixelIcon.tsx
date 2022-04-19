@@ -10,7 +10,7 @@ export interface PixelIconProps extends StyleProps, IdProps {
 }
 
 export const PixelIcon = (props: PixelIconProps) => (
-    <span id={props.id} className={`pixelicon is-size-${props.size || 'medium'}`} style={props.style}>
+    <span id={props.id} className={`nes-ui-pixelicon nes-ui-is-size-${props.size || 'medium'}`} style={props.style}>
         <span className={props.name} />
     </span>
 )

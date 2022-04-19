@@ -1,10 +1,10 @@
-.table-responsive {
+.nes-ui-table-responsive {
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
 }
 
-.table {
+.nes-ui-table {
   table-layout: fixed;
   background-color: $background-color;
 
@@ -51,11 +51,11 @@
     }
   }
 
-  &.is-centered th {
+  &.nes-ui-is-centered th {
     text-align: center;
   }
 
-  &.is-bordered {
+  &.nes-ui-is-bordered {
     margin: 4px;
     border-spacing: 0;
     border-collapse: separate;
@@ -67,7 +67,7 @@
     color: $background-color;
     background-color: $base-color;
 
-    &.is-bordered {
+    &.nes-ui-is-bordered {
       @include compact-rounded-corners(true);
     }
 

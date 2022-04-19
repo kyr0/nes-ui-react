@@ -1,4 +1,4 @@
-.hero-dash {
+.nes-ui-hero-dash {
   @supports (border-image-source: none) {
     border-radius: (2 * (4px + 2)) + (4px * 2);
   }
@@ -17,7 +17,7 @@
   }
 }
 
-.hero-flower {
+.nes-ui-hero-flower {
   @supports (border-image-source: none) {
     border-radius: (2 * (4px + 2)) + (4px * 2);
   }

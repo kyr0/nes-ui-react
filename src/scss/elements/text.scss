@@ -1,65 +1,65 @@
-.text {
-  &.is-small {
+.nes-ui-text {
+  &.nes-ui-is-small {
     font-size: 1em;
   }
 
-  &.is-medium {
+  &.nes-ui-is-medium {
     font-size: 1.25em;
   }
 
-  &.is-large {
+  &.nes-ui-is-large {
     font-size: 1.5em;
   }
 
-  &.is-xlarge {
+  &.nes-ui-is-xlarge {
     font-size: 1.75em;
   }
 
-  &.is-heading-small {
+  &.nes-ui-is-heading-small {
     font-size: 1.25em;
   }
 
-  &.is-heading-medium {
+  &.nes-ui-is-heading-medium {
     font-size: 1.5em;
   }
 
-  &.is-heading-large {
+  &.nes-ui-is-heading-large {
     font-size: 1.75em;
   }
 
-  &.is-heading-xlarge {
+  &.nes-ui-is-heading-xlarge {
     font-size: 2em;
   }
 
-  &.is-primary {
+  &.nes-ui-is-primary {
     color: map-get($primary-colors, 'normal');
   }
 
-  &.is-success {
+  &.nes-ui-is-success {
     color: map-get($success-colors, 'normal');
   }
 
-  &.is-warning {
+  &.nes-ui-is-warning {
     color: map-get($warning-colors, 'normal');
   }
 
-  &.is-error {
+  &.nes-ui-is-error {
     color: map_get($error-colors, 'normal');
   }
 
-  &.is-disabled {
+  &.nes-ui-is-disabled {
     color: map_get($disabled-colors, 'normal');
   }
 }
 
-.block-text {
+.nes-ui-block-text {
   display: inline-block;
   padding: 2px;
   padding-left: 5px;
   padding-right: 5px;
   background-color: $base-color;
 
-  &.is-shadow {
+  &.nes-ui-is-shadow {
     text-shadow: 1px 1px #fff;
 
     @media (prefers-color-scheme: dark) {

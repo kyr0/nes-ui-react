@@ -7,5 +7,5 @@ export interface HrProps extends StyleProps, IdProps {
 }
 
 export const Hr = ({ id, style, height, color, className }: HrProps) => (
-    <hr className={`${className || ''} is-${color || ''}`} id={id} style={{...style, height}} />
+    <hr className={`nes-ui-hr ${className || ''} nes-ui-is-${color || ''}`} id={id} style={{...style, height}} />
 )

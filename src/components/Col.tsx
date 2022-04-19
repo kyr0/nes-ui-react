@@ -8,5 +8,5 @@ export interface ColProps extends StyleProps, React.PropsWithChildren<any>, IdPr
 }
 
 export const Col = ({ children, style, type, className, id }: ColProps) => (
-    <div id={id} className={`col-${type} ${className || ''}`} style={style}>{children}</div>
+    <div id={id} className={`nes-ui-col-${type} ${className || ''}`} style={style}>{children}</div>
 )

@@ -1,4 +1,4 @@
-.modal {
+.nes-ui-modal {
   padding: 4px;
   border-width: $border-size;
   display: block;
@@ -8,7 +8,7 @@
     margin-bottom: 0;
   }
 
-  &.is-rounded {
+  &.nes-ui-is-rounded {
     @include pixel-borders(
       $corner-size: 1,
       $border-size: 4px,
@@ -34,7 +34,7 @@
     border-color: #fff;
   }
 
-  &:not(.is-rounded)::before {
+  &:not(.nes-ui-is-rounded)::before {
     position: absolute;
     top: -$border-size * 2;
     right: -$border-size * 2;
@@ -50,7 +50,7 @@
     background-color: $base-color;
     border-color: $background-color;
 
-    &:not(.is-rounded)::before {
+    &:not(.nes-ui-is-rounded)::before {
       position: absolute;
       top: -$border-size * 2;
       right: -$border-size * 2;
@@ -67,7 +67,7 @@
   position: fixed;
 }
 
-.modal-backdrop {
+.nes-ui-modal-backdrop {
   z-index: 9999;
   position: fixed;
   top: 0;
@@ -77,7 +77,7 @@
   background-color: #00000077;
 }
 
-.modal-content {
+.nes-ui-modal-content {
   margin: 4px;
   margin-top: 8px;
   margin-bottom: 8px;

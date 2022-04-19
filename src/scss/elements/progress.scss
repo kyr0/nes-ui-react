@@ -1,4 +1,4 @@
-.progress {
+.nes-ui-progress {
   // @include compact-rounded-corners();
 
   width: 100%;
@@ -55,26 +55,26 @@
 
   @include progress-style($base-color);
 
-  &.is-rounded {
+  &.nes-ui-is-rounded {
     @include rounded-corners();
   }
-  &.is-primary {
+  &.nes-ui-is-primary {
     @include progress-style(map-get($primary-colors, 'normal'));
   }
 
-  &.is-success {
+  &.nes-ui-is-success {
     @include progress-style(map-get($success-colors, 'normal'));
   }
 
-  &.is-warning {
+  &.nes-ui-is-warning {
     @include progress-style(map-get($warning-colors, 'normal'));
   }
 
-  &.is-error {
+  &.nes-ui-is-error {
     @include progress-style(map-get($error-colors, 'normal'));
   }
 
-  &.is-pattern {
+  &.nes-ui-is-pattern {
     &::-webkit-progress-value {
       background-color: $base-color;
       background-image: linear-gradient(

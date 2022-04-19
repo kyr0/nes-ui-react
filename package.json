@@ -21,10 +21,11 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "prebuild": "sass src/scss/nes-ui.scss:dist/nes-ui.css",
+    "clean": "rimraf dist && rimraf docs/dist",
+    "prebuild": "yarn clean && sass src/scss/nes-ui.scss:dist/nes-ui.css",
     "build": "ts-node build.ts",
     "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs",
+    "watch": "run-when-changed --watch ./src --exec yarn build",
     "deploy": "npm publish"
   },
   "repository": {
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@types/node": "^17.0.25",
     "@types/react": "^17.0.38",
+    "chokidar": "^3.5.3",
     "rimraf": "^3.0.2",
     "sass": "^1.50.0",
     "ts-node": "^10.7.0",

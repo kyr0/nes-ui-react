@@ -6,5 +6,7 @@ export interface BlockTextProps extends IdProps, StyleProps, React.PropsWithChil
     backgroundColor?: string;
 }
 
+// asd
+
 export const BlockText = ({ id, style, children, className, shadow, backgroundColor }: BlockTextProps) => 
-    <p id={id} style={{...style, backgroundColor: backgroundColor || '' }} className={`block-text ${shadow && 'is-shadow'} ${className || ''}`}>{children}</p>
+    <p id={id} style={{...style, backgroundColor: backgroundColor || '' }} className={`nes-ui-block-text ${shadow && 'nes-ui-is-shadow'} ${className || ''}`}>{children}</p>

@@ -28,9 +28,9 @@ export const TextField = (props: TextFieldProps) => {
     }, [props.value])
 
     return (
-        <div className="field">
+        <div className="nes-ui-field">
             <label htmlFor={props.name}>{props.label}</label>
-            <input id={props.id} autoComplete={props.autoComplete} type={props.type} className={`input ${props.disabled ? 'is-disabled' : ''} ${props.color ? 'is-' + props.color : ''} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} onChange={props.disabled ? () => {} : onValueChange} />
+            <input id={props.id} autoComplete={props.autoComplete} type={props.type} className={`nes-ui-input ${props.disabled ? 'nes-ui-is-disabled' : ''} ${props.color ? 'nes-ui-is-' + props.color : ''} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} onChange={props.disabled ? () => {} : onValueChange} />
         </div>
     )
 }

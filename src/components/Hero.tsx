@@ -6,7 +6,7 @@ export interface HeroProps extends StyleProps, React.PropsWithChildren<any>, IdP
 }
 
 export const Hero = ({ id, style, children, className, variant }: HeroProps) => (
-     <div id={id} className={`hero-${variant || 'dash'} ${className || ''}`} style={style}>
+     <div id={id} className={`nes-ui-hero-${variant || 'dash'} ${className || ''}`} style={style}>
         {children}
     </div>
 )

@@ -1,4 +1,4 @@
-.pixel-border {
+.nes-ui-pixel-border {
   border-radius: 15px;
   @include pixel-borders(
     $corner-size: 1,
@@ -17,7 +17,7 @@
   }
 }
 
-.pixel-border-2 {
+.nes-ui-pixel-border-2 {
   border-radius: 32px;
   @include pixel-borders(
     $corner-size: 2,
@@ -36,7 +36,7 @@
   }
 }
 
-.pixel-border-2x {
+.nes-ui-pixel-border-2x {
   border-radius: 0 !important;
   @include pixel-borders(
     $corner-size: 1,
@@ -55,7 +55,7 @@
   }
 }
 
-.pixel-border-2x-2 {
+.nes-ui-pixel-border-2x-2 {
   border-radius: 0 !important;
   @include pixel-borders(
     $corner-size: 2,

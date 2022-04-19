@@ -5,5 +5,5 @@ export interface RowProps extends StyleProps, React.PropsWithChildren<any>, IdPr
 }
 
 export const Row = ({ id, children, style, className }: RowProps) => (
-    <div id={id} className={`row ${className || ''}`} style={style}>{children}</div>
+    <div id={id} className={`nes-ui-row ${className || ''}`} style={style}>{children}</div>
 )

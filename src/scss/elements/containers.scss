@@ -1,4 +1,4 @@
-.container {
+.nes-ui-container {
   position: relative;
   padding: 1.5rem 2rem;
   border-color: black;
@@ -9,16 +9,16 @@
     margin-bottom: 0;
   }
 
-  &.is-center {
+  &.nes-ui-is-center {
     text-align: center;
   }
 
-  &.is-right {
+  &.nes-ui-is-right {
     text-align: right;
   }
 
-  &.with-title {
-    > .title {
+  &.nes-ui-with-title {
+    > .nes-ui-title {
       display: table;
       padding: 0 0.5rem;
       margin: -1.8rem 0 1rem;
@@ -26,14 +26,14 @@
       background-color: $background-color;
     }
 
-    &.is-center {
-      > .title {
+    &.nes-ui-is-center {
+      > .nes-ui-title {
         margin: -2rem auto 1rem;
       }
     }
 
-    &.is-right {
-      > .title {
+    &.nes-ui-is-right {
+      > .nes-ui-title {
         margin: -2rem 0 1rem auto;
       }
     }
@@ -57,9 +57,9 @@
       background-color: $base-color;
     }
 
-    &.with-title {
+    &.nes-ui-with-title {
       margin-top: 2em;
-      > .title {
+      > .nes-ui-title {
         top: -0.5rem;
         position: relative;
         color: $background-color;
@@ -68,15 +68,15 @@
     }
   }
 
-  &.with-title {
+  &.nes-ui-with-title {
     margin-top: 2em;
-    > .title {
+    > .nes-ui-title {
       top: -0.5rem;
       position: relative;
     }
   }
 
-  &.is-rounded {
+  &.nes-ui-is-rounded {
     // @include rounded-corners();
 
     @include pixel-borders(
@@ -86,19 +86,19 @@
       $border-inset-color: false
     );
 
-    &.with-title {
-      > .title {
+    &.nes-ui-with-title {
+      > .nes-ui-title {
         margin-top: -1.8rem;
       }
 
-      &.is-centered {
-        > .title {
+      &.nes-ui-is-centered {
+        > .nes-ui-title {
           margin: -1.5rem auto 1rem;
         }
       }
 
-      &.is-right {
-        > .title {
+      &.nes-ui-is-right {
+        > .nes-ui-title {
           margin: -1.5rem 0 1rem auto;
         }
       }
@@ -118,19 +118,19 @@
         content: none;
       }
 
-      &.with-title {
-        > .title {
+      &.nes-ui-with-title {
+        > .nes-ui-title {
           margin-top: -1.8rem;
         }
 
-        &.is-centered {
-          > .title {
+        &.nes-ui-is-centered {
+          > .nes-ui-title {
             margin: -1.5rem auto 1rem;
           }
         }
 
-        &.is-right {
-          > .title {
+        &.nes-ui-is-right {
+          > .nes-ui-title {
             margin: -1.5rem 0 1rem auto;
           }
         }

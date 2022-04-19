@@ -8,8 +8,8 @@ export interface TableProps extends StyleProps, React.PropsWithChildren<any>, Id
 }
 
 export const Table = ({ id, style, children, tableStyle, bordered, centered, className }: TableProps) => (
-    <div className={`table-responsive ${className || ''}`} style={style}>
-        <table id={id} style={tableStyle} className={`table ${bordered && 'is-bordered'} ${centered && 'is-centered'}`}>
+    <div className={`nes-ui-table-responsive ${className || ''}`} style={style}>
+        <table id={id} style={tableStyle} className={`nes-ui-table ${bordered && 'nes-ui-is-bordered'} ${centered && 'nes-ui-is-centered'}`}>
             {children}
         </table>
     </div>

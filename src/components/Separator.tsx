@@ -6,5 +6,5 @@ export interface SeparatorProps extends StyleProps, IdProps {
 }
 
 export const Separator = ({ id, style, className, horizontal }: SeparatorProps) => (
-    <div id={id} className={`separator ${className || ''} ${horizontal && 'is-horizontal'}`} style={style} />
+    <div id={id} className={`nes-ui-separator ${className || ''} ${horizontal && 'nes-ui-is-horizontal'}`} style={style} />
 )

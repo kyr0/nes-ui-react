@@ -31,8 +31,8 @@ export const BooleanField = (props: BooleanFieldProps) => {
     }, [props.value, props.checked])
 
     return (
-        <label className={`is-${props.type}`}>
-            <input id={props.id} type={props.type} className={`${props.type} ${props.disabled ? 'is-disabled' : ''} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} checked={checked} onChange={props.disabled ? () => {} : onValueChange} />
+        <label className={`nes-ui-is-${props.type}`}>
+            <input id={props.id} type={props.type} className={`nes-ui-${props.type} ${props.disabled ? 'nes-ui-is-disabled' : ''} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} checked={checked} onChange={props.disabled ? () => {} : onValueChange} />
             <span>{props.label}</span>
         </label>
     )

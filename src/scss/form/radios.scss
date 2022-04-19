@@ -1,4 +1,4 @@
-.radio {
+.nes-ui-radio {
   // prettier-ignore
   $radio: (
     (1,1,0,0,0,0),
@@ -77,7 +77,8 @@
       color: $color-white;
     }
   }
-  &.is-disabled {
+
+  &.nes-ui-is-disabled {
     $color: map-get($disabled-colors, 'normal');
     $colors-radio-disabled: ($color, map-get($disabled-colors, 'shadow'));
 
@@ -114,6 +115,6 @@
   }
 }
 
-label.is-radio {
+label.nes-ui-is-radio {
   margin-right: 10px;
 }

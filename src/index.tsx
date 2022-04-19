@@ -30,4 +30,5 @@ export * from './components/TextArea';
 export * from './components/TextField';
 export * from './components/Toast';
 export * from './components/Toolbar';
+export * from './components/PixelBorder';
 export * from './components/interface/Color';

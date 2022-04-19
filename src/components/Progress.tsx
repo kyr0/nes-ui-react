@@ -8,5 +8,5 @@ export interface ProgressProps extends StyleProps, IdProps {
 }
 
 export const Progress = ({ id, value, max, style, color }: ProgressProps) => (
-    <progress id={id} className={`progress ${color && 'is-' + color}`} style={style} value={value} max={max}></progress>
+    <progress id={id} className={`nes-ui-progress ${color && 'nes-ui-is-' + color}`} style={style} value={value} max={max}></progress>
 )

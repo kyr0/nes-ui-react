@@ -1,11 +1,11 @@
-.anchor {
+.nes-ui-anchor {
   @include pixel-borders(
     $corner-size: 1,
     $border-size: 2px,
     $border-color: map-get($primary-colors, 'normal'),
     $border-inset-color: false
   );
-
+  
   padding: 3px;
   padding-left: 4px;
   padding-top: 4px;

@@ -8,4 +8,4 @@ export interface AProps extends StyleProps, IdProps, React.PropsWithChildren<any
 }
 
 export const A = ({ id, style, className, href, target, rel, children }: AProps) => 
-    <a id={id} className={`anchor ${className || ''}`} href={href} ref={rel} target={target}  style={style}>{children}</a>
+    <a id={id} className={`nes-ui-anchor ${className || ''}`} href={href} ref={rel} target={target}  style={style}>{children}</a>

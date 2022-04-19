@@ -1,4 +1,4 @@
-import { Text, Heading, ColorPaletteNames, BlockText, Colors, Br } from "../../dist";
+import { Text, Heading, ColorPaletteNames, BlockText, Colors, Br, PixelBorder } from "../../dist";
 
 export const ColorPaletteDemo = () => (
     <>
@@ -9,7 +9,11 @@ export const ColorPaletteDemo = () => (
 
         <Text>On top of that, the whole NES color palette is exported for programmatic use:</Text>
 
-        {ColorPaletteNames.map((name) => <BlockText className="pixel-border" shadow shadowInverted key={name} backgroundColor={(Colors as any)[name]} style={{ marginRight: '1.4em', padding: 8 }}>{name}</BlockText>)}
+        {ColorPaletteNames.map((name) => <PixelBorder style={{ marginRight: '1.4em', marginBottom: '1em', padding: 0, display: 'inline-block' }}>
+            <BlockText shadow shadowInverted key={name} backgroundColor={(Colors as any)[name]} style={{ margin: 0 }}>
+                {name}
+            </BlockText>
+        </PixelBorder>)}
       
     </>
 )

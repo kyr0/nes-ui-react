@@ -1,4 +1,4 @@
-.menu {
+.nes-ui-menu {
   display: flex;
   margin: 0;
   min-width: 120px;
@@ -34,8 +34,8 @@
     width: 100%;
   }
 
-  .icon-button-wrapper,
-  .button-wrapper {
+  .nes-ui-icon-button-wrapper,
+  .nes-ui-button-wrapper {
     border: none;
     margin: 0;
     padding: 0;
@@ -48,11 +48,11 @@
     }
   }
 
-  &.is-borderless {
+  &.nes-ui-is-borderless {
     border: none;
   }
 
-  &.is-modal {
+  &.nes-ui-is-modal {
     position: absolute;
     z-index: 99999;
   }
