@@ -1,5 +1,6 @@
 {
   "name": "nes-ui-react",
+  "homepage": "http://kyr0.github.io/nes-ui-react/",
   "publishConfig": {
     "access": "public"
   },
@@ -40,7 +41,6 @@
   "bugs": {
     "url": "https://github.com/kyr0/nes-ui-react/issues"
   },
-  "homepage": "https://github.com/kyr0/nes-ui-react#readme",
   "devDependencies": {
     "@types/node": "^17.0.25",
     "@types/react": "^17.0.38",
