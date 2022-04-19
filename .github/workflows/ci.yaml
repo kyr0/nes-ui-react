@@ -10,6 +10,7 @@ jobs:
         with:
           node-version: 12.x
       - run: yarn install
+      - run: yarn --cwd docs install
       - run: yarn build:docs
       - name: Add artifact to github
         uses: actions/upload-artifact@v2
