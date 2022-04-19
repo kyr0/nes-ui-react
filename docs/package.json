@@ -1,6 +1,5 @@
 {
   "name": "nes-ui-react-docs",
-  "homepage": "http://kyr0.github.io/nes-ui-react/",
   "version": "0.0.1",
   "description": "NES UI for React docs",
   "private": true,

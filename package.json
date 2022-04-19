@@ -1,6 +1,6 @@
 {
   "name": "nes-ui-react",
-  "homepage": "http://kyr0.github.io/nes-ui-react/",
+  "homepage": "http://kyr0.github.io/nes-ui-react",
   "publishConfig": {
     "access": "public"
   },
@@ -30,7 +30,7 @@
     "deploy": "npm publish",
     "prebuild:docs": "rimraf docs/out",
     "build:docs": "yarn build",
-    "postbuild:docs": "yarn --cwd docs build && yarn --cwd docs export"
+    "postbuild:docs": "CI=true yarn --cwd docs build && CI=true yarn --cwd docs export"
   },
   "repository": {
     "type": "git",

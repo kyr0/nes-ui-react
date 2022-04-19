@@ -9,7 +9,7 @@ export const ColorPaletteDemo = () => (
 
         <Text>On top of that, the whole NES color palette is exported for programmatic use:</Text>
 
-        {ColorPaletteNames.map((name) => <PixelBorder style={{ marginRight: '1.4em', marginBottom: '1em', padding: 0, display: 'inline-block' }}>
+        {ColorPaletteNames.map((name) => <PixelBorder key={name} style={{ marginRight: '1.4em', marginBottom: '1em', padding: 0, display: 'inline-block' }}>
             <BlockText shadow shadowInverted key={name} backgroundColor={(Colors as any)[name]} style={{ margin: 0 }}>
                 {name}
             </BlockText>
