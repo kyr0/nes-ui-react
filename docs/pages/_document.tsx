@@ -23,8 +23,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="description" content="chiptunes.daw.rocks" />
-          <link rel="icon" href="/favicon.ico" />
+          <meta name="description" content="A design system that paints the web in 8 bits." />
+          <link rel="icon" href="favicon.png" />
           <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/minecraftia" type="text/css"/>
           <link
             href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=additional"
