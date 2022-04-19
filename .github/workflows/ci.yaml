@@ -1,0 +1,39 @@
+name: Node CI
+
+on: [push,pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install
+      - run: yarn build:docs
+      - name: Add artifact to github
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: docs/out
+  gh-pages:
+    needs: [ build ]
+    name: gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Download build
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+          path: docs/out
+      - name: rename folder
+        run: mv docs/out public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public  # default: public
