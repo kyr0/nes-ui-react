@@ -57,7 +57,7 @@ const Home = (): JSX.Element => {
         <Br />
         
         <Text>Features:</Text>
-        <List size="smal" styleType='circle'>
+        <List size="small" styleType='circle'>
           <li>Automatic dark and light mode</li>
           <li>Only scalable techniques used (CSS border-shadow, SVG, SCSS bitsets)</li>
           <li>Simple grid layout (2, 3 and 4 columns supported)</li>
