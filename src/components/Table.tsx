@@ -11,6 +11,6 @@ export const Table = ({ id, style, children, tableStyle, bordered, centered, cla
     <div className={`nes-ui-table-responsive ${className || ''}`} style={style}>
         <table id={id} style={tableStyle} className={`nes-ui-table ${bordered && 'nes-ui-is-bordered'} ${centered && 'nes-ui-is-centered'}`}>
             {children}
-        </table>
+        </table> 
     </div>
 )

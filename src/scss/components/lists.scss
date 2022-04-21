@@ -8,7 +8,7 @@
     top: calc(50% - 8px);
     left: -22px;
     content: '';
-    transform: scale(0.75);
+    transform: scale(0.75); 
     @include pixelize(2px, $disc-or-circle, $colors);
   }
 }
@@ -36,8 +36,31 @@
 
   list-style-type: none;
 
+  &.nes-ui-is-small {
+    li {
+      font-size: 1em;
+    }
+  }
+
+  &.nes-ui-is-medium {
+    li {
+      font-size: 1.25em;
+    } 
+  }
+
+  &.nes-ui-is-large {
+    font-size: 1.5em;
+  }
+
+  &.nes-ui-is-xlarge {
+    font-size: 1.75em;
+  }
+  
+
   & li {
     position: relative;
+
+    
   }
 
   @include list-before('disc', $disc);

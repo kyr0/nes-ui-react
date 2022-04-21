@@ -34,28 +34,28 @@ export const TableDemo = () => (
         <Col type='1-of-2'>
             <Heading topSpacing={false} bottomSpacing={false}>Centered, with borders:</Heading>
             <Table bordered centered>
-            <thead>
-                <tr>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-                <th>D</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>Funny</td>
-                <td>Games</td>
-                <td>Are made</td>
-                <td>of 8 bits</td>
-                </tr>
-                <tr>
-                <td>Good</td>
-                <td>Players</td>
-                <td>dream in</td>
-                <td>8 bit</td>
-                </tr>
-            </tbody>
+                <thead>
+                    <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Funny</td>
+                    <td>Games</td>
+                    <td>Are made</td>
+                    <td>of 8 bits</td>
+                    </tr>
+                    <tr>
+                    <td>Good</td>
+                    <td>Players</td>
+                    <td>dream in</td>
+                    <td>8 bit</td>
+                    </tr>
+                </tbody>
             </Table>
         </Col>
         </Row>

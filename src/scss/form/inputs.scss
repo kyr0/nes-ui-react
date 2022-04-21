@@ -110,21 +110,24 @@
   }
 }
 
-textarea {
-  resize: none !important;
-}
 
-textarea,
-input {
-  :focus,
-  :active {
+html.nes-ui {
+  textarea {
+    resize: none !important;
+  }
+
+  textarea,
+  input {
+    :focus,
+    :active {
+      outline: none;
+    }
     outline: none;
   }
-  outline: none;
-}
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  margin: 0;
-  padding: 0;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin: 0;
+    padding: 0;
+  } 
 }

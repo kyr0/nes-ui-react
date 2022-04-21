@@ -177,15 +177,19 @@
   }
 }
 
-button,
-.nes-ui-btn,
-input[type='submit'],
-input[type='reset'],
-input[type='button'] {
-  &:focus,
-  &:hover,
-  &:active {
-    outline: 0;
+
+html.nes-ui {
+
+  button,
+  .nes-ui-btn,
+  input[type='submit'],
+  input[type='reset'],
+  input[type='button'] {
+    &:focus,
+    &:hover,
+    &:active {
+      outline: 0;
+    }
   }
 }
 

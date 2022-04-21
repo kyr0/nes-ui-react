@@ -1,19 +1,20 @@
-import { Color } from "./interface/Color";
+import { Color, getColorAsHexOrByName } from "./interface/Color";
 import { IdProps } from "./interface/IdProps";
 import { StyleProps } from "./interface/StyleProps";
 
 export interface BadgeProps extends StyleProps, IdProps {
     backgroundColor: Color | string;
-    color?: string
+    color?: Color | string;
     text: string
 }
-
+ 
+// TODO: use hex color or map
 export const Badge = (badgeProps: BadgeProps) =>(
-  <span id={badgeProps.id} className={`nes-ui-badge ${badgeProps.className || ''}`} style={{...badgeProps.style, backgroundColor: badgeProps.backgroundColor.startsWith('#') ? badgeProps.backgroundColor : 'inherit'}}>
+  <span id={badgeProps.id} className={`nes-ui-badge ${badgeProps.className || ''}`} style={{...badgeProps.style, backgroundColor: badgeProps.backgroundColor ? getColorAsHexOrByName(badgeProps.backgroundColor) : 'inherit'}}>
     <span className={`nes-ui-is-${badgeProps.backgroundColor}`} style={{ color: badgeProps.color}}>{badgeProps.text}</span>
   </span>
 );
-
+ 
 export interface BadgeSplittedProps extends BadgeProps {
     backgroundColorLeft?: Color
     textLeft: string

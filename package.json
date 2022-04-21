@@ -26,7 +26,7 @@
     "prebuild": "yarn clean && sass src/scss/nes-ui.scss:dist/nes-ui.css",
     "build": "ts-node build.ts",
     "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs",
-    "watch": "run-when-changed --watch ./src --exec yarn build",
+    "watch": "ts-node runOnChanged.ts",
     "deploy": "npm publish",
     "prebuild:docs": "rimraf docs/out",
     "build:docs": "yarn build",

@@ -60,7 +60,12 @@
     border-spacing: 0;
     border-collapse: separate;
 
-    @include compact-rounded-corners();
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 4px,
+      $border-color: $base-color,
+      $border-inset-color: false
+    );
   }
 
   @media (prefers-color-scheme: dark) {
@@ -68,7 +73,12 @@
     background-color: $base-color;
 
     &.nes-ui-is-bordered {
-      @include compact-rounded-corners(true);
+      @include pixel-borders(
+        $corner-size: 1,
+        $border-size: 4px,
+        $border-color: $background-color,
+        $border-inset-color: false 
+      );
     }
 
     th,

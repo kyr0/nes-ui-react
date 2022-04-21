@@ -7,28 +7,38 @@ $cursor-click-url: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCA
 @import 'base/_index.scss';
 @import 'utilities/_index.scss';
 @import 'helpers/_index.scss';
-@import 'elements/_index.scss';
+@import 'components/_index.scss';
 @import 'form/_index.scss';
 
-// TODO: prefix with nes-ui-
-// TODO: dark mode support
+// TODO: dark mode support 
 // colors to choose from (palette)
 // how to override colors (variables) - :root!
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Press Start 2P', monospace;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  line-height: 1.5;
-}
 
-// https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting'
-@media (prefers-color-scheme: dark) {
-  html,
+html.nes-ui {
+   padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', monospace;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    line-height: 1.5;
+    
   body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', monospace;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    line-height: 1.5;
+  } 
+
+  // https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting'
+  @media (prefers-color-scheme: dark) {
     background-color: #000;
     color: #fff;
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
   }
 }

@@ -99,6 +99,7 @@
   $types:
     "dark" $base-color $base-color,
     "primary" $base-color map-get($primary-colors, "normal"),
+    "disabled" $base-color map-get($disabled-colors, "normal"),
     "success" $base-color map-get($success-colors, "normal"),
     "warning" $base-color map-get($warning-colors, "normal"),
     "error" $base-color map-get($error-colors, "normal");
@@ -107,6 +108,7 @@
     $types: 'dark' #000 #000,
       'primary' $base-color map-get($primary-colors, 'normal'),
       'success' $base-color map-get($success-colors, 'normal'),
+      'disabled' $base-color map-get($disabled-colors, 'normal'),
       'warning' $base-color map-get($warning-colors, 'normal'),
       'error' $base-color map-get($error-colors, 'normal');
   }
