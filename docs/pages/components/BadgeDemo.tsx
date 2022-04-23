@@ -1,4 +1,4 @@
-import { Container, Badge, BadgeSplitted, Text, Br } from "../../dist";
+import { Container, Badge, BadgeSplitted, Text } from "../../dist";
 
 export const BadgeDmeo = () => (
     <>

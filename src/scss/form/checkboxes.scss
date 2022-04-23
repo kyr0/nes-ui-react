@@ -60,7 +60,7 @@
     position: relative;
     user-select: none;
     padding-top: 3px;
-    cursor: $cursor-click-url, pointer;
+    cursor: var(--cursor-click-url), pointer;
   }
 
   & + span::before,

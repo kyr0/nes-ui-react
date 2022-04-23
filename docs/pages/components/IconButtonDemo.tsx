@@ -2,7 +2,6 @@ import { Row, Container, IconButton, PixelIcon, Br, Text } from "../../dist";
 import emptyCallback from "../../function/emptyCallback";
 
 export const IconButtonDemo = () => (
-    <>
     <Row>
         <Container title='&lt;IconButton&gt;'>
 
@@ -10,15 +9,15 @@ export const IconButtonDemo = () => (
 
           <div style={{display: 'flex'}}>
             <IconButton color="success" size="large" onClick={emptyCallback}>
-              <PixelIcon name="pixelicon-checkmark-32" size='large' />
+              <PixelIcon name="pixelicon-checkmark" size='large' />
             </IconButton>
 
             <IconButton color="primary" size="medium" onClick={emptyCallback}>
-              <PixelIcon name="pixelicon-checkmark-24" size='medium' />
+              <PixelIcon name="pixelicon-checkmark" size='medium' />
             </IconButton>
 
             <IconButton color="error" size="small" onClick={emptyCallback}>
-              <PixelIcon name="pixelicon-close-8" size='small' />
+              <PixelIcon name="pixelicon-close" size='small' />
             </IconButton>
           </div>
 
@@ -30,17 +29,16 @@ export const IconButtonDemo = () => (
 
             <IconButton color="success">
               <Text size='small'>OK</Text>
-              <PixelIcon name="pixelicon-checkmark-16" size='small' />
+              <PixelIcon name="pixelicon-checkmark" size='small' />
             </IconButton>
 
             <IconButton color="error">
-              <PixelIcon name="pixelicon-close-8" size='small' />
+              <PixelIcon name="pixelicon-close" size='small' />
               <Text size='small'>Cancel</Text>
             </IconButton>
           </div>
         </Container>
 
       </Row>
-    </>
 )
 export default IconButtonDemo

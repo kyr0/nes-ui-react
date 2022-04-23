@@ -35,7 +35,7 @@
     margin-right: 1em;
     user-select: none;
     align-items: center;
-    cursor: $cursor-click-url, pointer;
+    cursor: var(--cursor-click-url), pointer;
   }
 
   &:checked + span::before {

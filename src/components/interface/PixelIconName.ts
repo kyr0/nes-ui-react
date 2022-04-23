@@ -1,0 +1,1 @@
+export type PixelIconName = 'pixelicon-sun' | 'pixelicon-moon' | 'pixelicon-arrow-up' | 'pixelicon-checkmark' | 'pixelicon-close'

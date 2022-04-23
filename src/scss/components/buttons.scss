@@ -3,8 +3,8 @@
   height: fit-content;
   @include pixel-borders(
     $corner-size: 1,
-    $border-size: 4px,
-    $border-color: #000,
+    $border-size: $border-size,
+    $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
   display: flex;
@@ -13,8 +13,8 @@
   &.nes-ui-is-inverted {
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: #fff,
+      $border-size: $border-size,
+      $border-color: 'color-white-absolute',
       $border-inset-color: false
     );
   }
@@ -57,6 +57,7 @@
 .nes-ui-btn,
 .nes-ui-icon-btn {
   @include rounded-corners();
+  
   position: relative;
   display: inline-block;
   padding-left: 2px;
@@ -66,7 +67,7 @@
   margin: 0;
   text-align: center;
   vertical-align: middle;
-  cursor: $cursor-click-url, pointer;
+  cursor: var(--cursor-click-url), pointer;
   user-select: none;
 
   & .nes-ui-text {
@@ -199,8 +200,8 @@ html.nes-ui {
 .nes-ui-icon-button-wrapper {
   @include pixel-borders(
     $corner-size: 1,
-    $border-size: 4px,
-    $border-color: #000,
+    $border-size: $border-size,
+    $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
   display: inline-block;
@@ -209,8 +210,8 @@ html.nes-ui {
   &.nes-ui-is-inverted {
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: #000,
+      $border-size: $border-size,
+      $border-color: 'color-black-absolute',
       $border-inset-color: false
     );
 
@@ -218,8 +219,8 @@ html.nes-ui {
     @media (prefers-color-scheme: dark) {
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 4px,
-        $border-color: #fff,
+        $border-size: $border-size,
+        $border-color: 'color-white-absolute',
         $border-inset-color: false
       );
     }

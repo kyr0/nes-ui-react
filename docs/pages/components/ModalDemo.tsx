@@ -23,7 +23,7 @@ export const ModalDemo = () => {
 
           <IconButton color="primary" onClick={() => setDemoDialogOpen(true)}>
             <Text size='small'>Open Modal</Text>
-            <PixelIcon name="pixelicon-checkmark-16" size='small' />
+            <PixelIcon name="pixelicon-checkmark" size='small' />
           </IconButton>
 
           <Modal open={demoDialogOpen} onClose={() => setDemoDialogOpen(false)}>
@@ -32,20 +32,20 @@ export const ModalDemo = () => {
               <Heading dense>Settings</Heading>
               <Spacer /> 
               <IconButton color="error" size="small" onClick={() => setDemoDialogOpen(false)}>
-                <PixelIcon name="pixelicon-close-8" size='small' />
+                <PixelIcon name="pixelicon-close" size='small' />
               </IconButton>
             </Header>
             <ModalContent>This is written inside of a &lt;ModalContent&gt; component just to keep the correct distance to all sides of the modal: The &lt;Header&gt; which is above and the &lt;Footer&gt; which is holding the action buttons.</ModalContent>
             <Footer>
               <IconButton color="error" onClick={() => setDemoDialogOpen(false)}>
-                <PixelIcon name="pixelicon-close-8" size='small' />
+                <PixelIcon name="pixelicon-close" size='small' />
                 <Text size='small'>Cancel</Text>
               </IconButton>
               <Spacer />
               <IconButton color="success" onClick={() => setDemoDialogOpen(false)}>
 
                 <Text size='small'>Accept</Text>
-              <PixelIcon name="pixelicon-checkmark-16" size='small' />
+              <PixelIcon name="pixelicon-checkmark" size='small' />
               </IconButton>
             </Footer>
           </Modal>

@@ -14,7 +14,7 @@ export const ToolbarDemo = () => (
         <Toolbar>
         
         <IconButton color="success" size="small" onClick={emptyCallback}>
-            <PixelIcon name="pixelicon-checkmark-16" size='small' />
+            <PixelIcon name="pixelicon-checkmark" size='small' />
         </IconButton>
 
         <Separator />
@@ -26,7 +26,7 @@ export const ToolbarDemo = () => (
         <Spacer />
 
         <IconButton color="error" size="small" onClick={emptyCallback}>
-            <PixelIcon name="pixelicon-close-8" size='small' />
+            <PixelIcon name="pixelicon-close" size='small' />
         </IconButton>
 
         </Toolbar>
@@ -38,7 +38,7 @@ export const ToolbarDemo = () => (
         <Toolbar borderless roundedCorners={false}>
         
         <IconButton color="success" size="small" onClick={emptyCallback}>
-            <PixelIcon name="pixelicon-checkmark-16" size='small' />
+            <PixelIcon name="pixelicon-checkmark" size='small' />
         </IconButton>
 
         <Separator />
@@ -50,7 +50,7 @@ export const ToolbarDemo = () => (
         <Spacer />
 
         <IconButton color="error" size="small" onClick={emptyCallback}>
-            <PixelIcon name="pixelicon-close-8" size='small' />
+            <PixelIcon name="pixelicon-close" size='small' />
         </IconButton>
 
         </Toolbar>

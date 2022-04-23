@@ -1,8 +1,41 @@
-// https://en.wikipedia.org/wiki/List_of_video_game_console_palettes#NES
-
+// shaded black and white (anachronistic vibe)
 $color-black: #212529;
 $color-white: #fefefe;
 
+// absolute black and white
+$color-black-absolute: #000;
+$color-white-absolute: #fff;
+
+// contrast alpha colors (used for scrollbar)
+$contrast-alpha-color-normal: #999999bb; 
+$contrast-alpha-color-shadow: #99999933;
+
+// named colors
+$default-color-normal: #fefefe;
+$default-color-hover: #e7e7e7;
+$default-color-shadow: #adafbc;
+
+$disabled-color-normal: #888; 
+$disabled-color-shadow: #adafbc;
+
+$primary-color-normal: #209cee;
+$primary-color-hover: #108de0;
+$primary-color-shadow: #006bb3;
+
+$success-color-normal: #92cc41;
+$success-color-hover: #76c442;
+$success-color-shadow: #4aa52e;
+
+$warning-color-normal: #f7d51d;
+$warning-color-hover: #f2c409;
+$warning-color-shadow: #e59400;
+
+$error-color-normal: #e76e55;
+$error-color-hover: #ce372b;
+$error-color-shadow: #8c2022;
+
+// original palette colors
+// https://en.wikipedia.org/wiki/List_of_video_game_console_palettes#NES
 $color-00: #59595f;
 $color-01: #00008f;
 $color-02: #18008f;

@@ -1,6 +1,6 @@
 %rounded-corner-defaults {
   border-style: solid;
-  border-width: $border-size;
+  border-width: var(--border-size);
 }
 
 @mixin border-image($color) {

@@ -1,66 +1,41 @@
-
 html.nes-ui { 
   ::-webkit-scrollbar {
     width: 16px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #fff;
+    background: transparent;
   }
-
+ 
   ::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: var(--color-white);
 
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: #333,
-      $border-inset-color: #fff
+      $border-size: $border-size,
+        $border-color: 'contrast-alpha-color-normal',
+        $border-inset-color: 'contrast-alpha-color-shadow' 
     );
   }
 
   ::-webkit-scrollbar-corner {
     display: none;
   }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #999;
-  }
-   
+  
   @media (prefers-color-scheme: dark) {
     ::-webkit-scrollbar {
       width: 16px;
     }
 
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
     ::-webkit-scrollbar-thumb {
-      background: $base-color;
+      background: var(--color-black);
 
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 4px,
-        $border-color: #99999933,
-        $border-inset-color: #00000033
-      );
-    }
-
-    ::-webkit-scrollbar-corner {
-      display: none;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: $base-color;
-
-      @include pixel-borders(
-        $corner-size: 1,
-        $border-size: 4px,
-        $border-color: #bbbbbb33,
-        $border-inset-color: #00000033
+        $border-size: $border-size,
+        $border-color: 'contrast-alpha-color-normal',
+        $border-inset-color: 'contrast-alpha-color-shadow'
       );
     }
   }
-
 }

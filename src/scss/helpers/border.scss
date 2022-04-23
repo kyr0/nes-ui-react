@@ -1,17 +1,17 @@
 .nes-ui-pixel-border {
-  border-radius: 15px;
+  border-radius: 16px;
   @include pixel-borders(
     $corner-size: 1,
-    $border-size: 4px,
-    $border-color: $base-color,
+    $border-size: $border-size,
+    $border-color: 'color-black-absolute',
     $border-inset-color: false
-  );
+  ); 
 
   @media (prefers-color-scheme: dark) {
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: #fff,
+      $border-size: $border-size,
+      $border-color: 'color-white-absolute',
       $border-inset-color: false
     );
   }
@@ -21,16 +21,16 @@
   border-radius: 32px;
   @include pixel-borders(
     $corner-size: 2,
-    $border-size: 4px,
-    $border-color: $base-color,
+    $border-size: $border-size,
+    $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
 
   @media (prefers-color-scheme: dark) {
     @include pixel-borders(
       $corner-size: 2,
-      $border-size: 4px,
-      $border-color: #fff,
+      $border-size: $border-size,
+      $border-color: 'color-white-absolute',
       $border-inset-color: false
     );
   }
@@ -40,16 +40,16 @@
   border-radius: 0 !important;
   @include pixel-borders(
     $corner-size: 1,
-    $border-size: 8px,
-    $border-color: $base-color,
+    $border-size: calc($border-size * 2),
+    $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
 
   @media (prefers-color-scheme: dark) {
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 8px,
-      $border-color: #fff,
+      $border-size: calc($border-size * 2),
+      $border-color: 'color-white-absolute',
       $border-inset-color: false
     );
   }
@@ -59,16 +59,16 @@
   border-radius: 0 !important;
   @include pixel-borders(
     $corner-size: 2,
-    $border-size: 8px,
-    $border-color: $base-color,
+    $border-size: calc($border-size * 2),
+    $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
-
+ 
   @media (prefers-color-scheme: dark) {
-    @include pixel-borders(
+    @include pixel-borders( 
       $corner-size: 2,
-      $border-size: 8px,
-      $border-color: #fff,
+      $border-size: calc($border-size * 2),
+      $border-color: 'color-white-absolute',
       $border-inset-color: false
     );
   }

@@ -1,21 +1,23 @@
 .nes-ui-toolbar-wrapper {
+  /* 
   &.nes-ui-has-rounded-corners {
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: #999,
+      $border-size: $border-size,
+      $border-color: 'contrast-alpha-color-normal',
       $border-inset-color: false
     );
 
     @media (prefers-color-scheme: dark) {
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 4px,
-        $border-color: #333,
+        $border-size: $border-size,
+        $border-color: 'contrast-alpha-color-shadow',
         $border-inset-color: false
       );
     }
   }
+  */
 
   &.nes-ui-is-borderless {
     border: none;
@@ -32,8 +34,8 @@
 
   @include pixel-borders(
     $corner-size: 0,
-    $border-size: 4px,
-    $border-color: #666,
+    $border-size: $border-size,
+    $border-color: 'contrast-alpha-color-normal',
     $border-inset-color: false
   );
 
@@ -41,8 +43,8 @@
     background-color: #222;
     @include pixel-borders(
       $corner-size: 0,
-      $border-size: 4px,
-      $border-color: #666,
+      $border-size: $border-size,
+      $border-color: 'contrast-alpha-color-shadow',
       $border-inset-color: false
     );
   }

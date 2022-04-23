@@ -1,17 +1,21 @@
 .nes-ui-input,
 .nes-ui-textarea {
-  @mixin border-style($border, $outline) {
-    @include compact-border-image($border);
+  @mixin border-style($color, $outline) {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: calc($border-size / 2),
+      $border-color: $color,
+      $border-inset-color: false
+    );
   }
-
-  //@include compact-rounded-corners();
-
+ 
   @include pixel-borders(
     $corner-size: 1,
-    $border-size: 4px,
+    $border-size: calc($border-size / 2),
+    $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
-
+ 
   width: calc(100%);
   padding: 0.5em 1em;
   background-clip: padding-box;
@@ -19,7 +23,7 @@
 
   @media (prefers-color-scheme: dark) {
     @include border-style(
-      map-get($default-colors, 'normal'),
+      'color-white-absolute', 
       map-get($default-colors, 'hover')
     );
 
@@ -28,7 +32,7 @@
   }
   &.nes-ui-is-disabled {
     @include border-style(
-      map-get($disabled-colors, 'normal'),
+      'disabled-color-normal',
       map-get($disabled-colors, 'shadow')
     );
 
@@ -37,27 +41,27 @@
   }
   &.nes-ui-is-warning {
     @include border-style(
-      map-get($warning-colors, 'normal'),
+      'warning-color-normal',
       map-get($warning-colors, 'hover')
     );
   }
   &.nes-ui-is-error {
     @include border-style(
-      map-get($error-colors, 'normal'),
+      'error-color-normal',
       map-get($error-colors, 'hover')
     );
   }
 
   &.nes-ui-is-success {
     @include border-style(
-      map-get($success-colors, 'normal'),
+      'success-color-normal',
       map-get($success-colors, 'hover')
     );
   }
-
+ 
   &.nes-ui-is-primary {
     @include border-style(
-      map-get($primary-colors, 'normal'),
+      'primary-color-normal',
       map-get($primary-colors, 'hover')
     );
   }

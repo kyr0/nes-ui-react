@@ -1,15 +1,15 @@
 // Override reboot.scss
 html.nes-ui {
 
-  cursor: $cursor-url, auto;
+  cursor: var(--cursor-url), auto;
 
-  font-family: $font-family;
+  font-family: var(--font-family);
 
   pre,
   code,
   kbd, 
   samp {
-    font-family: $font-family;
+    font-family: var(--font-family);
   }
 
   body {
@@ -25,7 +25,7 @@ html.nes-ui {
 
   a,
   button {
-    cursor: $cursor-click-url, pointer;
+    cursor: var(--cursor-click-url), pointer;
   }
 
   button,

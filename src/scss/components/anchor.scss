@@ -1,22 +1,36 @@
 .nes-ui-anchor {
   @include pixel-borders(
     $corner-size: 1,
-    $border-size: 2px,
-    $border-color: map-get($primary-colors, 'normal'),
+    $border-size: calc($border-size / 2),
+    $border-color: 'primary-color-normal',
     $border-inset-color: false
   );
   
   padding: 2px;
   padding-left: 4px;
   padding-top: 2px;
-  background-color: map-get($primary-colors, 'normal');
-  color: #fff;
+  background-color: var(--primary-color-normal);
+  color: var(--color-white);
   text-decoration: underline;
 
+  &.nes-ui-is-transparent {
+    background: none;
+    border: none;
+  }
+   
+  &.nes-ui-is-dense {
+    padding: 0;
+  }
+
   &:hover {
-    background-color: map-get($primary-colors, 'hover');
+    background-color: var(--primary-color-hover);
     //text-shadow: 2px 2px #000;
     text-decoration: underline;
-    color: #fff;
+    color: var(--color-white);
+
+    &.nes-ui-is-transparent {
+      background: none;
+      border: none;
+    }
   }
 }

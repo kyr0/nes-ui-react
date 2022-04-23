@@ -1,10 +1,10 @@
-import { Color } from "./interface/Color";
+import { NamedColor } from "./interface/Color";
 import { IdProps } from "./interface/IdProps";
 import { StyleProps } from "./interface/StyleProps";
 
 export interface ButtonProps extends React.PropsWithChildren<any>, StyleProps, IdProps {
     disabled?: boolean
-    color?: Color
+    color?: NamedColor
     size?: 'medium' | 'small'
     inverted?: boolean
     onClick?: React.EventHandler<any>

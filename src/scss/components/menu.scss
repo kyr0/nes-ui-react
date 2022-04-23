@@ -9,17 +9,17 @@
 
   @include pixel-borders(
     $corner-size: 0,
-    $border-size: 4px,
-    $border-color: #666,
+    $border-size: $border-size, 
+    $border-color: 'contrast-alpha-color-shadow',
     $border-inset-color: false
   );
 
   @media (prefers-color-scheme: dark) {
-    background-color: #222;
+    background-color: var(--color-black); 
     @include pixel-borders(
       $corner-size: 0,
-      $border-size: 4px,
-      $border-color: #666,
+      $border-size: $border-size,
+      $border-color: 'contrast-alpha-color-normal',
       $border-inset-color: false
     );
   }

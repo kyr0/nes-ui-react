@@ -1,10 +1,10 @@
-import { Color } from "./interface/Color";
+import { NamedColor } from "./interface/Color";
 import { IdProps } from "./interface/IdProps";
 import { Size } from "./interface/Size";
 import { StyleProps } from "./interface/StyleProps";
 
 export interface TextProps extends StyleProps, React.PropsWithChildren<any>, IdProps {
-    color?: Color
+    color?: NamedColor
     size?: Size
     centered?: boolean
     heading?: boolean

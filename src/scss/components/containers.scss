@@ -39,7 +39,7 @@
     }
   }
   position: relative;
-  margin: $border-size;
+  margin: var(--border-size);
 
   @media (prefers-color-scheme: dark) {
     color: $background-color;
@@ -55,7 +55,7 @@
       z-index: -1;
       content: '';
       background-color: $base-color;
-    }
+    } 
 
     &.nes-ui-with-title {
       margin-top: 2em;
@@ -77,12 +77,11 @@
   }
 
   &.nes-ui-is-rounded {
-    // @include rounded-corners();
 
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: $base-color,
+      $border-size: $border-size,
+      $border-color: 'color-black-absolute',
       $border-inset-color: false
     );
 
@@ -105,12 +104,11 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      // @include rounded-corners(true);
 
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 4px,
-        $border-color: #fff,
+        $border-size: $border-size,
+        $border-color: 'color-white-absolute',
         $border-inset-color: false
       );
 
@@ -128,7 +126,7 @@
             margin: -1.5rem auto 1rem;
           }
         }
-
+ 
         &.nes-ui-is-right {
           > .nes-ui-title {
             margin: -1.5rem 0 1rem auto;
@@ -138,3 +136,4 @@
     }
   }
 }
+ 

@@ -19,14 +19,14 @@ export const MenuDemo = () => {
             <Menu>
             
             <IconButton color="success" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-checkmark-16" size='small' />
+                <PixelIcon name="pixelicon-checkmark" size='small' />
                 <Text size='small'>Accept</Text>
             </IconButton>
 
             <Separator horizontal />
 
             <IconButton color="error" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-close-8" size='small' />
+                <PixelIcon name="pixelicon-close" size='small' />
                 <Text size='small'>Decline</Text>
             </IconButton>
 
@@ -41,19 +41,19 @@ export const MenuDemo = () => {
             <Menu open={showMoreMenu} modal onClose={() => setShowMoreMenu(false)}>
             
             <IconButton color="success" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-checkmark-16" size='small' />
+                <PixelIcon name="pixelicon-checkmark" size='small' />
                 <Text size='small'>Accept</Text>
             </IconButton>
 
             <IconButton color="primary" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-checkmark-16" size='small' />
+                <PixelIcon name="pixelicon-checkmark" size='small' />
                 <Text size='small'>Accept</Text>
             </IconButton>
 
             <Separator horizontal />
 
             <IconButton color="error" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-close-8" size='small' />
+                <PixelIcon name="pixelicon-close" size='small' />
                 <Text size='small'>Decline</Text>
             </IconButton>
 

@@ -1,43 +1,83 @@
-// Font
 $font-family: 'Press Start 2P' !default;
 $font-size: 16px !default;
 
 $base-color: $color-black !default;
 $background-color: $color-white !default;
 
-$cursor-url: url(get-file-as-data-uri('../assets/cursor.png')) !default;
-$cursor-click-url: url(get-file-as-data-uri('../assets/cursor-click.png')) 14 0 !default;
-
 $border-size: 4px !default;
 
 $default-colors: (
-  normal: $background-color,
-  hover: #e7e7e7,
-  shadow: #adafbc,
+  normal: $default-color-normal,
+  hover: $default-color-hover,
+  shadow: $default-color-shadow,
 ) !default;
-
+ 
 $disabled-colors: (
-  normal: #888,
-  shadow: #adafbc,
+  normal: $disabled-color-normal,
+  shadow: $disabled-color-shadow,
 ) !default;
 
 $primary-colors: (
-  normal: #209cee,
-  hover: #108de0,
-  shadow: #006bb3,
+  normal: $primary-color-normal,
+  hover: $primary-color-hover,
+  shadow: $primary-color-shadow,
 ) !default;
+
 $success-colors: (
-  normal: #92cc41,
-  hover: #76c442,
-  shadow: #4aa52e,
+  normal: $success-color-normal,
+  hover: $success-color-hover,
+  shadow: $success-color-shadow,
 ) !default;
+
 $warning-colors: (
-  normal: #f7d51d,
-  hover: #f2c409,
-  shadow: #e59400,
+  normal: $warning-color-normal,
+  hover: $warning-color-hover,
+  shadow: $warning-color-shadow,
 ) !default;
+
 $error-colors: (
-  normal: #e76e55,
-  hover: #ce372b,
-  shadow: #8c2022,
+  normal: $error-color-normal,
+  hover: $error-color-hover,
+  shadow: $error-color-shadow,
 ) !default;
+
+:root {
+  --font-family: 'Press Start 2P';
+  --cursor-url: #{$cursor-url};
+  --cursor-click-url: #{$cursor-click-url};
+  --border-size: 4px;
+  --font-size: 16px;
+  --background-color: #{$color-white};
+
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+
+  --color-black-absolute:  #{$color-black-absolute};
+  --color-white-absolute:  #{$color-white-absolute};
+
+  --contrast-alpha-color-normal: #{$contrast-alpha-color-normal};
+  --contrast-alpha-color-shadow: #{$contrast-alpha-color-shadow};
+
+  --default-color-normal:  #{$default-color-normal};
+  --default-color-hover:   #{$default-color-hover};
+  --default-color-shadow:  #{$default-color-shadow};
+
+  --disabled-color-normal: #{$disabled-color-normal};
+  --disabled-color-shadow: #{$disabled-color-shadow};
+
+  --primary-color-normal:  #{$primary-color-normal};
+  --primary-color-hover:   #{$primary-color-hover};
+  --primary-color-shadow:  #{$primary-color-shadow};
+
+  --success-color-normal:  #{$success-color-normal};
+  --success-color-hover:   #{$success-color-hover};
+  --success-color-shadow:  #{$success-color-shadow};
+
+  --warning-color-normal:  #{$warning-color-normal};
+  --warning-color-hover:   #{$warning-color-hover};
+  --warning-color-shadow:  #{$warning-color-shadow};
+
+  --error-color-normal:    #{$error-color-normal};
+  --error-color-hover:     #{$error-color-hover};
+  --error-color-shadow:    #{$error-color-shadow};
+}

@@ -62,8 +62,8 @@
 
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: $base-color,
+      $border-size: $border-size,
+      $border-color: 'color-black-absolute',
       $border-inset-color: false
     );
   }
@@ -75,8 +75,8 @@
     &.nes-ui-is-bordered {
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 4px,
-        $border-color: $background-color,
+        $border-size: $border-size,
+        $border-color: 'color-white-absolute',
         $border-inset-color: false 
       );
     }

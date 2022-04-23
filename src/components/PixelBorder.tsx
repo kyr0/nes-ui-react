@@ -9,6 +9,6 @@ export interface PixelBorderProps extends IdProps, StyleProps, React.PropsWithCh
 export const PixelBorder = (props: PixelBorderProps) => {
     const { id, style, children, className, doubleSize, doubleRoundCorners } = props;
     return (
-        <div id={id} className={`nes-ui-pixel-border${doubleRoundCorners ? '-2x' : ''}${doubleSize ? '-2' : ''} ${className || ''}`} style={style}>{children}</div>
+        <div id={id} className={`nes-ui-pixel-border${doubleSize ? '-2x' : ''}${doubleRoundCorners ? '-2' : ''} ${className || ''}`} style={style}>{children}</div>
     );
 }

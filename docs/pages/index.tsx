@@ -1,4 +1,5 @@
-import { Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col } from '../dist';
+import React, { useEffect } from 'react';
+import { Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer } from '../dist';
 
 // @ts-ignore
 import styles from '../styles/Index.module.css';
@@ -29,13 +30,47 @@ import { TypographyDemo } from './components/TypographyDemo';
 
 const Home = (): JSX.Element => {
 
+  const [darkMode, setDarkMode] = React.useState(false);
+
+  useEffect(() => {
+    const prefersDarkMode = !!window.matchMedia("(prefers-color-scheme: dark)");
+    const userDarkModeDecided = localStorage.getItem('dark-mode') !== null;
+    let userDarkModeSetting;
+
+    if (userDarkModeDecided) {
+      userDarkModeSetting = localStorage.getItem('dark-mode') === 'true';
+    } else {
+      userDarkModeSetting = prefersDarkMode;
+    }
+
+    setDarkMode(userDarkModeSetting);
+
+    if (userDarkModeSetting) {
+      document.documentElement.classList.add("dark-mode");
+    }
+  }, []);
+
+  const toggleDarkMode = React.useCallback(() => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle("dark-mode", !darkMode);
+    localStorage.setItem('dark-mode', !darkMode ? 'true' : 'false');
+  }, [darkMode]);
+
   return (
     <>
-
+    
+      <Toolbar borderless>
+        <Spacer />
+        <IconButton onClick={toggleDarkMode} color="primary">
+          <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} size='small' style={{ marginRight: 5 }} />
+          <Text size='small'>Toggle</Text>
+        </IconButton>
+      </Toolbar>
+      
       <IconButton size="small" color="primary" inverted 
         style={{ zIndex: 9998, position: 'fixed', bottom: 20, right: 20 }} 
         onClick={() => {window.scrollTo(0, 0)}}>
-        <PixelIcon size='small' name='pixelicon-arrow-up-16' />
+        <PixelIcon size='small' name='pixelicon-arrow-up' />
       </IconButton>
       
       <Row style={{ marginTop: '2em' }}>
@@ -111,6 +146,9 @@ const Home = (): JSX.Element => {
         
       <Row>
         <PixelIconDemo />
+      </Row>
+
+      <Row>
         <PixelatedImages />
       </Row>
 

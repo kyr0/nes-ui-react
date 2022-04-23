@@ -1,4 +1,5 @@
-export type Color =
+
+export type NamedColor = 
   | 'primary'
   | 'success'
   | 'error'
@@ -8,7 +9,8 @@ export type Color =
   | 'dark'
   | 'white'
 
-  | 'color00'
+export type Color =
+  'color00'
   | 'color01'
   | 'color02'
   | 'color03'
@@ -74,7 +76,7 @@ export type Color =
   | 'color3C'
   | 'color3D'
   | 'color3E'
-  | 'color3F';
+  | 'color3F' & NamedColor;
 
 export enum Colors {
   primary = '#209cee',
@@ -154,6 +156,7 @@ export enum Colors {
   color3E = '#080808',
   color3F = '#080808',
 }
+
 
 export const ColorPaletteNames = Object.keys(Colors).sort();
 

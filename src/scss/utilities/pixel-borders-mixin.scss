@@ -12,48 +12,66 @@
   }
 
   $svg: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='#{$svg-size}' height='#{$svg-size}'><path d='#{$svg-path}' fill='#{$color}' /></svg>";
-
+  
   @return $svg;
 }
 
 // String replace function - replace `$search` with `$replace` in `$string`
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: str-index('' + $string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
+    @return str-slice('' + $string, 1, $index - 1) + $replace +
       str-replace(
-        str-slice($string, $index + str-length($search)),
+        str-slice('' + $string, $index + str-length($search)),
         $search,
         $replace
       );
-  }
-
-  @return $string;
+  } 
+  @return '' + $string;
 }
+
+@function get-color-name($color) {
+  @return str-replace($color, '#', '');
+}
+
+// define SVG border image variants (only the ones used) as
+// CSS custom properties, so they don't get duplicated in resulting generated code 
+:root {
+  --pixel-borders-image-1-primary-color-normal: #{url(pixel-borders-image(1, $primary-color-normal))};
+  --pixel-borders-image-1-success-color-normal: #{url(pixel-borders-image(1, $success-color-normal))};
+  --pixel-borders-image-1-warning-color-normal: #{url(pixel-borders-image(1, $warning-color-normal))};
+  --pixel-borders-image-1-error-color-normal: #{url(pixel-borders-image(1, $error-color-normal))};
+  --pixel-borders-image-1-color-black-absolute: #{url(pixel-borders-image(1, $color-black-absolute))};
+  --pixel-borders-image-2-color-black-absolute: #{url(pixel-borders-image(2, $color-black-absolute))};
+  --pixel-borders-image-1-color-white-absolute: #{url(pixel-borders-image(1, $color-white-absolute))};
+  --pixel-borders-image-2-color-white-absolute: #{url(pixel-borders-image(2, $color-white-absolute))};
+  --pixel-borders-image-1-contrast-alpha-color-shadow: #{url(pixel-borders-image(1, $contrast-alpha-color-shadow))}; 
+  --pixel-borders-image-1-contrast-alpha-color-normal: #{url(pixel-borders-image(1, $contrast-alpha-color-normal))};
+} 
 
 // Pixel border
 @mixin pixel-borders(
   $corner-size: 1,
-  $border-size: 4px,
-  $border-color: #000,
+  $border-size: $border-size,
+  $border-color: 'color-black',
   $border-inset-color: false
 ) {
   @supports (border-image-source: none) {
     border-radius: ($border-size * ($corner-size + 2)) + ($corner-size * 2);
   }
-
+  
   border-style: solid;
   border-width: $border-size;
-  border-color: $border-color;
-
+  border-color: var(--#{$border-color});
+ 
   border-image-slice: $corner-size * 2;
   border-image-width: $corner-size;
   border-image-outset: 0;
+ 
+  border-image-source: var(--pixel-borders-image-#{$corner-size}-#{$border-color});
 
-  border-image-source: url(pixel-borders-image($corner-size, $border-color));
-
-  @if $border-inset-color {
+  @if $border-inset-color { 
     @include pixel-inset-border($border-size, $border-inset-color);
   }
 }
@@ -76,7 +94,7 @@
   }
 
   position: relative;
-
+ 
   &::after {
     content: '';
     position: absolute;
@@ -148,7 +166,7 @@
 
   @if $border-inset {
     @include pixel-inset-border(
-      $border-inset-size: $border-size,
+      $border-inset-size: var(--border-size),
       $border-inset-color: $border-inset-color,
       $border-inset-sides: $border-inset-sides,
       $border-inset-color-br: $border-inset-color-br,

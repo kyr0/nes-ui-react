@@ -16,25 +16,25 @@
       background-color: $background-color;
 
       @media (prefers-color-scheme: dark) {
-        background-color: #000;
+        background-color: var(--color-black-absolute);
       }
-
+ 
       @media (prefers-color-scheme: light) {
-        background-color: #fff;
+        background-color: var(--color-white-absolute);
       }
 
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 4px,
-        $border-color: $background-color,
+        $border-size: $border-size,
+        $border-color: 'color-white-absolute',
         $border-inset-color: false
       );
 
       @media (prefers-color-scheme: light) {
         @include pixel-borders(
           $corner-size: 1,
-          $border-size: 4px,
-          $border-color: #000,
+          $border-size: $border-size,
+          $border-color: 'color-black-absolute',
           $border-inset-color: false
         );
       }
@@ -56,25 +56,26 @@
   &.nes-ui-is-rounded {
     @include rounded-corners();
   }
+
   &.nes-ui-is-primary {
-    @include progress-style(map-get($primary-colors, 'normal'));
+    @include progress-style($primary-color-normal);
   }
 
-  &.nes-ui-is-success {
-    @include progress-style(map-get($success-colors, 'normal'));
+  &.nes-ui-is-success { 
+    @include progress-style($success-color-normal);
   }
 
   &.nes-ui-is-warning {
-    @include progress-style(map-get($warning-colors, 'normal'));
+    @include progress-style($warning-color-normal);
   }
 
   &.nes-ui-is-error {
-    @include progress-style(map-get($error-colors, 'normal'));
+    @include progress-style($error-color-normal);
   }
 
   &.nes-ui-is-pattern {
     &::-webkit-progress-value {
-      background-color: $base-color;
+      background-color: var(--#{$color-black});
       background-image: linear-gradient(
           45deg,
           $background-color 25%,
@@ -96,7 +97,7 @@
     }
 
     &::-moz-progress-bar {
-      background-color: $base-color;
+      background-color: var(--#{$color-black});
       background-image: -moz-linear-gradient(
           45deg,
           $background-color 25%,
@@ -112,7 +113,7 @@
     }
 
     &::-ms-fill {
-      background-color: $base-color;
+      background-color: var(--#{$color-black});
       background-image: linear-gradient(
           45deg,
           $background-color 25%,

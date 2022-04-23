@@ -8,30 +8,30 @@
     (0,0,1,1,1,0,0),
     (0,0,0,1,0,0,0),
   );
-  $dropdown-color: ($base-color, map-get($default-colors, 'shadow'));
-
+  $dropdown-color: ($color-black, $default-color-shadow);
+ 
   outline: none !important;
   position: relative;
   width: calc(100% - #{2 * $border-size});
-  margin: 4px;
+  margin: 4px; 
 
   select {
     width: 100%;
     padding: 0.5rem 2.5rem 0.5rem 1rem;
-    cursor: $cursor-click-url, pointer;
+    cursor: var(--cursor-click-url), pointer;
     border-radius: 0;
-    outline-color: map-get($default-colors, 'hover');
-    -webkit-appearance: none;
+    outline-color: var(--default-color-hover);
+    -webkit-appearance: none; 
     appearance: none;
     margin-bottom: 1em;
 
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 2px,
-      $border-color: $base-color,
+      $border-size: calc($border-size / 2),
+      $border-color: 'color-black-absolute',
       $border-inset-color: false
     );
-
+ 
     &:focus {
       outline: none;
     }
@@ -41,21 +41,19 @@
     }
 
     &:invalid {
-      color: map-get($disabled-colors, shadow);
+      color: var(--disabled-color-shadow);
     }
   }
 
   @media (prefers-color-scheme: dark) {
-    $dropdown-color: $background-color;
-
     select {
-      color: $background-color;
-      background-color: $base-color;
+      color: var(--background-color);
+      background-color: var(--color-black);
 
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 2px,
-        $border-color: #fff,
+        $border-size: calc($border-size / 2),
+        $border-color: 'color-white-absolute',
         $border-inset-color: false
       );
     }
@@ -63,7 +61,7 @@
 
   &.nes-ui-is-disabled {
     @extend .nes-ui-is-disable;
-    color: map-get($disabled-colors, 'normal');
+    color: var(--disabled-color-normal);
     cursor: not-allowed;
   }
 
@@ -81,31 +79,29 @@
     padding: 0.25em;
   }
 
-  // prettier-ignore
   $types:
-    "dark" map-get($default-colors, "normal") map-get($default-colors, "hover"),
-    "success" map-get($success-colors, "normal") map-get($success-colors, "hover"),
-    "warning" map-get($warning-colors, "normal") map-get($warning-colors, "hover"),
-    "error" map-get($error-colors, "normal") map-get($error-colors, "hover"),
-    "disable" map-get($disabled-colors, "normal") map-get($disabled-colors, "shadow");
-
+    "success" $success-color-normal $success-color-hover,
+    "warning" $warning-color-normal $warning-color-hover,
+    "error" $error-color-normal $error-color-hover,
+    "disable" $disabled-color-normal $disabled-color-shadow;
+ 
   @each $type in $types {
+    
     &.nes-ui-is-#{nth($type, 1)} {
       $color: nth($type, 2);
 
       &::after {
-        color: $color;
+        color: var(--#{nth($type, 1)}-color-normal);
       }
 
       select {
         @include pixel-borders(
           $corner-size: 1,
-          $border-size: 2px,
-          $border-color: $color,
+          $border-size: calc($border-size / 2),
+          $border-color: '#{nth($type, 1)}-color-normal',
           $border-inset-color: false
         );
-
-        outline-color: nth($type, 3);
+        outline-color: var(--#{nth($type, 1)}-color-hover)
       }
     }
   }
@@ -121,3 +117,4 @@
     padding-bottom: 1.5em;
   }
 }
+ 

@@ -11,27 +11,27 @@
   &.nes-ui-is-rounded {
     @include pixel-borders(
       $corner-size: 1,
-      $border-size: 4px,
-      $border-color: #000,
+      $border-size: $border-size,
+      $border-color: 'color-black-absolute',
       $border-inset-color: false
     );
 
     @media (prefers-color-scheme: dark) {
       @include pixel-borders(
         $corner-size: 1,
-        $border-size: 4px,
-        $border-color: #fff,
+        $border-size: $border-size,
+        $border-color: 'color-white-absolute',
         $border-inset-color: false
       );
     }
   }
 
   color: $base-color;
-  background-color: #fff;
+  background-color: var(--color-white-absolute);
   border-color: $background-color;
 
   @media (prefers-color-scheme: dark) {
-    border-color: #fff;
+    border-color: var(--color-white-absolute);
   }
 
   &:not(.nes-ui-is-rounded)::before {
@@ -42,7 +42,7 @@
     left: -$border-size * 2;
     z-index: -1;
     content: '';
-    border: $border-size solid #fff;
+    border: var(--border-size) solid #fff;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -56,9 +56,9 @@
       right: -$border-size * 2;
       bottom: -$border-size * 2;
       left: -$border-size * 2;
-      z-index: -1;
+      z-index: -1; 
       content: '';
-      border: $border-size solid #fff;
+      border: var(--border-size) solid #fff;
     }
   }
   border-radius: none;

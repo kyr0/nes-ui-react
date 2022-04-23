@@ -5,5 +5,11 @@ html.nes-ui {
     image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+
+    &.invert {
+      @media (prefers-color-scheme: dark) {
+          filter: invert(1);
+      } 
+    }
   }
 }
