@@ -56,6 +56,9 @@ const Home = (): JSX.Element => {
     localStorage.setItem('dark-mode', !darkMode ? 'true' : 'false');
   }, [darkMode]);
 
+  // TODO: refactor styles to use classNames
+  // TODO: include https://www.youtube.com/watch?v=1_BnF67v58M as hero or https://www.youtube.com/watch?v=pYFjUj80ZEA
+  // TODO: demo canvas pixelized rendering
   return (
     <main style={{marginLeft: 'auto', marginRight: 'auto', width: '85vw'}}>
     

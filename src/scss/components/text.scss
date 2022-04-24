@@ -60,14 +60,14 @@
   background-color: $base-color;
 
   &.nes-ui-is-shadow {
-    text-shadow: 1px 1px #fff;
+    text-shadow: 1px 1px var(--color-white-absolute);
   }
 }
 
 .dark-mode {
   .nes-ui-block-text {
     &.nes-ui-is-shadow {
-      text-shadow: 1px 1px #000;
+      text-shadow: 1px 1px var(--color-black-absolute);
     }
   }
 } 

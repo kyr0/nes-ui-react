@@ -5,17 +5,17 @@
 
   border-style: solid;
   border-width: 32px;
-  border-color: #000;
+  border-color: var(--color-black-absolute);
   border-image-slice: 8;
   border-image-width: 150px;
   border-image-outset: 0;
-  border-image-source: url(pixel-borders-image(2, #000));
+  border-image-source: url(pixel-borders-image(2, $color-black-absolute));
 }
 
 .dark-mode {
   .nes-ui-hero-dash {
-    border-color: #fff;
-    border-image-source: url(pixel-borders-image(2, #fff));
+    border-color: var(--color-white-absolute);
+    border-image-source: url(pixel-borders-image(2, $color-white-absolute));
   }
 }
 
@@ -26,16 +26,16 @@
 
   border-style: solid;
   border-width: 32px;
-  border-color: #000;
+  border-color: var(--color-black-absolute);
   border-image-slice: 16;
   border-image-width: 110px;
   border-image-outset: 0;
-  border-image-source: url(pixel-borders-image(2, #000));
+  border-image-source: url(pixel-borders-image(2, $color-black-absolute));
 }
 
 .dark-mode {
   .nes-ui-hero-flower {
-    border-color: #fff;
-    border-image-source: url(pixel-borders-image(2, #fff));
+    border-color: var(--color-white-absolute);
+    border-image-source: url(pixel-borders-image(2, $color-white-absolute));
   }
 }

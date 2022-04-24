@@ -29,7 +29,7 @@
     left: -$border-size * 2;
     z-index: -1;
     content: '';
-    border: var(--border-size) solid #fff;
+    border: var(--border-size) solid var(--color-white-absolute);
   }
   border-radius: none;
   z-index: 10000;
@@ -61,7 +61,7 @@
       left: -$border-size * 2;
       z-index: -1; 
       content: '';
-      border: var(--border-size) solid #fff;
+      border: var(--border-size) solid var(--color-white-absolute);
     }
   }
 }

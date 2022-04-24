@@ -4,8 +4,8 @@ hr.nes-ui-hr {
   border: none; 
 
   &.dark-mode {
-    background-color: #fff;
-    border-color: #fff;
+    background-color: var(--color-white-absolute);
+    border-color: var(--color-white-absolute);
   }
   height: 4px;
 

@@ -1,7 +1,7 @@
 .nes-ui-container {
   position: relative;
   padding: 1.5rem 2rem;
-  border-color: black;
+  border-color: var(--color-black-absolute);
   border-style: solid;
   border-width: 4px; 
   background-color: var(--color-white);
@@ -24,7 +24,7 @@
       padding: 0 0.5rem;
       margin: -1.8rem 0 1rem;
       font-size: 1rem;
-      background-color: $background-color;
+      background-color: var(--color-white);
     }
 
     &.nes-ui-is-center {
@@ -79,13 +79,12 @@
   }
 }
 
-
 .dark-mode {
  
   .nes-ui-container {
-    color: $background-color;
+    color: var(--color-white);
     background-color: var(--color-black);
-    border-color: white; 
+    border-color: var(--color-white-absolute); 
 
     &::after {
       position: absolute;
@@ -99,12 +98,14 @@
     } 
 
     &.nes-ui-with-title {
+      
       margin-top: 2em;
+
       > .nes-ui-title {
         top: -0.5rem;
-        position: relative;
-        color: $background-color;
-        background-color: $base-color;
+        position: relative; 
+        color: var(--color-white);
+        background-color: var(--color-black);
       }
     }
 
