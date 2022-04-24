@@ -23,7 +23,7 @@ export interface ModalContentProps extends StyleProps, React.PropsWithChildren<a
 
 export const ModalContent = ({ id, children, style, className }: ModalContentProps) => (
     <>
-        <div id={id} className={`modal-content ${className || ''}`} style={style}>
+        <div id={id} className={`nes-ui-modal-content ${className || ''}`} style={style}>
             {children}
         </div>
     </>

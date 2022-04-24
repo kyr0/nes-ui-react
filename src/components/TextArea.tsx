@@ -28,8 +28,8 @@ export const TextArea = (props: TextAreaProps) => {
 
     return (
         <div className="nes-ui-field">
-            <label htmlFor={props.name}>{props.label}</label>
-            <textarea id={props.id} cols={props.cols} rows={props.rows} className={`nes-ui-input ${props.disabled ? 'nes-ui-is-disabled' : ''} ${props.color ? 'nes-ui-is-' + props.color : ''} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} onChange={props.disabled ? () => {} : onValueChange} />
+            <label htmlFor={props.name}>{props.label}</label> 
+            <textarea id={props.id} cols={props.cols} rows={props.rows} className={`nes-ui-textarea ${props.disabled ? 'nes-ui-is-disabled' : ''} ${props.color ? 'nes-ui-is-' + props.color : 'nes-ui-is-none'} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} onChange={props.disabled ? () => {} : onValueChange} />
         </div>
     )
 }

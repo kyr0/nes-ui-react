@@ -32,23 +32,23 @@
   }
 
   &.nes-ui-is-primary {
-    color: map-get($primary-colors, 'normal');
+    color: var(--primary-color-normal);
   }
 
   &.nes-ui-is-success {
-    color: map-get($success-colors, 'normal');
+    color: var(--success-color-normal);
   }
 
   &.nes-ui-is-warning {
-    color: map-get($warning-colors, 'normal');
+    color: var(--warning-color-normal);
   }
 
   &.nes-ui-is-error {
-    color: map_get($error-colors, 'normal');
+    color: var(--error-color-normal);
   }
 
   &.nes-ui-is-disabled {
-    color: map_get($disabled-colors, 'normal');
+    color: var(--disabled-color-normal);
   }
 }
 
@@ -57,7 +57,6 @@
   padding: 2px;
   padding-left: 5px;
   padding-right: 5px;
-  background-color: $base-color;
 
   &.nes-ui-is-shadow {
     text-shadow: 1px 1px var(--color-white-absolute);

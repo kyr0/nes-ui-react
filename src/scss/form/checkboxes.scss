@@ -1,49 +1,47 @@
-// prettier-ignore
-  $checkbox: (
-    (1,1,1,1,1,1,1,1,0,0),
-    (1,0,0,0,0,0,0,1,0,0),
-    (1,0,0,0,0,0,0,1,0,0),
-    (1,0,0,0,0,0,0,1,0,0),
-    (1,0,0,0,0,0,0,1,0,0),
-    (1,0,0,0,0,0,0,1,0,0),
-    (1,0,0,0,0,0,0,1,0,0),
-    (1,1,1,1,1,1,1,1,0,0),
-  );
 
-  // prettier-ignore
-  $checkbox-checked: (
-    (1,1,1,1,1,1,1,0,1,1),
-    (1,0,0,0,0,0,0,1,1,1),
-    (1,0,0,0,0,0,1,1,0,0),
-    (1,1,0,0,0,1,1,0,0,0),
-    (1,1,1,0,1,1,0,1,0,0),
-    (1,0,1,1,1,0,0,1,0,0),
-    (1,0,0,1,0,0,0,1,0,0),
-    (1,1,1,1,1,1,1,1,0,0)
-  );
-  // prettier-ignore
-  $checkbox-focus: (
-    (2,2,2,2,2,2,2,2,0,0),
-    (2,0,0,0,0,0,0,2,0,0),
-    (2,0,0,0,0,0,0,2,0,0),
-    (2,0,0,0,0,0,0,2,0,0),
-    (2,0,0,0,0,0,0,2,0,0),
-    (2,0,0,0,0,0,0,2,0,0),
-    (2,0,0,0,0,0,0,2,0,0),
-    (2,2,2,2,2,2,2,2,0,0),
-  );
+$checkbox: (
+  (1,1,1,1,1,1,1,1,0,0),
+  (1,0,0,0,0,0,0,1,0,0),
+  (1,0,0,0,0,0,0,1,0,0),
+  (1,0,0,0,0,0,0,1,0,0),
+  (1,0,0,0,0,0,0,1,0,0),
+  (1,0,0,0,0,0,0,1,0,0),
+  (1,0,0,0,0,0,0,1,0,0),
+  (1,1,1,1,1,1,1,1,0,0),
+);
 
-  // prettier-ignore
-  $checkbox-checked-focus: (
-    (2,2,2,2,2,2,2,0,1,1),
-    (2,0,0,0,0,0,0,1,1,1),
-    (1,0,0,0,0,0,1,1,0,0),
-    (1,1,0,0,0,1,1,0,0,0),
-    (2,1,1,0,1,1,0,2,0,0),
-    (2,0,1,1,1,0,0,2,0,0),
-    (2,0,0,1,0,0,0,2,0,0),
-    (2,2,2,2,2,2,2,2,0,0)
-  );
+$checkbox-checked: (
+  (1,1,1,1,1,1,1,0,1,1),
+  (1,0,0,0,0,0,0,1,1,1),
+  (1,0,0,0,0,0,1,1,0,0),
+  (1,1,0,0,0,1,1,0,0,0),
+  (1,1,1,0,1,1,0,1,0,0),
+  (1,0,1,1,1,0,0,1,0,0),
+  (1,0,0,1,0,0,0,1,0,0),
+  (1,1,1,1,1,1,1,1,0,0)
+);
+
+$checkbox-focus: (
+  (2,2,2,2,2,2,2,2,0,0),
+  (2,0,0,0,0,0,0,2,0,0),
+  (2,0,0,0,0,0,0,2,0,0),
+  (2,0,0,0,0,0,0,2,0,0),
+  (2,0,0,0,0,0,0,2,0,0),
+  (2,0,0,0,0,0,0,2,0,0),
+  (2,0,0,0,0,0,0,2,0,0),
+  (2,2,2,2,2,2,2,2,0,0),
+);
+
+$checkbox-checked-focus: (
+  (2,2,2,2,2,2,2,0,1,1),
+  (2,0,0,0,0,0,0,1,1,1),
+  (1,0,0,0,0,0,1,1,0,0),
+  (1,1,0,0,0,1,1,0,0,0),
+  (2,1,1,0,1,1,0,2,0,0),
+  (2,0,1,1,1,0,0,2,0,0),
+  (2,0,0,1,0,0,0,2,0,0),
+  (2,2,2,2,2,2,2,2,0,0)
+);
 
 .nes-ui-checkbox {
   
@@ -72,22 +70,21 @@
     content: '';
   }
 
-  // prettier-ignore
-  & + span::before { /* stylelint-disable-line no-descending-specificity */
+  & + span::before { 
     @include pixelize(2px, $checkbox, $colors);
   }
-  // prettier-ignore
-  &:focus + span::before { /* stylelint-disable-line no-descending-specificity */
+
+  &:focus + span::before { 
     @include pixelize(2px, $checkbox-focus, $colors);
   }
 
   &:checked + span::before {
     @include pixelize(2px, $checkbox-checked, $colors);
   }
+
   &:checked:focus + span::before {
     @include pixelize(2px, $checkbox-checked-focus, $colors);
   }
-
 }
 
 .dark-mode {
@@ -99,8 +96,7 @@
       color: $color-white;
     }
 
-    // prettier-ignore
-    + span::before { /* stylelint-disable-line no-descending-specificity */
+    + span::before {
       color: $color-white;
     }
 
@@ -133,13 +129,11 @@ label.nes-ui-is-checkbox {
       cursor: not-allowed;
     }
 
-    /* stylelint-disable-next-line no-descending-specificity */
     + span::before {
       color: $color;
       cursor: not-allowed;
     }
 
-    /* stylelint-disable-next-line no-descending-specificity */
     &:checked + span::before {
       @include pixelize(2px, $checkbox-checked-focus, $colors-radio-disabled);
 

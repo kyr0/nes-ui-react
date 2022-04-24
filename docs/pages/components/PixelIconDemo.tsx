@@ -1,4 +1,4 @@
-import { Container, Row, PixelIcon, A, Text, List, Heading, TextArea, PixelBorder, Hr, Button } from "../../dist";
+import { isDarkModeActive, Container, Row, PixelIcon, A, Text, List, Heading, TextArea, PixelBorder, Hr, Button, Colors } from "../../dist";
 
 import { FileUploader } from "react-drag-drop-files";
 
@@ -16,6 +16,7 @@ export const PixelIconDemo = () => {
     const handleChange = (file) => {
         setFile(file);
     };
+    const darkMode = isDarkModeActive();
 
     useEffect(() => {
         ;(async() => {
@@ -39,9 +40,9 @@ export const PixelIconDemo = () => {
                 </Row>
 
                 <Row style={{ display: 'flex' }}>
-                    <PixelIcon name="pixelicon-checkmark" size="small" style={{ marginRight: 10 }} />
-                    <PixelIcon name="pixelicon-checkmark" size="medium" style={{ marginRight: 10 }}  />
-                    <PixelIcon name="pixelicon-checkmark" size="large" style={{ marginRight: 10 }}  />
+                    <PixelIcon inverted={darkMode} name="pixelicon-checkmark" size="small" style={{ marginRight: 10 }} />
+                    <PixelIcon inverted={darkMode} name="pixelicon-checkmark" size="medium" style={{ marginRight: 10 }}  />
+                    <PixelIcon inverted={darkMode} name="pixelicon-checkmark" size="large" style={{ marginRight: 10 }}  />
                 </Row>
 
                 <Text>Sizes:</Text>
@@ -64,20 +65,20 @@ export const PixelIconDemo = () => {
             <Container title='Pixelart (PNG, JPG, ...) to SVG converter' >
                 <Text>Once you've created such an Icon, you'd probably like to convert it into such an base64-inlined icon CSS class as we usually do. Just drag and drop the PNG file here:</Text>
                 
-                <PixelBorder doubleRoundCorners style={{ borderWidth: 2, backgroundColor: '#00000077' }}>
+                <div style={{ border: `4px dashed ${Colors.color10}` }}>
                     <FileUploader classes={`${styles.dropRegion}`} label="Drop image file here..." hoverTitle="Drop now!" handleChange={handleChange} name="file" types={SUPPORTED_IMAGE_FILE_TYPES} />
-                </PixelBorder>
+                </div>
 
                 {svgImage && (
                     <>
                         <Heading size="medium" style={{ marginTop: 20 }} dense>SVG</Heading>
                         <TextArea  color="success" style={{ backgroundColor: '#000', marginBottom: 25 }} rows={6} value={svgImage.svg} />
                         
-                        <img className="invert" style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
+                        <img className={darkMode ? 'invert' : ''} style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
 
-                        <img className="invert" style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width*2} height={svgImage.height*2} />
+                        <img className={darkMode ? 'invert' : ''} style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width*2} height={svgImage.height*2} />
 
-                        <img className="invert" style={{ maxWidth: '80vw' }} src={svgDataUrl} width={svgImage.width*4} height={svgImage.height*4} />
+                        <img className={darkMode ? 'invert' : ''} style={{ maxWidth: '80vw' }} src={svgDataUrl} width={svgImage.width*4} height={svgImage.height*4} />
                     </>
                 )}
 

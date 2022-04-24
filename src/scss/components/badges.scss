@@ -102,28 +102,28 @@ $em: 0.75em;
     "error" $base-color map-get($error-colors, "normal");
 
   @each $type in $types {
-    &.nes-ui-is-split {
+    &.nes-ui-is-split { 
       & span.nes-ui-is-#{nth($type, 1)} {
-        @include badge-style(nth($type, 2), nth($type, 3), is-split, nth($type, 3), #000);
+        @include badge-style(nth($type, 2), nth($type, 3), is-split, nth($type, 3), $color-black-absolute);
       }
     }
 
     &.nes-ui-is-icon {
       width: $em * 7;
       & span.nes-ui-is-#{nth($type, 1)} {
-        @include badge-style(nth($type, 2), nth($type, 3), is-icon, nth($type, 3), #000);
+        @include badge-style(nth($type, 2), nth($type, 3), is-icon, nth($type, 3), $color-black-absolute);
       }
     }
 
     & span.nes-ui-is-#{nth($type, 1)} {
-      @include badge-style(nth($type, 2), nth($type, 3), is-default, nth($type, 3), #000);
+      @include badge-style(nth($type, 2), nth($type, 3), is-default, nth($type, 3), $color-black-absolute);
     }
   }
 } 
  
 .dark-mode {
   .nes-ui-badge {
-    $types: 'dark' #000 #000,
+    $types: 'dark' $color-black-absolute $color-black-absolute,
       'primary' $base-color map-get($primary-colors, 'normal'),
       'success' $base-color map-get($success-colors, 'normal'),
       'disabled' $base-color map-get($disabled-colors, 'normal'),
@@ -133,19 +133,19 @@ $em: 0.75em;
     @each $type in $types {
       &.nes-ui-is-split {
         & span.nes-ui-is-#{nth($type, 1)} {
-          @include badge-style(nth($type, 2), nth($type, 3), is-split,  nth($type, 3), #000);
+          @include badge-style(nth($type, 2), nth($type, 3), is-split,  nth($type, 3), $color-black-absolute);
         }
       } 
 
       &.nes-ui-is-icon {
         width: $em * 7;
         & span.nes-ui-is-#{nth($type, 1)} {
-          @include badge-style(nth($type, 2), nth($type, 3), is-icon,  nth($type, 3), #000);
+          @include badge-style(nth($type, 2), nth($type, 3), is-icon,  nth($type, 3), $color-black-absolute);
         } 
       }
 
       & span.nes-ui-is-#{nth($type, 1)} {
-        @include badge-style(nth($type, 2), nth($type, 3), is-default,  nth($type, 3), #000);
+        @include badge-style(nth($type, 2), nth($type, 3), is-default,  nth($type, 3), $color-black-absolute);
       }
     } 
   }

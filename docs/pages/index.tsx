@@ -62,9 +62,9 @@ const Home = (): JSX.Element => {
   return (
     <main style={{marginLeft: 'auto', marginRight: 'auto', width: '85vw'}}>
     
-      <Toolbar borderless style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 99999 }}>
+      <Toolbar borderless style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 9999 }}>
         <Spacer />
-        <PixelIcon name={"pixelicon-nes-ui-logo"} size='medium' style={{ marginRight: 10 }} />
+        <PixelIcon inverted={false} name={"pixelicon-nes-ui-logo"} size='medium' style={{ marginRight: 10 }} />
         <Heading>nes-ui-react</Heading>
         <Spacer />
         <IconButton onClick={toggleDarkMode} color="warning">
@@ -72,7 +72,7 @@ const Home = (): JSX.Element => {
         </IconButton>
       </Toolbar>
       
-      <IconButton size="small" color="primary" inverted 
+      <IconButton borderInverted size="small" color="primary" 
         style={{ zIndex: 9998, position: 'fixed', bottom: 20, right: 20 }} 
         onClick={() => {window.scrollTo(0, 0)}}>
         <PixelIcon size='small' name='pixelicon-arrow-up' />

@@ -3,7 +3,7 @@
     @include pixel-borders(
       $corner-size: 1,
       $border-size: $border-size,
-      $border-color: 'contrast-alpha-color-normal',
+      $border-color: 'contrast-alpha-color-shadow',
       $border-inset-color: false
     );
   }
@@ -63,7 +63,7 @@
 
 .dark-mode {
   .nes-ui-toolbar {
-    background-color: $color-00;
+    background-color: darken($color-00, 10%);
     @include pixel-borders(
       $corner-size: 0,
       $border-size: $border-size,

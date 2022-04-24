@@ -6,7 +6,7 @@
 
 .nes-ui-table {
   table-layout: fixed;
-  background-color: $background-color;
+  background-color: var(--color-white);
 
   tr {
     margin-left: -0.25em;
@@ -17,32 +17,12 @@
     position: relative;
     padding: 0.5rem;
     word-wrap: break-word;
-    border-color: $base-color;
+    border-color: var(--color-black);
     border-style: solid;
     border-width: 0 0.25em 0.25em 0;
 
     &:last-child {
       border-right-width: 0;
-    }
-
-    &::after,
-    &::before {
-      position: absolute;
-      display: block;
-      width: 0.25em;
-      height: 0.25em;
-      content: '';
-      background-color: $base-color;
-    }
-
-    &::after {
-      bottom: -0.25em;
-      left: -0.25em;
-    }
-
-    &::before {
-      top: -0.25em;
-      right: -0.25em;
     }
 
     &:last-child::before {
@@ -67,32 +47,12 @@
       $border-inset-color: false
     );
   }
-
-  /***************************************************************************  \
-    This eliminates the gap between the last row in a table and the border, as
-    well as hiding the derelict pixels in the bottom right and bottom left of
-    the last row of a table
-  \  ***************************************************************************/
-  tbody,
-  thead:last-child {
-    tr:last-child {
-      th,
-      td {
-        border-bottom-width: 0;
-
-        &:first-child::after,
-        &:last-child::before {
-          display: none;
-        }
-      }
-    }
-  }
 }
 
 .dark-mode {
   .nes-ui-table {
-    color: $background-color;
-    background-color: $base-color;
+    color: var(--color-white);
+    background-color: var(--color-black);
 
     &.nes-ui-is-bordered {
       @include pixel-borders(
@@ -105,12 +65,7 @@
 
     th,
     td {
-      border-color: $background-color;
-
-      &::after,
-      &::before {
-        display: none;
-      }
+      border-color: var(--color-white);
     }
   } 
 }

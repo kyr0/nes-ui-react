@@ -19,18 +19,7 @@ $icon-size-large: 32px;
     background-size:cover;
     background-position: center; 
   } 
-
-  & * {
-    // always white
-    filter: invert(1);
-  }
-   
-  &.nes-ui-is-inverted {
-    & * {
-      filter: invert(1);
-    }
-  }
-
+  
   &.nes-ui-is-size-medium {
  
     & * {
@@ -55,16 +44,3 @@ $icon-size-large: 32px;
     } 
   }
 }
-
-.dark-mode {
-  .nes-ui-pixelicon {
-    & * {
-      filter: invert(1);
-    }
-    &.nes-ui-is-inverted {
-      & * {
-        filter: invert(0);
-      }
-    }
-  }
-} 

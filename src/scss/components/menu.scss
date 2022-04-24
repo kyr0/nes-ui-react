@@ -10,20 +10,9 @@
   @include pixel-borders(
     $corner-size: 0,
     $border-size: $border-size, 
-    $border-color: 'contrast-alpha-color-shadow',
+    $border-color: 'color-black',
     $border-inset-color: false
   );
-
-  &.dark-mode {
-    background-color: var(--color-black); 
-    @include pixel-borders(
-      $corner-size: 0,
-      $border-size: $border-size,
-      $border-color: 'contrast-alpha-color-normal',
-      $border-inset-color: false
-    );
-  }
-  border-radius: 0 !important;
 
   > * {
     margin: 0;
@@ -56,4 +45,20 @@
     position: absolute;
     z-index: 99999;
   }
+}
+
+.dark-mode {
+  .nes-ui-menu {
+    background-color: var(--color-black); 
+    @include pixel-borders( 
+      $corner-size: 0,
+      $border-size: $border-size,
+      $border-color: 'color-white',
+      $border-inset-color: false
+    );
+  }
+}
+ 
+.nes-ui-menu {
+  border-radius: 0 !important;
 }

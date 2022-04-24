@@ -2,10 +2,10 @@
   display: flex;
   height: 20px;
   width: 4px;
-  background-color: #aaa;
+  background-color: $color-10;
 
   &.dark-mode {
-    background-color: #444;
+    background-color: $color-00;
   }
   margin-left: 2px;
   margin-right: 6px;

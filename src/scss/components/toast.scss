@@ -51,7 +51,8 @@
     content: '';
   }
 
-  &.nes-ui-from-left {
+  &.nes-ui-from-left,
+  &.nes-ui-from-right {
     &::before,
     &::after {
       left: 2rem;
@@ -61,44 +62,31 @@
       bottom: -14px;
       width: 26px;
       height: 10px;
-      background-color: $background-color;
-      border-right: 4px solid $base-color;
-      border-left: 4px solid $base-color;
+      border-right: 4px solid var(--color-black);
+      border-left: 4px solid var(--color-black);
+      background-color: var(--color-white);
     }
-
     &::after {
       bottom: -18px;
       width: 18px;
       height: 4px;
       margin-right: 8px;
       color: $base-color;
-      background-color: $background-color;
-      @include box-shadow($background-color);
+      background-color: var(--color-white);
+      @include box-shadow($color-white);
     }
   } 
 
   &.nes-ui-from-right {
     &::before,
     &::after {
+      left: unset;
       right: 2rem;
-    }
-
-    &::before {
-      bottom: -14px;
-      width: 26px;
-      height: 10px;
-      background-color: $background-color;
-      border-right: 4px solid $base-color;
-      border-left: 4px solid $base-color;
-    }
-
+    } 
+ 
     &::after {
-      bottom: -18px;
-      width: 18px;
-      height: 4px;
-      margin-left: 8px;
-      background-color: $background-color;
-      @include box-shadow($background-color, false);
+      margin-right: 4px;
+      @include box-shadow($color-white, false);
     }
   }
 }
@@ -113,40 +101,37 @@
     );
 
     border-radius: 0 !important;
-    color: $background-color;
+    color: var(--color-white);
     background: var(--color-black-absolute);
-
-    //border-image-outset: 2;
-    //box-shadow: 0 0 0 8px $base-color;
 
     &.nes-ui-from-left,
     &.nes-ui-from-right {
       &::before {
-        background-color: $base-color;
-        border-color: $background-color;
+        background-color: var(--color-black);
+        border-color: var(--color-white);
       }
 
       &::after {
-        color: $background-color;
-        background-color: $base-color;
+        color: var(--color-white);
+        background-color: var(--color-black);
       }
     }
 
     &.nes-ui-from-left {
-      &::before {
-        box-shadow: -5px 10px 0 6px $base-color;
+      &::before { 
+        box-shadow: -5px 10px 0 6px var(--color-black);
       }
       &::after {
-        @include box-shadow($base-color);
+        @include box-shadow($color-black);
       }
     }
 
     &.nes-ui-from-right {
       &::before {
-        box-shadow: 5px 10px 0 6px $base-color;
+        box-shadow: 5px 10px 0 6px var(--color-black);
       }
       &::after {
-        @include box-shadow($base-color, false);
+        @include box-shadow($color-black, false);
       }
     }
   }

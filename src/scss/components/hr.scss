@@ -1,6 +1,6 @@
 hr.nes-ui-hr {
-  background-color: $base-color;
-  border-color: $base-color;
+  background-color: var(--color-black-absolute);
+  border-color: var(--color-black-absolute);
   border: none; 
 
   &.dark-mode {

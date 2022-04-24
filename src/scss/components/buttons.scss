@@ -10,7 +10,7 @@
   display: flex;
   margin-right: 1em;
 
-  &.nes-ui-is-inverted {
+  &.nes-ui-border-inverted {
     @include pixel-borders(
       $corner-size: 1,
       $border-size: $border-size,
@@ -53,7 +53,6 @@
   }
 }
 
-// Default style
 .nes-ui-btn,
 .nes-ui-icon-btn {
   @include rounded-corners();
@@ -122,8 +121,6 @@
     box-shadow: inset -4px -4px map-get($disabled-colors, 'shadow');
   }
 
-  // Other styles
-  // prettier-ignore
   $types:
     "primary" $background-color map-get($primary-colors, "normal") map-get($primary-colors, "hover") map-get($primary-colors, "shadow"),
     "success" $background-color map-get($success-colors, "normal") map-get($success-colors, "hover") map-get($success-colors, "shadow"),
@@ -194,8 +191,6 @@ html.nes-ui {
   }
 }
 
-// --- icon button
-
 .nes-ui-button-wrapper,
 .nes-ui-icon-button-wrapper {
   @include pixel-borders(
@@ -207,7 +202,7 @@ html.nes-ui {
   display: inline-block;
   margin-right: 1em;
 
-  &.nes-ui-is-inverted {
+  &.nes-ui-border-inverted {
     @include pixel-borders(
       $corner-size: 1,
       $border-size: $border-size,
@@ -221,7 +216,7 @@ html.nes-ui {
   .nes-ui-button-wrapper,
   .nes-ui-icon-button-wrapper {
  
-    &.nes-ui-is-inverted {
+    &.nes-ui-border-inverted {
       @include pixel-borders(
         $corner-size: 1,
         $border-size: $border-size,
@@ -265,8 +260,6 @@ html.nes-ui {
   }
 }
 
-// Default style
-// padding: 6px 8px;
 .nes-ui-icon-btn {
   padding: 0;
   padding-bottom: 4px;

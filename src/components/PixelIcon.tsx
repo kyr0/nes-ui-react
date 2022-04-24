@@ -2,7 +2,6 @@ import { IdProps } from "./interface/IdProps";
 import { Size } from "./interface/Size";
 import { StyleProps } from "./interface/StyleProps";
 import { PixelIconName } from './interface/PixelIconName';
-//import { isDarkModeActive } from "../lib/darkMode";
 import { useEffect } from "react";
 import React from "react";
 
@@ -14,21 +13,19 @@ export interface PixelIconProps extends StyleProps, IdProps {
  
 export const PixelIcon = (props: PixelIconProps) => {
 
-    //const isDarkModeActiveFlag = isDarkModeActive();
     const [isInverted, setIsInverted] = React.useState(props.inverted);
     
     useEffect(() => {
-        if (typeof props.inverted === 'undefined') {
-            //setIsInverted(isDarkModeActiveFlag)
-
+        if (props.inverted !== false) {
+            setIsInverted(true)
         } else {
-            setIsInverted(props.inverted)
+            setIsInverted(false)
         }
-    }, [props.inverted/*, isDarkModeActiveFlag*/]) 
-
+    }, [props.inverted]) 
+ 
     return (
-        <span id={props.id} className={`nes-ui-pixelicon nes-ui-is-size-${props.size || 'medium'} ${isInverted ? 'nes-ui-is-inverted' : ''}`} >
-            <span className={props.name} style={props.style} />
+        <span id={props.id} className={`nes-ui-pixelicon nes-ui-is-size-${props.size || 'medium'}`} >
+            <span className={`${props.name} ${isInverted ? 'nes-ui-is-inverted' : ''}`} style={props.style} />
         </span> 
     )
 }

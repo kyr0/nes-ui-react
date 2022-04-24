@@ -6,14 +6,14 @@ export interface ButtonProps extends React.PropsWithChildren<any>, StyleProps, I
     disabled?: boolean
     color?: NamedColor
     size?: 'medium' | 'small'
-    inverted?: boolean
+    borderInverted?: boolean
     onClick?: React.EventHandler<any>
 }
 
-export const Button = ({ style, children, disabled, color, onClick, id, size, inverted }: ButtonProps) => (
-  <div style={style} className={`nes-ui-button-wrapper nes-ui-is-${inverted && 'inverted'}`}>
+export const Button = ({ style, children, disabled, color, onClick, id, size, borderInverted }: ButtonProps) => (
+  <div style={style} className={`nes-ui-button-wrapper ${borderInverted ? 'nes-ui-border-inverted' : ''}`}>
     <button id={id} className={`nes-ui-btn nes-ui-btn-${color || 'normal'} nes-ui-is-size-${size || 'medium'} ${disabled && 'nes-ui-btn-disabled'}`} onClick={disabled ? () => {} : onClick}>
       {children}
     </button>
-  </div>
+  </div> 
 )

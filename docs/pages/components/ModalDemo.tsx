@@ -21,7 +21,7 @@ export const ModalDemo = () => {
 
           <Br size='small' />
 
-          <IconButton color="primary" onClick={() => setDemoDialogOpen(true)}>
+          <IconButton borderInverted color="primary" onClick={() => setDemoDialogOpen(true)}>
             <Text size='small'>Open Modal</Text>
             <PixelIcon name="pixelicon-checkmark" size='small' />
           </IconButton>

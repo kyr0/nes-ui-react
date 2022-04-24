@@ -1,6 +1,8 @@
 .dropRegion {
   border: none !important;
-  color: #fff !important;
+  padding: 16px !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
   cursor: var(--cursor-click-url), pointer !important;
 }
 
@@ -10,4 +12,8 @@
 
 .dropRegion span:last-child {
   display: block;
+}
+
+.dropRegion span[title] {
+  display: none !important;
 }

@@ -34,3 +34,4 @@ export * from './components/PixelBorder';
 export * from './components/interface/Color';
 export * from './components/interface/PixelIconName';
 export * from './components/interface/OnChangeHandler';
+export * from './lib/darkMode';

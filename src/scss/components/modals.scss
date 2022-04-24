@@ -17,6 +17,12 @@
     );
   }
 
+  .nes-ui-modal-content {
+    margin: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
   color: $base-color;
   background-color: var(--color-white-absolute);
   border-color: $background-color;
@@ -73,11 +79,5 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #00000077;
-}
-
-.nes-ui-modal-content {
-  margin: 4px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  background-color: rgba(0,0,0,0.5);
 }

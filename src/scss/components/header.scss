@@ -4,11 +4,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 4px;
-  background-color: #00000033;
-  border-bottom: 4px solid #00000033;
-  color: $base-color;
-
-  position: relative;
+  background-color: lighten($color-00, 50%);
+  border-bottom: 4px solid $color-00;
+  color: var(--color-black-absolute); 
+  position: relative; 
   top: 0;
   left: 0;
   width: 100%;
@@ -22,6 +21,8 @@
 
 .dark-mode {
   .nes-ui-header {
+    background-color: darken($color-00, 10%);
+    border-bottom: 4px solid var(--color-black-absolute);
     color: var(--color-white-absolute);
   }
 }
