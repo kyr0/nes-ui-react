@@ -1,28 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://kyr0.github.io/nes-ui-react</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/BadgeDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ButtonDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/CheckboxDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ColorPaletteDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ContainerDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/GridDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/HeroDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/HrDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/IconButtonDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/InputDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ListDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/MenuDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ModalDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/PixelBorderDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/PixelIconDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/PixelatedImages</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ProgressDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/RadioDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/SelectDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/TableDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/TextAreaDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ToastDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/ToolbarDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
-<url><loc>https://kyr0.github.io/nes-ui-react/components/TypographyDemo</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-21T16:23:34.396Z</lastmod></url>
+<url><loc>https://kyr0.github.io/nes-ui-react</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-04-24T13:06:50.659Z</lastmod></url>
 </urlset>

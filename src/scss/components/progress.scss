@@ -54,7 +54,7 @@
 
   &.nes-ui-is-pattern {
     &::-webkit-progress-value {
-      background-color: var(--#{$color-black});
+      background-color: var(--color-black);
       background-image: linear-gradient(
           45deg,
           $background-color 25%,
@@ -76,7 +76,7 @@
     }
 
     &::-moz-progress-bar {
-      background-color: var(--#{$color-black});
+      background-color: var(--color-black);
       background-image: -moz-linear-gradient(
           45deg,
           $background-color 25%,
@@ -92,7 +92,7 @@
     }
 
     &::-ms-fill {
-      background-color: var(--#{$color-black});
+      background-color: var(--color-black);
       background-image: linear-gradient(
           45deg,
           $background-color 25%,
