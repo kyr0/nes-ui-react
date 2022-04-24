@@ -30,24 +30,20 @@
   }
 }
 
-@mixin badge-style($color, $background, $option: is-default) {
+@mixin badge-style($color, $background, $option, $shadow-color, $font-color) {
   $box-shadow-first-two: 0 0.5em $background, 0 -0.5em $background;
 
   @if $option == is-split {
     &:first-child {
       @include span-style($color, $background, left);
 
-      box-shadow: $box-shadow-first-two, 0 0 $background, -0.5em 0 $background;
-
-      @media (prefers-color-scheme: dark) {
-        box-shadow: $box-shadow-first-two, 0 0 black, -0.5em 0 black;
-        color: #fff;
-      }
+      box-shadow: $box-shadow-first-two, 0 0 $shadow-color, -0.5em 0 $shadow-color;
+      color: $font-color;
     }
     &:last-child {
       @include span-style($color, $background, right);
 
-      box-shadow: $box-shadow-first-two, 0.5em 0 $background, 0 0 $background;
+      box-shadow: $box-shadow-first-two, 0.5em 0 $shadow-color, 0 0 $shadow-color;
     }
   } @else if $option == is-icon {
     &:first-child {
@@ -67,22 +63,23 @@
         0.88em
       );
 
-      box-shadow: $box-shadow-first-two, 0.5em 0 $background,
-        -0.5em 0 $background;
+      box-shadow: $box-shadow-first-two, 0.5em 0 $shadow-color,
+        -0.5em 0 $shadow-color;
     }
   } @else {
     &:first-child {
       @include span-style($color, $background, 0, 100%);
 
-      box-shadow: $box-shadow-first-two, 0.5em 0 $background,
-        -0.5em 0 $background;
+      box-shadow: $box-shadow-first-two, 0.5em 0 $shadow-color,
+        -0.5em 0 $shadow-color;
     }
   }
 }
 
+$em: 0.75em;
+
 // Default style
 .nes-ui-badge {
-  $em: 0.75em;
   position: relative;
   display: inline-block;
   width: $em * 14;
@@ -96,7 +93,7 @@
 
   // Other styles
   // prettier-ignore
-  $types:
+  $types: 
     "dark" $base-color $base-color,
     "primary" $base-color map-get($primary-colors, "normal"),
     "disabled" $base-color map-get($disabled-colors, "normal"),
@@ -104,31 +101,52 @@
     "warning" $base-color map-get($warning-colors, "normal"),
     "error" $base-color map-get($error-colors, "normal");
 
-  @media (prefers-color-scheme: dark) {
-    $types: 'dark' #000 #000,
-      'primary' $base-color map-get($primary-colors, 'normal'),
-      'success' $base-color map-get($success-colors, 'normal'),
-      'disabled' $base-color map-get($disabled-colors, 'normal'),
-      'warning' $base-color map-get($warning-colors, 'normal'),
-      'error' $base-color map-get($error-colors, 'normal');
-  }
-
   @each $type in $types {
     &.nes-ui-is-split {
       & span.nes-ui-is-#{nth($type, 1)} {
-        @include badge-style(nth($type, 2), nth($type, 3), is-split);
+        @include badge-style(nth($type, 2), nth($type, 3), is-split, nth($type, 3), #000);
       }
     }
 
     &.nes-ui-is-icon {
       width: $em * 7;
       & span.nes-ui-is-#{nth($type, 1)} {
-        @include badge-style(nth($type, 2), nth($type, 3), is-icon);
+        @include badge-style(nth($type, 2), nth($type, 3), is-icon, nth($type, 3), #000);
       }
     }
 
     & span.nes-ui-is-#{nth($type, 1)} {
-      @include badge-style(nth($type, 2), nth($type, 3));
+      @include badge-style(nth($type, 2), nth($type, 3), is-default, nth($type, 3), #000);
     }
+  }
+} 
+ 
+.dark-mode {
+  .nes-ui-badge {
+    $types: 'dark' #000 #000,
+      'primary' $base-color map-get($primary-colors, 'normal'),
+      'success' $base-color map-get($success-colors, 'normal'),
+      'disabled' $base-color map-get($disabled-colors, 'normal'),
+      'warning' $base-color map-get($warning-colors, 'normal'),
+      'error' $base-color map-get($error-colors, 'normal');
+
+    @each $type in $types {
+      &.nes-ui-is-split {
+        & span.nes-ui-is-#{nth($type, 1)} {
+          @include badge-style(nth($type, 2), nth($type, 3), is-split,  nth($type, 3), #000);
+        }
+      } 
+
+      &.nes-ui-is-icon {
+        width: $em * 7;
+        & span.nes-ui-is-#{nth($type, 1)} {
+          @include badge-style(nth($type, 2), nth($type, 3), is-icon,  nth($type, 3), #000);
+        } 
+      }
+
+      & span.nes-ui-is-#{nth($type, 1)} {
+        @include badge-style(nth($type, 2), nth($type, 3), is-default,  nth($type, 3), #000);
+      }
+    } 
   }
 }

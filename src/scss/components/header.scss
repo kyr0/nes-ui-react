@@ -8,9 +8,6 @@
   border-bottom: 4px solid #00000033;
   color: $base-color;
 
-  @media (prefers-color-scheme: dark) {
-    color: #fff;
-  }
   position: relative;
   top: 0;
   left: 0;
@@ -20,5 +17,11 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+}
+
+.dark-mode {
+  .nes-ui-header {
+    color: #fff;
   }
 }

@@ -1,26 +1,27 @@
+// prettier-ignore
+$radio: (
+  (1,1,0,0,0,0),
+  (1,1,1,1,0,0),
+  (1,1,1,1,1,0),
+  (1,1,1,1,1,1),
+  (1,1,1,1,1,0),
+  (1,1,1,1,0,0),
+  (1,1,0,0,0,0),
+);
+// prettier-ignore
+$radio-checked-focus: (
+  (2,2,0,0,0,0),
+  (2,2,2,2,0,0),
+  (2,2,2,2,2,0),
+  (2,2,2,2,2,2),
+  (2,2,2,2,2,0),
+  (2,2,2,2,0,0),
+  (2,2,0,0,0,0),
+);
+ 
 .nes-ui-radio {
-  // prettier-ignore
-  $radio: (
-    (1,1,0,0,0,0),
-    (1,1,1,1,0,0),
-    (1,1,1,1,1,0),
-    (1,1,1,1,1,1),
-    (1,1,1,1,1,0),
-    (1,1,1,1,0,0),
-    (1,1,0,0,0,0),
-  );
-  // prettier-ignore
-  $radio-checked-focus: (
-    (2,2,0,0,0,0),
-    (2,2,2,2,0,0),
-    (2,2,2,2,2,0),
-    (2,2,2,2,2,2),
-    (2,2,2,2,2,0),
-    (2,2,2,2,0,0),
-    (2,2,0,0,0,0),
-  );
+  
   $colors: ($base-color, map-get($default-colors, 'shadow'));
-  $colors-radio-dark: ($color-white, map-get($default-colors, 'shadow'));
 
   margin-right: 18px;
   -webkit-appearance: none;
@@ -57,26 +58,42 @@
   &:checked:focus + span::before {
     @include pixelize(2px, $radio-checked-focus, $colors);
   }
-  @media (prefers-color-scheme: dark) {
+}
+
+
+.dark-mode {
+
+  $colors-radio-dark: ($color-white, map-get($default-colors, 'shadow'));
+
+  .nes-ui-radio {
     + span {
       color: $color-white;
     }
+
     // prettier-ignore
     + span::before { /* stylelint-disable-line no-descending-specificity */
       color: $color-white;
     }
-
+ 
     &:checked + span::before {
       @include pixelize(2px, $radio-checked-focus, $colors-radio-dark);
 
       color: $color-white;
     }
+
     &:checked:focus + span::before {
       @include pixelize(2px, $radio-checked-focus, $colors-radio-dark);
 
       color: $color-white;
     }
   }
+}
+
+label.nes-ui-is-radio {
+  margin-right: 10px;
+}
+
+.nes-ui-radio {
 
   &.nes-ui-is-disabled {
     $color: map-get($disabled-colors, 'normal');
@@ -113,8 +130,4 @@
       color: $color;
     }
   }
-}
-
-label.nes-ui-is-radio {
-  margin-right: 10px;
 }

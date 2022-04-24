@@ -61,9 +61,13 @@
 
   &.nes-ui-is-shadow {
     text-shadow: 1px 1px #fff;
+  }
+}
 
-    @media (prefers-color-scheme: dark) {
+.dark-mode {
+  .nes-ui-block-text {
+    &.nes-ui-is-shadow {
       text-shadow: 1px 1px #000;
     }
   }
-}
+} 

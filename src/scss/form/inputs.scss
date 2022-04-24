@@ -1,35 +1,29 @@
-.nes-ui-input,
-.nes-ui-textarea {
-  @mixin border-style($color, $outline) {
-    @include pixel-borders(
-      $corner-size: 1,
-      $border-size: calc($border-size / 2),
-      $border-color: $color,
-      $border-inset-color: false
-    );
-  }
- 
+
+@mixin border-style($color, $outline) {
   @include pixel-borders(
     $corner-size: 1,
     $border-size: calc($border-size / 2),
-    $border-color: 'color-black-absolute',
+    $border-color: $color,
     $border-inset-color: false
   );
+}
+
+ 
+.nes-ui-input,
+.nes-ui-textarea {
  
   width: calc(100%);
   padding: 0.5em 1em;
   background-clip: padding-box;
   margin-bottom: 1em;
 
-  @media (prefers-color-scheme: dark) {
+  &.nes-ui-is-none {
     @include border-style(
-      'color-white-absolute', 
-      map-get($default-colors, 'hover')
+      'color-black-absolute',
+      map-get($disabled-colors, 'shadow')
     );
-
-    color: $background-color;
-    background-color: $base-color;
   }
+
   &.nes-ui-is-disabled {
     @include border-style(
       'disabled-color-normal',
@@ -73,8 +67,7 @@
     margin-top: 1.5em;
   }
 
-  .nes-ui-input,
-
+  .nes-ui-input, 
   .nes-ui-textarea {
     display: block;
   }
@@ -95,6 +88,23 @@
     .nes-ui-textarea {
       flex-basis: 0;
       flex-grow: 5;
+    }
+  }
+}
+
+
+.dark-mode {
+  .nes-ui-input,
+  .nes-ui-textarea {
+
+    color: $background-color;
+    background-color: var(--color-black-absolute);
+
+    &.nes-ui-is-none { 
+      @include border-style(
+        'color-white-absolute', 
+        map-get($default-colors, 'hover')
+      );
     }
   }
 }
@@ -128,7 +138,7 @@ html.nes-ui {
     }
     outline: none;
   }
-
+  
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     margin: 0;

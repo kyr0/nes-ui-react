@@ -1,5 +1,4 @@
-.nes-ui-checkbox {
-  // prettier-ignore
+// prettier-ignore
   $checkbox: (
     (1,1,1,1,1,1,1,1,0,0),
     (1,0,0,0,0,0,0,1,0,0),
@@ -45,8 +44,10 @@
     (2,0,0,1,0,0,0,2,0,0),
     (2,2,2,2,2,2,2,2,0,0)
   );
+
+.nes-ui-checkbox {
+  
   $colors: ($base-color, map-get($default-colors, 'shadow'));
-  $colors-checkbox-dark: ($color-white, map-get($default-colors, 'shadow'));
 
   user-select: none;
   margin-left: 28px;
@@ -87,7 +88,13 @@
     @include pixelize(2px, $checkbox-checked-focus, $colors);
   }
 
-  @media (prefers-color-scheme: dark) {
+}
+
+.dark-mode {
+  .nes-ui-checkbox {
+    
+    $colors-checkbox-dark: ($color-white, map-get($default-colors, 'shadow'));
+    
     + span {
       color: $color-white;
     }
@@ -108,6 +115,15 @@
       color: $color-white;
     }
   }
+}
+
+
+label.nes-ui-is-checkbox {
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.nes-ui-checkbox {
   &.nes-ui-is-disabled {
     $color: map-get($disabled-colors, 'normal');
     $colors-radio-disabled: ($color, map-get($disabled-colors, 'shadow'));
@@ -136,9 +152,4 @@
       color: $color;
     }
   }
-}
-
-label.nes-ui-is-checkbox {
-  margin-bottom: 5px;
-  margin-right: 10px;
 }

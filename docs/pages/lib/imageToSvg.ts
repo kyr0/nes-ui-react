@@ -1,3 +1,9 @@
+/**
+ * Parts of this code are refactored TypeScript/ES6 variants of:
+ * https://codepen.io/shshaw/pen/XbxvNj by https://github.com/shshaw and
+ * https://codepen.io/elliz/pen/ygvgay by https://github.com/elliz
+ * Thank you for your work!
+ */
 export interface SvgImage {
   cssClassName: string;
   name: string;
@@ -22,22 +28,22 @@ const componentToHex = (c: string) => {
 const getColor = (r: string, g: string, b: string, a: string) => {
   const aValue = parseInt(a);
   if (aValue === undefined || aValue === 255) {
-    return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    return `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
   }
   if (aValue === 0) {
     return false;
   }
-  return 'rgba(' + r + ',' + g + ',' + b + ',' + aValue / 255 + ')';
+  return `rgba(${r},${g},${b},${aValue / 255})`;
 };
 
-const makePathData = (x, y, w) => 'M' + x + ' ' + y + 'h' + w + '';
-const makePath = (color, data) =>
-  '<path stroke="' + color + '" d="' + data + '" />\n';
+const makePathData = (x: number, y: number, w: number) => `M${x} ${y}h${w}`;
+const makePath = (hexColor: string, data: string) =>
+  `<path stroke="${hexColor}" d="${data}" />\n`;
 
-const each = (obj: any, fn: Function) => {
+const each = (obj: ArrayLike<Object>, fn: Function) => {
   let length = obj.length,
     likeArray = length === 0 || (length > 0 && length - 1 in obj),
-    i: any = 0;
+    i = 0;
 
   if (likeArray) {
     for (; i < length; i++) {
@@ -46,7 +52,7 @@ const each = (obj: any, fn: Function) => {
       }
     }
   } else {
-    for (i in obj) {
+    for (let i in obj) {
       if (fn.call(obj[i], i, obj[i]) === false) {
         break;
       }
@@ -58,21 +64,21 @@ const colorsToPaths = (colors) => {
   var output = '';
 
   // Loop through each color to build paths
-  each(colors, function (color, values) {
-    var orig = color;
-    color = getColor.apply(null, color.split(','));
+  each(colors, function (hexColor: string, values: Array<[number, number]>) {
+    const hexColorValidated = getColor(
+      ...(hexColor.split(',') as [string, string, string, string]),
+    );
 
-    if (color === false) {
+    if (hexColorValidated === false) {
       return;
     }
 
-    var paths = [];
-    var curPath;
-    var w = 1;
+    let paths = [];
+    let curPath: number;
+    let w = 1;
 
-    // Loops through each color's pixels to optimize paths
-    each(values, function () {
-      if (curPath && this[1] === curPath[1] && this[0] === curPath[0] + w) {
+    each(values, function (i: number, j: number) {
+      if (curPath && j === curPath[1] && i === curPath[0] + w) {
         w++;
       } else {
         if (curPath) {
@@ -83,8 +89,9 @@ const colorsToPaths = (colors) => {
       }
     });
 
-    paths.push(makePathData(curPath[0], curPath[1], w)); // Finish last path
-    output += makePath(color, paths.join(''));
+    paths.push(makePathData(curPath[0], curPath[1], w));
+
+    output += makePath(hexColorValidated, paths.join(''));
   });
 
   return output;
@@ -99,7 +106,7 @@ const getColors = (img: ImageData) => {
     x = 0,
     y = 0,
     i = 0,
-    color;
+    color: string;
 
   for (; i < len; i += 4) {
     if (data[i + 3] > 0) {
@@ -115,21 +122,11 @@ const getColors = (img: ImageData) => {
 };
 
 const convertImage = (img: ImageData) => {
-  'use strict';
+  const colors = getColors(img);
+  const paths = colorsToPaths(colors);
 
-  const colors = getColors(img),
-    paths = colorsToPaths(colors),
-    output =
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 ' +
-      img.width +
-      ' ' +
-      img.height +
-      '" shape-rendering="crispEdges">\n' +
-      paths +
-      '</svg>';
-
-  // Send message back to the main script
-  return output;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 ${img.width} ${img.height}" shape-rendering="crispEdges">
+  ${paths}</svg>`;
 };
 
 const makeImage = (src: string): Promise<HTMLImageElement> =>
@@ -172,20 +169,17 @@ const imageDataFromImage = (img: HTMLImageElement): Promise<ImageData> => {
   return Promise.resolve(ctx.getImageData(0, 0, img.width, img.height));
 };
 
-const escapeRegExp = (str: string) => {
-  return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1');
-};
+const escapeRegExp = (text: string) =>
+  text.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1');
 
-const replaceAll = (str: string, find: string, replace: string) => {
-  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
-};
+const replaceAll = (text: string, find: string, replace: string) =>
+  text.replace(new RegExp(escapeRegExp(find), 'g'), replace);
 
 export const svgToBase64DataUrl = (svg: string): string => {
   if (svg === null) return '';
 
   let encoded = svg.replace(/\s+/g, ' ');
 
-  // According to Taylor Hunt, lowercase gzips better ... my tiny test confirms this
   encoded = replaceAll(encoded, '%', '%25');
 
   // normalise spaces elements
@@ -229,8 +223,10 @@ export const convertImageToSvg = async (file: File): Promise<SvgImage> => {
   if (imageFile === null) {
     return Promise.resolve(null);
   }
+
   const img = await makeImage(imageFile.data as string);
   const imgData = await imageDataFromImage(img);
+
   return {
     svg: convertImage(imgData),
     width: img.width,

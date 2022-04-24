@@ -45,26 +45,6 @@
     }
   }
 
-  @media (prefers-color-scheme: dark) {
-    select {
-      color: var(--background-color);
-      background-color: var(--color-black);
-
-      @include pixel-borders(
-        $corner-size: 1,
-        $border-size: calc($border-size / 2),
-        $border-color: 'color-white-absolute',
-        $border-inset-color: false
-      );
-    }
-  }
-
-  &.nes-ui-is-disabled {
-    @extend .nes-ui-is-disable;
-    color: var(--disabled-color-normal);
-    cursor: not-allowed;
-  }
-
   &::after {
     @include pixelize(2px, $dropdown, $dropdown-color);
     transform: scale(0.75);
@@ -80,6 +60,7 @@
   }
 
   $types:
+    "none" $color-white-absolute $color-white-absolute,
     "success" $success-color-normal $success-color-hover,
     "warning" $warning-color-normal $warning-color-hover,
     "error" $error-color-normal $error-color-hover,
@@ -105,6 +86,18 @@
       }
     }
   }
+
+  
+  &.nes-ui-is-none {
+    select {
+      @include pixel-borders(
+        $corner-size: 1,
+        $border-size: calc($border-size / 2),
+        $border-color: 'color-black-absolute',
+        $border-inset-color: false
+      );
+    }
+  }
 }
 
 .nes-ui-select.nes-ui-is-multiple {
@@ -118,3 +111,31 @@
   }
 }
  
+.dark-mode {
+  .nes-ui-select {
+    select {
+      color: var(--background-color);
+      background-color: var(--color-black);
+    } 
+
+    &.nes-ui-is-none {
+      select {
+        @include pixel-borders(
+          $corner-size: 1,
+          $border-size: calc($border-size / 2),
+          $border-color: 'color-white-absolute',
+          $border-inset-color: false
+        );
+      }
+    }
+  }
+}
+
+.nes-ui-select {
+
+  &.nes-ui-is-disabled {
+    @extend .nes-ui-is-disable;
+    color: var(--disabled-color-normal);
+    cursor: not-allowed;
+  }
+}

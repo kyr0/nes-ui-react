@@ -1,5 +1,4 @@
 .nes-ui-toolbar-wrapper {
-  /* 
   &.nes-ui-has-rounded-corners {
     @include pixel-borders(
       $corner-size: 1,
@@ -7,18 +6,23 @@
       $border-color: 'contrast-alpha-color-normal',
       $border-inset-color: false
     );
-
-    @media (prefers-color-scheme: dark) {
-      @include pixel-borders(
-        $corner-size: 1,
-        $border-size: $border-size,
-        $border-color: 'contrast-alpha-color-shadow',
-        $border-inset-color: false
-      );
+  }
+}
+ 
+.dark-mode {
+  .nes-ui-toolbar-wrapper {
+    &.nes-ui-has-rounded-corners {
+        @include pixel-borders(
+          $corner-size: 1,
+          $border-size: $border-size,
+          $border-color: 'contrast-alpha-color-shadow',
+          $border-inset-color: false
+        );
     }
   }
-  */
+}
 
+.nes-ui-toolbar-wrapper {
   &.nes-ui-is-borderless {
     border: none;
   }
@@ -29,26 +33,15 @@
   margin: 0;
   padding: 4px;
   flex-direction: row;
-  align-items: center;
-  background-color: #eee;
+  align-items: center; 
+  background-color: $color-20;
 
-  @include pixel-borders(
+  @include pixel-borders( 
     $corner-size: 0,
     $border-size: $border-size,
     $border-color: 'contrast-alpha-color-normal',
     $border-inset-color: false
   );
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #222;
-    @include pixel-borders(
-      $corner-size: 0,
-      $border-size: $border-size,
-      $border-color: 'contrast-alpha-color-shadow',
-      $border-inset-color: false
-    );
-  }
-  border-radius: 0 !important;
 
   > * {
     margin: 0;
@@ -66,8 +59,23 @@
       margin-right: 0;
     }
   }
+}
 
+.dark-mode {
+  .nes-ui-toolbar {
+    background-color: $color-00;
+    @include pixel-borders(
+      $corner-size: 0,
+      $border-size: $border-size,
+      $border-color: 'contrast-alpha-color-shadow',
+      $border-inset-color: false
+    );
+  }
+}
+
+.nes-ui-toolbar {
+  border-radius: 0 !important;
   &.nes-ui-is-borderless {
     border: none;
-  }
+  } 
 }

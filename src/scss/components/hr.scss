@@ -1,8 +1,9 @@
 hr.nes-ui-hr {
   background-color: $base-color;
   border-color: $base-color;
+  border: none; 
 
-  @media (prefers-color-scheme: dark) {
+  &.dark-mode {
     background-color: #fff;
     border-color: #fff;
   }

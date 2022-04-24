@@ -14,8 +14,8 @@ html.nes-ui {
 
   body {
     font-size: $font-size;
-    color: $base-color;
-    background-color: $background-color;
+    color: $base-color; 
+    background-color: var(--background-color);
     -webkit-font-smoothing: antialiased; 
   }
 

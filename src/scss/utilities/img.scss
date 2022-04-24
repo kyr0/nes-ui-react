@@ -7,9 +7,9 @@ html.nes-ui {
     image-rendering: crisp-edges;
 
     &.invert {
-      @media (prefers-color-scheme: dark) {
+      &.dark-mode  {
           filter: invert(1);
-      } 
+      }
     }
   }
 }

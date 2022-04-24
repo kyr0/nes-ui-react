@@ -57,13 +57,15 @@ const Home = (): JSX.Element => {
   }, [darkMode]);
 
   return (
-    <>
+    <main style={{marginLeft: 'auto', marginRight: 'auto', width: '85vw'}}>
     
-      <Toolbar borderless>
+      <Toolbar borderless style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 99999 }}>
         <Spacer />
-        <IconButton onClick={toggleDarkMode} color="primary">
-          <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} size='small' style={{ marginRight: 5 }} />
-          <Text size='small'>Toggle</Text>
+        <PixelIcon name={"pixelicon-nes-ui-logo"} size='medium' style={{ marginRight: 10 }} />
+        <Heading>nes-ui-react</Heading>
+        <Spacer />
+        <IconButton onClick={toggleDarkMode} color="warning">
+          <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} inverted={darkMode} size='small' />
         </IconButton>
       </Toolbar>
       
@@ -221,7 +223,7 @@ const Home = (): JSX.Element => {
         <Br size='large' />
 
       </Row>
-    </>
+    </main>
   );
 };
 

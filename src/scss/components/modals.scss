@@ -15,24 +15,11 @@
       $border-color: 'color-black-absolute',
       $border-inset-color: false
     );
-
-    @media (prefers-color-scheme: dark) {
-      @include pixel-borders(
-        $corner-size: 1,
-        $border-size: $border-size,
-        $border-color: 'color-white-absolute',
-        $border-inset-color: false
-      );
-    }
   }
 
   color: $base-color;
   background-color: var(--color-white-absolute);
   border-color: $background-color;
-
-  @media (prefers-color-scheme: dark) {
-    border-color: var(--color-white-absolute);
-  }
 
   &:not(.nes-ui-is-rounded)::before {
     position: absolute;
@@ -44,11 +31,27 @@
     content: '';
     border: var(--border-size) solid #fff;
   }
+  border-radius: none;
+  z-index: 10000;
+  top: 100px;
+  position: fixed;
+} 
 
-  @media (prefers-color-scheme: dark) {
+.dark-mode {
+  .nes-ui-modal {
+    border-color: var(--color-white-absolute);
     color: $background-color;
     background-color: $base-color;
     border-color: $background-color;
+
+    &.nes-ui-is-rounded {
+      @include pixel-borders(
+        $corner-size: 1,
+        $border-size: $border-size,
+        $border-color: 'color-white-absolute',
+        $border-inset-color: false
+      );
+    }
 
     &:not(.nes-ui-is-rounded)::before {
       position: absolute;
@@ -61,10 +64,6 @@
       border: var(--border-size) solid #fff;
     }
   }
-  border-radius: none;
-  z-index: 10000;
-  top: 100px;
-  position: fixed;
 }
 
 .nes-ui-modal-backdrop {

@@ -57,6 +57,7 @@ export const PixelIconDemo = () => {
                 <Text color="disabled">
                     &gt; Create your own PixelIcons with&nbsp;
                     <A href="https://www.pixilart.com/kyr0/gallery" target={"_blank"}>kyr0 @ PixilArt.com</A>
+                    Note that icons look most nostalgic when you draw them in 8x8 pixel raster, monochrome.
                 </Text>
             </Container>
 
@@ -70,11 +71,11 @@ export const PixelIconDemo = () => {
                 {svgImage && (
                     <>
                         <Heading size="medium" style={{ marginTop: 20 }} dense>SVG</Heading>
-                        <TextArea  color="success" style={{ backgroundColor: '#000' }} rows={6} value={svgImage.svg} />
+                        <TextArea  color="success" style={{ backgroundColor: '#000', marginBottom: 25 }} rows={6} value={svgImage.svg} />
                         
-                        <img className="invert" style={{ maxWidth: '80vw' }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
+                        <img className="invert" style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
 
-                        <img className="invert" style={{ maxWidth: '80vw' }} src={svgDataUrl} width={svgImage.width*2} height={svgImage.height*2} />
+                        <img className="invert" style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width*2} height={svgImage.height*2} />
 
                         <img className="invert" style={{ maxWidth: '80vw' }} src={svgDataUrl} width={svgImage.width*4} height={svgImage.height*4} />
                     </>

@@ -3,7 +3,8 @@
   padding: 1.5rem 2rem;
   border-color: black;
   border-style: solid;
-  border-width: 4px;
+  border-width: 4px; 
+  background-color: var(--color-white);
 
   > :last-child {
     margin-bottom: 0;
@@ -41,33 +42,6 @@
   position: relative;
   margin: var(--border-size);
 
-  @media (prefers-color-scheme: dark) {
-    color: $background-color;
-    background-color: $base-color;
-    border-color: white;
-
-    &::after {
-      position: absolute;
-      top: -$border-size * 1.8;
-      right: -$border-size * 1.8;
-      bottom: -$border-size * 1.8;
-      left: -$border-size * 1.8;
-      z-index: -1;
-      content: '';
-      background-color: $base-color;
-    } 
-
-    &.nes-ui-with-title {
-      margin-top: 2em;
-      > .nes-ui-title {
-        top: -0.5rem;
-        position: relative;
-        color: $background-color;
-        background-color: $base-color;
-      }
-    }
-  }
-
   &.nes-ui-with-title {
     margin-top: 2em;
     > .nes-ui-title {
@@ -102,9 +76,39 @@
         }
       }
     }
+  }
+}
 
-    @media (prefers-color-scheme: dark) {
 
+.dark-mode {
+ 
+  .nes-ui-container {
+    color: $background-color;
+    background-color: var(--color-black);
+    border-color: white; 
+
+    &::after {
+      position: absolute;
+      top: -$border-size * 1.8;
+      right: -$border-size * 1.8;
+      bottom: -$border-size * 1.8;
+      left: -$border-size * 1.8;
+      z-index: -1;
+      content: '';
+      background-color: $base-color;
+    } 
+
+    &.nes-ui-with-title {
+      margin-top: 2em;
+      > .nes-ui-title {
+        top: -0.5rem;
+        position: relative;
+        color: $background-color;
+        background-color: $base-color;
+      }
+    }
+
+    &.nes-ui-is-rounded { 
       @include pixel-borders(
         $corner-size: 1,
         $border-size: $border-size,
@@ -126,7 +130,7 @@
             margin: -1.5rem auto 1rem;
           }
         }
- 
+
         &.nes-ui-is-right {
           > .nes-ui-title {
             margin: -1.5rem 0 1rem auto;

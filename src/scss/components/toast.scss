@@ -35,7 +35,7 @@
   padding: 1rem 1.5rem;
   margin: 8px;
   margin-bottom: 30px;
-  background-color: $background-color;
+  background: var(--color-white-absolute);
 
   > :last-child {
     margin-bottom: 0;
@@ -49,51 +49,6 @@
   &::after {
     position: absolute;
     content: '';
-  }
-
-  @media (prefers-color-scheme: dark) {
-    @include pixel-borders(
-      $corner-size: 1,
-      $border-size: $border-size,
-      $border-color: 'color-white-absolute',
-      $border-inset-color: false
-    );
-
-    color: $background-color;
-    background: $base-color;
-    border-image-outset: 2;
-    box-shadow: 0 0 0 8px $base-color;
-
-    &.nes-ui-from-left,
-    &.nes-ui-from-right {
-      &::before {
-        background-color: $base-color;
-        border-color: $background-color;
-      }
-
-      &::after {
-        color: $background-color;
-        background-color: $base-color;
-      }
-    }
-
-    &.nes-ui-from-left {
-      &::before {
-        box-shadow: -5px 10px 0 6px $base-color;
-      }
-      &::after {
-        @include box-shadow($base-color);
-      }
-    }
-
-    &.nes-ui-from-right {
-      &::before {
-        box-shadow: 5px 10px 0 6px $base-color;
-      }
-      &::after {
-        @include box-shadow($base-color, false);
-      }
-    }
   }
 
   &.nes-ui-from-left {
@@ -144,6 +99,55 @@
       margin-left: 8px;
       background-color: $background-color;
       @include box-shadow($background-color, false);
+    }
+  }
+}
+
+.dark-mode {
+  .nes-ui-toast {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: $border-size,
+      $border-color: 'color-white-absolute',
+      $border-inset-color: false
+    );
+
+    border-radius: 0 !important;
+    color: $background-color;
+    background: var(--color-black-absolute);
+
+    //border-image-outset: 2;
+    //box-shadow: 0 0 0 8px $base-color;
+
+    &.nes-ui-from-left,
+    &.nes-ui-from-right {
+      &::before {
+        background-color: $base-color;
+        border-color: $background-color;
+      }
+
+      &::after {
+        color: $background-color;
+        background-color: $base-color;
+      }
+    }
+
+    &.nes-ui-from-left {
+      &::before {
+        box-shadow: -5px 10px 0 6px $base-color;
+      }
+      &::after {
+        @include box-shadow($base-color);
+      }
+    }
+
+    &.nes-ui-from-right {
+      &::before {
+        box-shadow: 5px 10px 0 6px $base-color;
+      }
+      &::after {
+        @include box-shadow($base-color, false);
+      }
     }
   }
 }

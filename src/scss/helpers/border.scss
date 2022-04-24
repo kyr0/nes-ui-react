@@ -1,39 +1,21 @@
 .nes-ui-pixel-border {
-  border-radius: 16px;
+  border-radius: 4px !important;
   @include pixel-borders(
     $corner-size: 1,
     $border-size: $border-size,
     $border-color: 'color-black-absolute',
     $border-inset-color: false
-  ); 
-
-  @media (prefers-color-scheme: dark) {
-    @include pixel-borders(
-      $corner-size: 1,
-      $border-size: $border-size,
-      $border-color: 'color-white-absolute',
-      $border-inset-color: false
-    );
-  }
+  );
 }
 
 .nes-ui-pixel-border-2 {
-  border-radius: 32px;
+  border-radius: 8px !important; 
   @include pixel-borders(
     $corner-size: 2,
     $border-size: $border-size,
     $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
-
-  @media (prefers-color-scheme: dark) {
-    @include pixel-borders(
-      $corner-size: 2,
-      $border-size: $border-size,
-      $border-color: 'color-white-absolute',
-      $border-inset-color: false
-    );
-  }
 }
 
 .nes-ui-pixel-border-2x {
@@ -44,15 +26,6 @@
     $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
-
-  @media (prefers-color-scheme: dark) {
-    @include pixel-borders(
-      $corner-size: 1,
-      $border-size: calc($border-size * 2),
-      $border-color: 'color-white-absolute',
-      $border-inset-color: false
-    );
-  }
 }
 
 .nes-ui-pixel-border-2x-2 {
@@ -63,8 +36,39 @@
     $border-color: 'color-black-absolute',
     $border-inset-color: false
   );
- 
-  @media (prefers-color-scheme: dark) {
+}
+
+.dark-mode  {
+
+  .nes-ui-pixel-border {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: $border-size,
+      $border-color: 'color-white-absolute',
+      $border-inset-color: false
+    );
+  }
+
+  .nes-ui-pixel-border-2 {
+    @include pixel-borders(
+      $corner-size: 2,
+      $border-size: $border-size,
+      $border-color: 'color-white-absolute',
+      $border-inset-color: false
+    );
+  }
+
+  .nes-ui-pixel-border-2x {
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: calc($border-size * 2),
+      $border-color: 'color-white-absolute',
+      $border-inset-color: false
+    );
+  }
+
+
+  .nes-ui-pixel-border-2x-2 {
     @include pixel-borders( 
       $corner-size: 2,
       $border-size: calc($border-size * 2),

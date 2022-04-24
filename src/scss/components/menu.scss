@@ -14,7 +14,7 @@
     $border-inset-color: false
   );
 
-  @media (prefers-color-scheme: dark) {
+  &.dark-mode {
     background-color: var(--color-black); 
     @include pixel-borders(
       $corner-size: 0,

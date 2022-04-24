@@ -2,12 +2,6 @@ $icon-size-small: 16px;
 $icon-size-medium: 24px;
 $icon-size-large: 32px;
 
-$pixelicon-color: #fff;
-
-@media (prefers-color-scheme: dark) {
-  $pixelicon-color: #000;
-}
-
 .nes-ui-pixelicon-wrapper {
   display: block;
 }
@@ -24,10 +18,17 @@ $pixelicon-color: #fff;
     image-rendering: crisp-edges;
     background-size:cover;
     background-position: center; 
+  } 
 
-    @media (prefers-color-scheme: dark) {
+  & * {
+    // always white
+    filter: invert(1);
+  }
+   
+  &.nes-ui-is-inverted {
+    & * {
       filter: invert(1);
-    };
+    }
   }
 
   &.nes-ui-is-size-medium {
@@ -55,14 +56,15 @@ $pixelicon-color: #fff;
   }
 }
 
-// pixelart https://www.pixelartcss.com/
-// replace: rgba(255, 255, 255, 1)
-// by: $pixelicon-color
-@import 'icons/checkmark-24.scss';
-@import 'icons/arrow-up-16.scss';
-@import 'icons/close-8.scss';
-@import 'icons/sun.scss';
-@import 'icons/moon.scss';
-@import 'icons/checkmark.scss';
-@import 'icons/arrow-up.scss';
-@import 'icons/close.scss';
+.dark-mode {
+  .nes-ui-pixelicon {
+    & * {
+      filter: invert(1);
+    }
+    &.nes-ui-is-inverted {
+      & * {
+        filter: invert(0);
+      }
+    }
+  }
+} 

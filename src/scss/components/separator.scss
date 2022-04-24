@@ -4,7 +4,7 @@
   width: 4px;
   background-color: #aaa;
 
-  @media (prefers-color-scheme: dark) {
+  &.dark-mode {
     background-color: #444;
   }
   margin-left: 2px;
