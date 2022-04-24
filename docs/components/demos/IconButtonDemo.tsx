@@ -1,5 +1,6 @@
 import { Row, Container, IconButton, PixelIcon, Br, Text } from "../../dist";
 import emptyCallback from "../../function/emptyCallback";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const IconButtonDemo = () => (
     <Row>
@@ -37,6 +38,8 @@ export const IconButtonDemo = () => (
               <Text size='small'>Cancel</Text>
             </IconButton>
           </div>
+          
+          <SourceCodeButton path="/docs/components/demos/IconButtonDemo.tsx#L12" />
         </Container>
 
       </Row>

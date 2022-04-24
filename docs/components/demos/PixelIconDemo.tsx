@@ -6,6 +6,7 @@ import { FileUploader } from "react-drag-drop-files";
 import styles from '../../styles/Index.module.css';
 import { useEffect, useState } from "react";
 import { convertImageToSvg, getCssClassCode, getDownloadStream, SUPPORTED_IMAGE_FILE_TYPES, SvgImage, svgToBase64DataUrl } from "../../function/imageToSvg";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const PixelIconDemo = () => {  
         
@@ -60,6 +61,8 @@ export const PixelIconDemo = () => {
                     <A href="https://www.pixilart.com/kyr0/gallery" target={"_blank"}>kyr0 @ PixilArt.com</A>
                     Note that icons look most nostalgic when you draw them in 8x8 pixel raster, monochrome.
                 </Text>
+
+                <SourceCodeButton path="/docs/components/demos/PixelIconDemo.tsx#L43" />
             </Container>
 
             <Container title='Pixelart (PNG, JPG, ...) to SVG converter' >

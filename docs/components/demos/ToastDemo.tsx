@@ -2,6 +2,7 @@ import { Container, Toast, PixelIcon, Text } from "../../dist";
 
 // @ts-ignore
 import styles from '../../styles/Index.module.css';
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const ToastDemo = () => (
     <Container title='&lt;Toast bubblePostion="right"&gt;' alignTitle="center">
@@ -10,11 +11,12 @@ export const ToastDemo = () => (
         </Toast>
 
         <Toast id="foo" style={{ float: 'right' }} bubblePostion='right' cursor='pointer'>
-        <Text size="small" color='white'>
-            Okay, okay, I got it... 
-        </Text>
-        <PixelIcon name={styles.pixeliconMeowAnimated} size='small' style={{ marginLeft: 10 }} />
+            <Text size="small" color='white'>
+                Okay, okay, I got it... 
+            </Text>
+            <PixelIcon name={styles.pixeliconMeowAnimated} size='small' style={{ marginLeft: 10 }} />
         </Toast>
+        <SourceCodeButton path="/docs/components/demos/ToastDemo.tsx#L9" />
     </Container>
 )
 export default ToastDemo

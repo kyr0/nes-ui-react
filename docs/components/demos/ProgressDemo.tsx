@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Progress } from "../../dist";
 import useInterval from "../../hook/useInterval";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const ProgressDemo = () => {
 
@@ -23,6 +24,9 @@ export const ProgressDemo = () => {
             <Progress value="10" max="100" color='warning' />
             <Progress value="50" max="100" color='error' />
             <Progress value="50" max="100" color='pattern' />
+     
+            <SourceCodeButton style={{ bottom: -60, right: -4 }} path="/docs/components/demos/ProgressDemo.tsx#L21" />
+     
         </Container>
 
     )

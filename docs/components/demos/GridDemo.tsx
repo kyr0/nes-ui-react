@@ -1,4 +1,5 @@
 import { Heading, Row, Col, Container } from "../../dist";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const GridDemo = () => (
     <>
@@ -51,6 +52,9 @@ export const GridDemo = () => (
               &lt;Col type=&quot;1-of-4&quot;&gt;...&lt;/Col&gt;
             </Container>
           </Col>
+        </Row>
+        <Row style={{ position: 'relative' }}>
+          <SourceCodeButton style={{ right: 0, bottom: -30 }} path="/docs/components/demos/GridDemo.tsx#L8" />
         </Row>
 
     </>

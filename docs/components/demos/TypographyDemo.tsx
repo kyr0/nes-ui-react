@@ -1,8 +1,9 @@
 import { Heading, Container, Row, Col, Br, Text } from "../../dist";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const TypographyDemo = () => (
     <>
-        <Heading size='large' centered>&lt;Text&gt; and &lt;Heading&gt;</Heading>
+        <Heading size='large' centered>Typography</Heading>
 
         <Container title='&lt;Text&gt;' alignTitle="center">
           <Text>Typography is simple: There is text or headings. Every paragraph becomes a &lt;Text&gt;. A text can be centered, have a color and a size.</Text>
@@ -23,6 +24,7 @@ export const TypographyDemo = () => (
               <Text color="disabled">color=&quot;disabled&quot;</Text>
             </Col>
           </Row>
+          <SourceCodeButton path="/docs/components/demos/TypographyDemo.tsx#L13" />
         </Container>
 
         <Br size="medium" />
@@ -47,6 +49,7 @@ export const TypographyDemo = () => (
               <Heading dense color="disabled">color=&quot;disabled&quot;</Heading>
             </Col>
           </Row>
+          <SourceCodeButton path="/docs/components/demos/TypographyDemo.tsx#L38" />
         </Container>
     </>
 )

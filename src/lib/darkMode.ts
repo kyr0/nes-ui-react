@@ -1,7 +1,7 @@
 export const DARK_MODE_KEY = 'nes-ui-dark-mode';
 
-export const isDarkModeActive = () => typeof document !== 'undefined' && document.documentElement.classList.contains('dark-mode')
-    
+export const isDarkModeActive = () => typeof document !== 'undefined' && document.documentElement.classList.contains(DARK_MODE_KEY)
+
 export const setDarkModeActivation = (isDarkMode: boolean): void => {
     document.documentElement.classList.toggle(DARK_MODE_KEY, isDarkMode);
     localStorage.setItem(DARK_MODE_KEY, isDarkMode ? 'true' : 'false');

@@ -1,4 +1,5 @@
 import { Container, Row, Col, Input, Text } from "../../dist";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const InputDemo = () => (
     <Container title='&lt;Input color="error"&gt;' alignTitle='center'>
@@ -26,6 +27,7 @@ export const InputDemo = () => (
             </Row>
 
         </form>
+        <SourceCodeButton path="/docs/components/demos/InputDemo.tsx#L10" />
     </Container>
 )
 export default InputDemo

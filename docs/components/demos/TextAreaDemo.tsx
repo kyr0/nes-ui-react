@@ -1,4 +1,5 @@
 import { Container, TextArea, Row, Col } from "../../dist";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const TextAreaDemo = () => (
     <Container title='&lt;TextArea color="success" rows="3"&gt;' alignTitle="center">
@@ -18,6 +19,7 @@ c0ns3c737ur 4d1p15c1ng 3l1t3 31337!`} />
             <TextArea rows={3} name="textarea" color='error' value={`MISSION ACCOMPLISHED!\nALL YOUR BASE BELONG TO US!`} disabled />
         </Col>
         </Row>
+        <SourceCodeButton path="/docs/components/demos/TextAreaDemo.tsx#L11" />
     </Container>
 )
 export default TextAreaDemo

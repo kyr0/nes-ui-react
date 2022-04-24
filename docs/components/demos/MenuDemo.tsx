@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Text, Row, Heading, Br, Menu, IconButton, PixelIcon, Separator, Button } from "../../dist";
 import emptyCallback from "../../function/emptyCallback";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const MenuDemo = () => {
 
@@ -17,20 +18,24 @@ export const MenuDemo = () => {
             <Br size='small' />
 
             <Menu>
-            
-            <IconButton color="success" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-checkmark" size='small' />
-                <Text size='small'>Accept</Text>
-            </IconButton>
+                
+                <IconButton color="success" size="small" onClick={emptyCallback}>
+                    <PixelIcon name="pixelicon-checkmark" size='small' />
+                    <Text size='small'>Accept</Text>
+                </IconButton>
 
-            <Separator horizontal />
+                <Separator horizontal />
 
-            <IconButton color="error" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-close" size='small' />
-                <Text size='small'>Decline</Text>
-            </IconButton>
+                <IconButton color="error" size="small" onClick={emptyCallback}>
+                    <PixelIcon name="pixelicon-close" size='small' />
+                    <Text size='small'>Decline</Text>
+                </IconButton>
 
             </Menu>
+
+            <Row style={{ position: 'relative' }}>
+                <SourceCodeButton style={{ bottom: -50 }} path="/docs/components/demos/MenuDemo.tsx#L20" />
+            </Row>
 
             <Br size='small' />
 
@@ -39,25 +44,29 @@ export const MenuDemo = () => {
             <Button onClick={() => setShowMoreMenu(true)}>More...</Button>
 
             <Menu open={showMoreMenu} modal onClose={() => setShowMoreMenu(false)}>
-            
-            <IconButton color="success" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-checkmark" size='small' />
-                <Text size='small'>Accept</Text>
-            </IconButton>
+                
+                <IconButton color="success" size="small" onClick={emptyCallback}>
+                    <PixelIcon name="pixelicon-checkmark" size='small' />
+                    <Text size='small'>Accept</Text>
+                </IconButton>
 
-            <IconButton color="primary" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-checkmark" size='small' />
-                <Text size='small'>Accept</Text>
-            </IconButton>
+                <IconButton color="primary" size="small" onClick={emptyCallback}>
+                    <PixelIcon name="pixelicon-checkmark" size='small' />
+                    <Text size='small'>Accept</Text>
+                </IconButton>
 
-            <Separator horizontal />
+                <Separator horizontal />
 
-            <IconButton color="error" size="small" onClick={emptyCallback}>
-                <PixelIcon name="pixelicon-close" size='small' />
-                <Text size='small'>Decline</Text>
-            </IconButton>
+                <IconButton color="error" size="small" onClick={emptyCallback}>
+                    <PixelIcon name="pixelicon-close" size='small' />
+                    <Text size='small'>Decline</Text>
+                </IconButton>
 
             </Menu>
+
+            <Row style={{ position: 'relative' }}>
+                <SourceCodeButton style={{ bottom: -50 }} path="/docs/components/demos/MenuDemo.tsx#L46" />
+            </Row>
 
         </Row>
     )

@@ -1,4 +1,5 @@
-import { Heading, Hr, Text } from "../../dist";
+import { Heading, Hr, Row, Text } from "../../dist";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const HrDemo = () => (
     <>
@@ -9,6 +10,10 @@ export const HrDemo = () => (
         <Hr color="primary" height={1} />
         <Hr color="success" height={2} />
         <Hr />
+        
+        <Row style={{ position: 'relative' }}>
+            <SourceCodeButton style={{ bottom: -30 }} path="/docs/components/demos/HrDemo.tsx#L10" />
+        </Row>
     </>
 )
 export default HrDemo

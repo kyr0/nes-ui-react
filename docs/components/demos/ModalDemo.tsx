@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { Text, Row, Heading, Br, IconButton, PixelIcon, Modal, Header, Spacer, ModalContent, Footer } from "../../dist"
+import { SourceCodeButton } from "../SourceCodeButton"
 
 export const ModalDemo = () => {
 
   const [demoDialogOpen, setDemoDialogOpen] = useState(false)
 
     return (
+      <>
         <Row>
           <Heading size='large' centered>&lt;Modal&gt;&rsquo;s</Heading>
 
@@ -50,6 +52,11 @@ export const ModalDemo = () => {
             </Footer>
           </Modal>
         </Row>
+
+        <Row style={{ position: 'relative' }}>
+            <SourceCodeButton style={{ bottom: -20 }} path="/docs/components/demos/ModalDemo.tsx#L31" />
+        </Row>
+      </>
     )
 }
 export default ModalDemo

@@ -1,4 +1,5 @@
-import { Text, Heading, BlockText, Br, PixelBorder, Table, Colors, A, Badge } from "../../dist";
+import { Text, Heading, BlockText, Br, PixelBorder, Table, Colors, A, Badge, Row } from "../../dist";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const ColorPaletteDemo = () => (
     <>
@@ -109,7 +110,12 @@ export const ColorPaletteDemo = () => (
                     <td style={{ backgroundColor: Colors.color3F }}></td>
                 </tr>
             </tbody>
+
         </Table>
+
+        <Row style={{ position: 'relative' }}>
+            <SourceCodeButton path="/src/components/interface/Color.ts#L81" />
+        </Row>
 
         <Br />
 
@@ -151,6 +157,10 @@ export const ColorPaletteDemo = () => (
         <Badge backgroundColor={"success"} text="success" />
         <Badge backgroundColor={"warning"} text="warning" />
         <Badge backgroundColor={"error"} text="error" />
+
+        <Row style={{ position: 'relative' }}>
+            <SourceCodeButton style={{ bottom: -40 }} path="/docs/components/demos/ColorPaletteDemo.tsx#L155" />
+        </Row>
     </>
 )
 export default ColorPaletteDemo
