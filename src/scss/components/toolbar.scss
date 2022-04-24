@@ -9,7 +9,7 @@
   }
 }
  
-.dark-mode {
+.nes-ui-dark-mode {
   .nes-ui-toolbar-wrapper {
     &.nes-ui-has-rounded-corners {
         @include pixel-borders(
@@ -61,7 +61,7 @@
   }
 }
 
-.dark-mode {
+.nes-ui-dark-mode {
   .nes-ui-toolbar {
     background-color: darken($color-00, 10%);
     @include pixel-borders(

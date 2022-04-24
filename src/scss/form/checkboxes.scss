@@ -87,7 +87,7 @@ $checkbox-checked-focus: (
   }
 }
 
-.dark-mode {
+.nes-ui-dark-mode {
   .nes-ui-checkbox {
     
     $colors-checkbox-dark: ($color-white, map-get($default-colors, 'shadow'));

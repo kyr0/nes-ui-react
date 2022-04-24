@@ -64,7 +64,7 @@ $circle: (
   @include list-before('circle', $circle);
 }
 
-.dark-mode {
+.nes-ui-dark-mode {
 
   .nes-ui-list {
     $dark-colors: ($background-color, $base-color);

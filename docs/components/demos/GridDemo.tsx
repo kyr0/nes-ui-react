@@ -1,4 +1,4 @@
-import { Heading, Row, Col, Container, Br, Colors } from "../../dist";
+import { Heading, Row, Col, Container } from "../../dist";
 
 export const GridDemo = () => (
     <>

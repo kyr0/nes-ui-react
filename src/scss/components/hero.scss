@@ -12,7 +12,7 @@
   border-image-source: url(pixel-borders-image(2, $color-black-absolute));
 }
 
-.dark-mode {
+.nes-ui-dark-mode {
   .nes-ui-hero-dash {
     border-color: var(--color-white-absolute);
     border-image-source: url(pixel-borders-image(2, $color-white-absolute));
@@ -33,7 +33,7 @@
   border-image-source: url(pixel-borders-image(2, $color-black-absolute));
 }
 
-.dark-mode {
+.nes-ui-dark-mode {
   .nes-ui-hero-flower {
     border-color: var(--color-white-absolute);
     border-image-source: url(pixel-borders-image(2, $color-white-absolute));

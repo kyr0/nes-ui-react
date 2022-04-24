@@ -200,7 +200,7 @@ html.nes-ui {
     $border-inset-color: false
   );
   display: inline-block;
-  margin-right: 1em;
+  margin-right: 0;
 
   &.nes-ui-border-inverted {
     @include pixel-borders(
@@ -212,7 +212,11 @@ html.nes-ui {
   }
 }
 
-.dark-mode {
+.nes-ui-icon-button-wrapper {
+  margin-right: 1em;
+}
+
+.nes-ui-dark-mode {
   .nes-ui-button-wrapper,
   .nes-ui-icon-button-wrapper {
  

@@ -1,4 +1,4 @@
-import { Heading, Hr, Br, Text } from "../../dist";
+import { Heading, Hr, Text } from "../../dist";
 
 export const HrDemo = () => (
     <>

@@ -7,7 +7,7 @@ html.nes-ui {
     image-rendering: crisp-edges;
 
     &.invert {
-      &.dark-mode  {
+      &.nes-ui-dark-mode  {
           filter: invert(1);
       }
     }

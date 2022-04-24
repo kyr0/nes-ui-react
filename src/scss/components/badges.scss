@@ -121,7 +121,7 @@ $em: 0.75em;
   }
 } 
  
-.dark-mode {
+.nes-ui-dark-mode {
   .nes-ui-badge {
     $types: 'dark' $color-black-absolute $color-black-absolute,
       'primary' $base-color map-get($primary-colors, 'normal'),

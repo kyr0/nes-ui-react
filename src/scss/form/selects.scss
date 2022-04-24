@@ -87,7 +87,7 @@
     }
   }
 
-  
+
   &.nes-ui-is-none {
     select {
       @include pixel-borders(
@@ -111,7 +111,7 @@
   }
 }
  
-.dark-mode {
+.nes-ui-dark-mode {
   .nes-ui-select {
     select {
       color: var(--background-color);

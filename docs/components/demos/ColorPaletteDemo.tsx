@@ -1,4 +1,4 @@
-import { Text, Heading, BlockText, Br, PixelBorder, Table, Colors, A, Badge, ColorPaletteNames } from "../../dist";
+import { Text, Heading, BlockText, Br, PixelBorder, Table, Colors, A, Badge } from "../../dist";
 
 export const ColorPaletteDemo = () => (
     <>

@@ -30,7 +30,7 @@ html.nes-ui {
   } 
 
   // https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting'
-  &.dark-mode {
+  &.nes-ui-dark-mode {
     background-color: var(--color-black-absolute);
     color: var(--color-white-absolute);
 

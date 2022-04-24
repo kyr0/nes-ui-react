@@ -1,4 +1,5 @@
 import { Container, Badge, BadgeSplitted, Text } from "../../dist";
+import { SourceCodeButton } from "../SourceCodeButton";
 
 export const BadgeDmeo = () => (
     <>
@@ -8,6 +9,8 @@ export const BadgeDmeo = () => (
           <Badge backgroundColor="error" text="Error" color='#fff' />
           <Badge backgroundColor="warning" text="Warning" />
           <Badge backgroundColor="success" text="Success"  />
+
+          <SourceCodeButton path="/docs/components/demos/BadgeDemo.tsx#L6" />
         </Container>
 
         <Container title='&lt;BadgeSplitted&gt;'>
@@ -16,6 +19,8 @@ export const BadgeDmeo = () => (
           <BadgeSplitted textLeft='!!' backgroundColor="error" text="Oh!"  />
           <BadgeSplitted textLeft='??' backgroundColor="warning" text="Ha?" />
           <BadgeSplitted textLeft=':)' backgroundColor="success" text="Yay!" />
+
+          <SourceCodeButton path="/docs/components/demos/BadgeDemo.tsx#L16" />
         </Container>
 
     </>

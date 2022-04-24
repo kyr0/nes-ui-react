@@ -11,8 +11,8 @@ export interface IconButtonProps extends React.PropsWithChildren<any>, StyleProp
     onClick?: React.EventHandler<any>
 }
 
-export const IconButton = ({ style, children, disabled, color, onClick, id, size, borderInverted }: IconButtonProps) => (
-  <div style={style} className={`nes-ui-icon-button-wrapper ${borderInverted ? 'nes-ui-border-inverted' : ''}`}>
+export const IconButton = ({ style, children, disabled, color, onClick, id, size, borderInverted, className }: IconButtonProps) => (
+  <div style={style} className={`nes-ui-icon-button-wrapper ${borderInverted ? 'nes-ui-border-inverted' : ''} ${className ? className : ''}`}>
     <button id={id} className={`nes-ui-icon-btn nes-ui-btn-${color || 'normal'} is-${size || 'medium'} ${disabled && 'nes-ui-btn-disabled'}`} onClick={disabled ? () => {} : onClick}>
       {children}
     </button>

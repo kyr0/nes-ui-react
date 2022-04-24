@@ -1,11 +1,11 @@
-import { isDarkModeActive, Container, Row, PixelIcon, A, Text, List, Heading, TextArea, PixelBorder, Hr, Button, Colors } from "../../dist";
+import { isDarkModeActive, Container, Row, PixelIcon, A, Text, List, Heading, TextArea, Button, Colors } from "../../dist";
 
 import { FileUploader } from "react-drag-drop-files";
 
 // @ts-ignore
 import styles from '../../styles/Index.module.css';
 import { useEffect, useState } from "react";
-import { convertImageToSvg, getCssClassCode, getDownloadStream, SUPPORTED_IMAGE_FILE_TYPES, SvgImage, svgToBase64DataUrl } from "../lib/imageToSvg";
+import { convertImageToSvg, getCssClassCode, getDownloadStream, SUPPORTED_IMAGE_FILE_TYPES, SvgImage, svgToBase64DataUrl } from "../../function/imageToSvg";
 
 export const PixelIconDemo = () => {  
         

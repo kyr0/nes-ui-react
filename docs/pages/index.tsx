@@ -1,80 +1,65 @@
-import React, { useEffect } from 'react';
-import { Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer } from '../dist';
+import { useCallback, useEffect, useState } from 'react';
+import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer } from '../dist';
+import { BadgeDmeo } from '../components/demos/BadgeDemo';
+import { ButtonDemo } from '../components/demos/ButtonDemo';
+import { CheckboxDemo } from '../components/demos/CheckboxDemo';
+import { ColorPaletteDemo } from '../components/demos/ColorPaletteDemo';
+import { ContainerDemo } from '../components/demos/ContainerDemo';
+import { GridDemo } from '../components/demos/GridDemo';
+import { HeroDemo } from '../components/demos/HeroDemo';
+import { HrDemo } from '../components/demos/HrDemo';
+import { IconButtonDemo } from '../components/demos/IconButtonDemo';
+import { InputDemo } from '../components/demos/InputDemo';
+import { ListDemo } from '../components/demos/ListDemo';
+import { MenuDemo } from '../components/demos/MenuDemo';
+import { ModalDemo } from '../components/demos/ModalDemo';
+import { PixelatedImages } from '../components/demos/PixelatedImages';
+import { PixelBorderDemo } from '../components/demos/PixelBorderDemo';
+import { PixelIconDemo } from '../components/demos/PixelIconDemo';
+import { ProgressDemo } from '../components/demos/ProgressDemo';
+import { RadioDemo } from '../components/demos/RadioDemo';
+import { SelectDemo } from '../components/demos/SelectDemo';
+import { TableDemo } from '../components/demos/TableDemo';
+import { TextAreaDemo } from '../components/demos/TextAreaDemo';
+import { ToastDemo } from '../components/demos/ToastDemo';
+import { ToolbarDemo } from '../components/demos/ToolbarDemo';
+import { TypographyDemo } from '../components/demos/TypographyDemo';
 
 // @ts-ignore
 import styles from '../styles/Index.module.css';
-import { BadgeDmeo } from './components/BadgeDemo';
-import { ButtonDemo } from './components/ButtonDemo';
-import { CheckboxDemo } from './components/CheckboxDemo';
-import { ColorPaletteDemo } from './components/ColorPaletteDemo';
-import { ContainerDemo } from './components/ContainerDemo';
-import { GridDemo } from './components/GridDemo';
-import { HeroDemo } from './components/HeroDemo';
-import { HrDemo } from './components/HrDemo';
-import { IconButtonDemo } from './components/IconButtonDemo';
-import { InputDemo } from './components/InputDemo';
-import { ListDemo } from './components/ListDemo';
-import { MenuDemo } from './components/MenuDemo';
-import { ModalDemo } from './components/ModalDemo';
-import { PixelatedImages } from './components/PixelatedImages';
-import { PixelBorderDemo } from './components/PixelBorderDemo';
-import { PixelIconDemo } from './components/PixelIconDemo';
-import { ProgressDemo } from './components/ProgressDemo';
-import { RadioDemo } from './components/RadioDemo';
-import { SelectDemo } from './components/SelectDemo';
-import { TableDemo } from './components/TableDemo';
-import { TextAreaDemo } from './components/TextAreaDemo';
-import { ToastDemo } from './components/ToastDemo';
-import { ToolbarDemo } from './components/ToolbarDemo';
-import { TypographyDemo } from './components/TypographyDemo';
 
 const Home = (): JSX.Element => {
 
-  const [darkMode, setDarkMode] = React.useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const prefersDarkMode = !!window.matchMedia("(prefers-color-scheme: dark)");
-    const userDarkModeDecided = localStorage.getItem('dark-mode') !== null;
-    let userDarkModeSetting;
-
-    if (userDarkModeDecided) {
-      userDarkModeSetting = localStorage.getItem('dark-mode') === 'true';
-    } else {
-      userDarkModeSetting = prefersDarkMode;
-    }
-
+    const userDarkModeSetting = rememberDarkModeUserSetting();
     setDarkMode(userDarkModeSetting);
-
-    if (userDarkModeSetting) {
-      document.documentElement.classList.add("dark-mode");
-    }
+    setDarkModeActivation(userDarkModeSetting);
   }, []);
 
-  const toggleDarkMode = React.useCallback(() => {
+  const toggleDarkMode = useCallback(() => {
     setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark-mode", !darkMode);
-    localStorage.setItem('dark-mode', !darkMode ? 'true' : 'false');
+    setDarkModeActivation(!darkMode);
   }, [darkMode]);
 
-  // TODO: refactor styles to use classNames
+  // TODO: add source code buttons with links
   // TODO: include https://www.youtube.com/watch?v=1_BnF67v58M as hero or https://www.youtube.com/watch?v=pYFjUj80ZEA
   // TODO: demo canvas pixelized rendering
   return (
-    <main style={{marginLeft: 'auto', marginRight: 'auto', width: '85vw'}}>
+    <main className={styles.main}>
     
-      <Toolbar borderless style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 9999 }}>
+      <Toolbar borderless className={styles.headerToolbar}>
         <Spacer />
-        <PixelIcon inverted={false} name={"pixelicon-nes-ui-logo"} size='medium' style={{ marginRight: 10 }} />
+        <PixelIcon inverted={false} name={"pixelicon-nes-ui-logo"} size='medium' style={{ marginRight: 8 }} />
         <Heading>nes-ui-react</Heading>
         <Spacer />
         <IconButton onClick={toggleDarkMode} color="warning">
-          <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} inverted={darkMode} size='small' />
+          <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} inverted={false} size='small' />
         </IconButton>
       </Toolbar>
       
-      <IconButton borderInverted size="small" color="primary" 
-        style={{ zIndex: 9998, position: 'fixed', bottom: 20, right: 20 }} 
-        onClick={() => {window.scrollTo(0, 0)}}>
+      <IconButton borderInverted size="small" color="primary" className={styles.scrollToTop} onClick={() => window.scrollTo(0, 0)}>
         <PixelIcon size='small' name='pixelicon-arrow-up' />
       </IconButton>
       
@@ -88,22 +73,26 @@ const Home = (): JSX.Element => {
 
         <Text>Welcome back to 1986! This is NES UI for React, the most comprehensive anachronistic, retro UI component library for React JS.</Text>
 
-        <Text>This design system paints the web in 8 bits. Altough the framework can handle light mode, the dask mode feels definitely more like back in the days.</Text>
+        <Text>This design system paints the web in 8 bits. Altough the framework can handle light mode, the dark mode feels more like back in the days.</Text>
 
-        <Text>The library works great for games, websites and retro-apps (like ).</Text>
+        <Text>The library works great for games, websites and all kinds of retro web apps.</Text>
 
-        <Text>This is a fun project! We welcome every contributor :)</Text>
+        <Text>If you'd like to see a feature added or bug fixed, please consider becoming a contributor. You're welcome here! :)</Text>
 
         <Br />
         
         <Text>Features:</Text>
         <List size="small" styleType='circle'>
-          <li>Automatic dark and light mode</li>
-          <li>Only scalable techniques used (CSS border-shadow, SVG, SCSS bitsets)</li>
-          <li>Simple grid layout (2, 3 and 4 columns supported)</li>
-          <li>Pixel borders, component-independent as helper CSS class</li>
-          <li>Permissively licensed</li>
-          <li>Based on original NES.css. Now in B3RS3RK3R mode!</li>
+          <li>Refactored and bugfixed the whole NES.css codebase, now featuring CSS custom properties</li>
+          <li>Written in modern Sass and TypeScript</li>
+          <li>Refactored dark mode support with automatic theme default and app-wide switching</li>
+          <li>Updated, standard NTSC color palette; all colors exported to TypeScript</li>
+          <li>Only vector-scalable techniques are used (CSS border-shadow, SVG and Sass bitsets)</li>
+          <li>Added a simple grid layout (2, 3 and 4 columns supported)</li>
+          <li>Helper CSS classes like color inversion, pixel borders etc.</li>
+          <li>Updated cursors and introduced the pixelated scrollbar</li>
+          <li>Many new components added like: Hero, Toolbar components, Modal components, Menu, new input fields</li>
+          <li>MIT licensed</li>
         </List>
 
         <Br size='large' />
