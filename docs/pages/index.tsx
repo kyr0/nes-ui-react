@@ -31,7 +31,7 @@ import { SourceCodeButton } from '../components/SourceCodeButton';
 
 const Home = (): JSX.Element => {
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(!!window.matchMedia("(prefers-color-scheme: dark)"));
 
   useEffect(() => {
     const userDarkModeSetting = rememberDarkModeUserSetting();
