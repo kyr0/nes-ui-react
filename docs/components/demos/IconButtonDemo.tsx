@@ -8,7 +8,7 @@ export const IconButtonDemo = () => (
 
           <Text>Buttons that only consist of icons are used in Toolbars and Menus. For a perfect shape, the PixelIcon size needs to match the desired button size (32px, 24px or 16px):</Text>
 
-          <div style={{display: 'flex'}}>
+          <div>
             <IconButton color="success" size="large" onClick={emptyCallback}>
               <PixelIcon name="pixelicon-checkmark" size='large' />
             </IconButton>
