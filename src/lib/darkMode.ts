@@ -4,12 +4,17 @@ export const isDarkModeActive = () => typeof document !== 'undefined' && documen
 
 export const setDarkModeActivation = (isDarkMode: boolean): void => {
     document.documentElement.classList.toggle(DARK_MODE_KEY, isDarkMode);
-    localStorage.setItem(DARK_MODE_KEY, isDarkMode ? 'true' : 'false');
+    try {
+      localStorage.setItem(DARK_MODE_KEY, isDarkMode ? 'true' : 'false');
+    } catch (e) {}
 }
 
 export const rememberDarkModeUserSetting = (): boolean => {
   const prefersDarkMode = !!window.matchMedia("(prefers-color-scheme: dark)");
-  const userDarkModeDecided = localStorage.getItem(DARK_MODE_KEY) !== null;
+  let userDarkModeDecided = false;
+  try {
+    userDarkModeDecided = localStorage.getItem(DARK_MODE_KEY) !== null;
+  } catch (e) {}
   let userDarkModeSetting = false;
 
   if (userDarkModeDecided) {

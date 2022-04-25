@@ -1,12 +1,13 @@
-import { StyleProps } from "./interface/StyleProps";
-
-export interface ToastProps extends StyleProps, React.PropsWithChildren<any> {
+import { ButtonHTMLAttributes } from "react";
+import { skipProps } from "../lib/skipProps";
+export interface ToastProps extends ButtonHTMLAttributes<any> {
     bubblePostion?: 'left' | 'right'
-    cursor?: 'pointer' | 'default'
 }
 
-export const Toast = ({ className, bubblePostion, cursor, children, style }: ToastProps) => (
-    <div style={style} className={`nes-ui-toast nes-ui-from-${bubblePostion || 'left'} ${cursor || ''} ${className || ''}`}>
-        {children}
-    </div>
+export const ToastCustomProps = 'bubblePostion'
+
+export const Toast = (props: ToastProps) => (
+    <button {...skipProps(props, 'bubblePostion')} className={`nes-ui-toast nes-ui-from-${props.bubblePostion || 'left'} ${props.onClick ? 'nes-ui-clickable' : ''} ${props.className ? props.className : ''}`}>
+        {props.children}
+    </button> 
 )

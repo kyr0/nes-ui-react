@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer, A } from '../dist';
+import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer, A, Toast } from '../dist';
 import { BadgeDmeo } from '../components/demos/BadgeDemo';
 import { ButtonDemo } from '../components/demos/ButtonDemo';
 import { CheckboxDemo } from '../components/demos/CheckboxDemo';
@@ -43,20 +43,17 @@ const Home = (): JSX.Element => {
     setDarkModeActivation(!darkMode);
   }, [darkMode]);
 
-  // TODO: add source code buttons with links
   // TODO: include https://www.youtube.com/watch?v=1_BnF67v58M as hero or https://www.youtube.com/watch?v=pYFjUj80ZEA
   // TODO: demo canvas pixelized rendering
   return (
     <main className={styles.main}>
+
     
       <Toolbar borderless className={styles.headerToolbar}>
         <Spacer />
         <PixelIcon inverted={false} name={"pixelicon-nes-ui-logo"} size='medium' style={{ marginRight: 8 }} />
         <Heading>nes-ui-react</Heading>
         <Spacer />
-        <IconButton onClick={toggleDarkMode} color="warning">
-          <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} inverted={false} size='small' />
-        </IconButton>
       </Toolbar>
       
       <IconButton borderInverted size="small" color="primary" className={styles.scrollToTop} onClick={() => window.scrollTo(0, 0)}>
@@ -65,39 +62,56 @@ const Home = (): JSX.Element => {
       
       <Row style={{ marginTop: '2em' }}>
         
-        <Br />
+        <Br size='large'/>
 
-        <Heading size='xlarge' centered>kyr0/nes-ui-react</Heading>
+          <IconButton style={{ float: 'right', marginTop: -8, marginRight: -12 }} onClick={toggleDarkMode} color="warning">
+            <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} inverted={false} size='medium' />
+          </IconButton>
 
-        <Br size='medium'/>
+        <Text>
+          nes-ui-react is the most comprehensive retro UI library for React JS. 
+          It is based on <A href="https://nostalgic-css.github.io/NES.css/" target={"_blank"}>NES.css</A>,
+          but refactored and bug-fixed.
+        </Text>
 
-        <Text>Welcome back to 1986! This is NES UI for React, the most comprehensive anachronistic, retro UI component library for React JS.</Text>
 
-        <Text>This design system paints the web in 8 bits. Altough the framework can handle light mode, the dark mode feels more like back in the days.</Text>
+        <Toast className={styles.forkOnGithub} onClick={() => window.open('https://github.com/kyr0/nes-ui-react', '_blank')}>
+          <Text color="white">
+            Fork me <br />on GitHub!
+          </Text>
+          <div className={styles.octocatIcon} />
+        </Toast>
 
-        <Text>The library works great for games, websites and all kinds of retro web apps.</Text>
-
-        <Text>If you'd like to see a feature added or bug fixed, please consider becoming a contributor. You're welcome here! :)</Text>
-
-        <Br />
-        
         <Text>Features:</Text>
         <List size="small" styleType='circle'>
-          <li>Refactored and bugfixed the whole NES.css codebase, now featuring CSS custom properties</li>
-          <li>Written in modern Sass and TypeScript</li>
-          <li>Refactored dark mode support with automatic theme default and app-wide switching</li>
-          <li>Updated, standard NTSC color palette; all colors exported to TypeScript</li>
-          <li>Only vector-scalable techniques are used (CSS border-shadow, SVG and Sass bitsets)</li>
-          <li>Added a simple grid layout (2, 3 and 4 columns supported)</li>
-          <li>Helper CSS classes like color inversion, pixel borders etc.</li>
-          <li>Updated cursors and introduced the pixelated scrollbar</li>
-          <li>Many new components added like: Hero, Toolbar components, Modal components, Menu, new input fields</li>
+          <li>Forked from NES.css, fully refactored</li>
+          <li>Modern Sass and TypeScript</li>
+          <li>Dark and light mode</li>
+          <li>NTSC color palette</li>
+          <li>Simple grid layout (2, 3 and 4 columns)</li>
+          <li>New styles and custom decoration</li>
+          <li>Many new components!</li>
           <li>MIT licensed</li>
         </List>
+        <Br />
 
-        <Br size='large' />
+        <Text>If you'd like to see more features added or bug fixed, please consider becoming a contributor. You're welcome! :)</Text>
 
-        <Hr color="disabled" height={2} />
+        <Heading size='medium' centered>Installation</Heading>
+
+        <Text>Simply run:</Text>
+        <Text color='primary'>&nbsp;&nbsp;yarn add nes-ui-react</Text>
+        <Text color='white'>or:</Text>
+        <Text color='success'>&nbsp;&nbsp;npm install nes-ui-react</Text>
+
+        <Heading size='medium' centered>Usage</Heading>
+
+        <iframe src={`https://codesandbox.io/embed/usage-forked-r5yudo?autoresize=1&fontsize=14&theme=${darkMode ? 'dark' : 'light'}`}
+          style={{ border: 0, width: '100%', height: 300 }}
+          title="Usage (forked)"
+          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+        ></iframe>
 
         <Br size='large' />
 

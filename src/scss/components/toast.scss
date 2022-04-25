@@ -51,6 +51,14 @@
     content: '';
   }
 
+  &.nes-ui-clickable {
+    cursor: var(--cursor-click-url), pointer;
+  }
+
+  &:not(.nes-ui-clickable) {  
+    cursor: var(--cursor-url), default;
+  }
+
   &.nes-ui-from-left,
   &.nes-ui-from-right {
     &::before,

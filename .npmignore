@@ -8,3 +8,5 @@ tsconfig.types.json
 yarn.lock
 build.ts
 dist/tsconfig.tsbuildinfo
+.github
+runOnChanged.ts
