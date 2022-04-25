@@ -30,7 +30,7 @@
     "watch": "ts-node runOnChanged.ts",
     "predeploy": "yarn build && yarn build:docs",
     "deploy": "npm publish",
-    "prebuild:docs": "rimraf docs/out",
+    "prebuild:docs": "rimraf docs/out && yarn build",
     "build:docs": "CI=true yarn --cwd docs build",
     "postbuild:docs": "CI=true yarn --cwd docs export"
   },
