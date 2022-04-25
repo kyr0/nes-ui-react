@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A design system that paints the web in 8 bits.",
   "keywords": [
     "NES",
@@ -28,10 +28,11 @@
     "build": "ts-node build.ts",
     "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs",
     "watch": "ts-node runOnChanged.ts",
+    "predeploy": "yarn build && yarn build:docs",
     "deploy": "npm publish",
     "prebuild:docs": "rimraf docs/out",
-    "build:docs": "yarn build",
-    "postbuild:docs": "CI=true yarn --cwd docs build && CI=true yarn --cwd docs export"
+    "build:docs": "CI=true yarn --cwd docs build",
+    "postbuild:docs": "CI=true yarn --cwd docs export"
   },
   "repository": {
     "type": "git",

@@ -27,6 +27,7 @@ import { TypographyDemo } from '../components/demos/TypographyDemo';
 
 // @ts-ignore
 import styles from '../styles/Index.module.css';
+import { SourceCodeButton } from '../components/SourceCodeButton';
 
 const Home = (): JSX.Element => {
 
@@ -110,12 +111,17 @@ const Home = (): JSX.Element => {
 
         <Heading size='medium' centered>Usage</Heading>
 
-        <iframe src={`https://codesandbox.io/embed/usage-forked-r5yudo?autoresize=1&fontsize=14&theme=${darkMode ? 'dark' : 'light'}`}
-          style={{ border: 0, width: '100%', height: 300 }}
+        <iframe src={`https://codesandbox.io/embed/nes-ui-react-usage-r5yudo?autoresize=1&fontsize=14&theme=${darkMode ? 'dark' : 'light'}`}
+          style={{ border: 0, width: '100%', height: 400 }}
           title="Usage (forked)"
           allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
           sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
         ></iframe>
+
+        <Br />
+
+        <Text>Just click on the following buttons to find the exact demo code:</Text>
+         <SourceCodeButton style={{ position: 'relative' }} path="/docs/pages/index.tsx#L124"/>
 
         <Br size='large' />
 
