@@ -1,4 +1,4 @@
-import { isDarkModeActive, Container, Row, PixelIcon, A, Text, List, Heading, TextArea, Button, Colors } from "../../dist";
+import { isDarkModeActive, Container, Row, PixelIcon, A, Text, List, Heading, TextArea, Button, Colors, IconButton } from "../../dist";
 
 import { FileUploader } from "react-drag-drop-files";
 
@@ -77,21 +77,27 @@ export const PixelIconDemo = () => {
                         <Heading size="medium" style={{ marginTop: 20 }} dense>SVG</Heading>
                         <TextArea  color="success" style={{ backgroundColor: '#000', marginBottom: 25 }} rows={6} value={svgImage.svg} />
                         
-                        <img className={darkMode ? 'invert' : ''} style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
-
-                        <img className={darkMode ? 'invert' : ''} style={{ maxWidth: '80vw', marginRight: 20 }} src={svgDataUrl} width={svgImage.width*2} height={svgImage.height*2} />
-
-                        <img className={darkMode ? 'invert' : ''} style={{ maxWidth: '80vw' }} src={svgDataUrl} width={svgImage.width*4} height={svgImage.height*4} />
+                        <img className={darkMode ? 'nes-ui-is-inverted' : ''} style={{ maxWidth: '100%', marginRight: 20 }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
                     </>
                 )}
 
-                {cssClassCode && (
+                {cssClassCode && svgImage && (
                     <>
                         <Heading size="small" style={{ marginTop: 20 }} dense>&lt;PixelIcon&gt; CSS code</Heading>
                         <TextArea color="warning" style={{ backgroundColor: '#000' }} rows={6} value={cssClassCode} />
                     
                         <A href={getDownloadStream(cssClassCode)} dense download={`${svgImage.cssClassName}.css`} transparent>
-                            <Button color="primary">Download: {svgImage.cssClassName}.css</Button>
+                            <IconButton color="primary">
+                                <PixelIcon size="small" name="pixelicon-arrow-down" />
+                                <Text size="small">{svgImage.cssClassName}.css</Text>
+                            </IconButton>
+                        </A>
+
+                        <A href={getDownloadStream(svgImage.svg)} dense download={`${svgImage.cssClassName}.svg`} transparent>
+                            <IconButton color="primary">
+                                <PixelIcon size="small" name="pixelicon-arrow-down" />
+                                <Text size="small">{svgImage.cssClassName}.svg</Text>
+                            </IconButton>
                         </A>
                     </>
                 )}

@@ -1,19 +1,28 @@
-import { NamedColor } from "./interface/Color";
-import { IdProps } from "./interface/IdProps";
-import { StyleProps } from "./interface/StyleProps";
+import { ButtonHTMLAttributes } from "react";
+import { getColorAsHexOrByName, NamedColor } from "./interface/Color";
+import { skipProps } from "../lib/skipProps"
 
-export interface ButtonProps extends React.PropsWithChildren<any>, StyleProps, IdProps {
-    disabled?: boolean
+export interface ButtonProps extends ButtonHTMLAttributes<any> {
     color?: NamedColor
+    fontColor?: NamedColor | string
     size?: 'medium' | 'small'
     borderInverted?: boolean
-    onClick?: React.EventHandler<any>
 }
 
-export const Button = ({ style, children, disabled, color, onClick, id, size, borderInverted, className }: ButtonProps) => (
-  <div style={style} className={`nes-ui-button-wrapper ${borderInverted ? 'nes-ui-border-inverted' : ''} ${className ? className : ''}`}>
-    <button id={id} className={`nes-ui-btn nes-ui-btn-${color || 'normal'} nes-ui-is-size-${size || 'medium'} ${disabled && 'nes-ui-btn-disabled'}`} onClick={disabled ? () => {} : onClick}>
-      {children}
+const ButtonCustomProps = ['fontColor', 'borderInverted', 'size', 'color']
+
+export const Button = (props: ButtonProps) => (
+  <div style={{ 
+      ...props.style, 
+      color: getColorAsHexOrByName(props.fontColor || 'inherit')
+      }} 
+      className={`nes-ui-button-wrapper ${props.borderInverted ? 'nes-ui-border-inverted' : ''} ${props.className ? props.className : ''}`}>
+
+    <button {...skipProps(props, ...ButtonCustomProps, 'style')} 
+      className={`nes-ui-btn nes-ui-btn-${props.color || 'normal'} nes-ui-is-size-${props.size || 'medium'} ${props.disabled && 'nes-ui-btn-disabled'}`} 
+      onClick={props.disabled ? () => {} : props.onClick}>
+      {props.children}
     </button>
+     
   </div> 
 )

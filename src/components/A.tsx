@@ -1,14 +1,11 @@
-import { IdProps } from "./interface/IdProps";
-import { StyleProps } from "./interface/StyleProps";
+import { AnchorHTMLAttributes } from "react";
 
-export interface AProps extends StyleProps, IdProps, React.PropsWithChildren<any> {
-    href?: string;
-    target?: string;
-    rel?: string;
-    download?: string;
+export interface AProps extends AnchorHTMLAttributes<any> {
     transparent?: boolean;
     dense?: boolean;
 }
 
-export const A = ({ id, style, className, href, target, rel, children, download, transparent, dense }: AProps) => 
-    <a id={id} className={`nes-ui-anchor ${className || ''} ${transparent && 'nes-ui-is-transparent'} ${dense && 'nes-ui-is-dense'}`} download={download} href={href} ref={rel} target={target}  style={style}>{children}</a>
+export const A = (props: AProps) => 
+    <a {...props} className={`nes-ui-anchor ${props.className || ''} ${props.transparent && 'nes-ui-is-transparent'} ${props.dense && 'nes-ui-is-dense'}`}>
+        {props.children}
+    </a>

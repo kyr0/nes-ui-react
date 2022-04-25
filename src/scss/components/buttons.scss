@@ -1,12 +1,12 @@
 .nes-ui-button-wrapper,
 .nes-ui-icon-button-wrapper {
-  height: fit-content;
+  height: auto;
   @include pixel-borders(
     $corner-size: 1,
     $border-size: $border-size,
     $border-color: 'color-black-absolute',
     $border-inset-color: false
-  );
+  ); 
   display: flex;
   margin-right: 1em;
 

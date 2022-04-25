@@ -47,6 +47,22 @@
       $border-inset-color: false
     );
   }
+
+  tbody,
+  thead:last-child {
+    tr:last-child {
+      th,
+      td {
+        
+        border-bottom-width: 0;
+
+        &:first-child::after,
+        &:last-child::before {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .nes-ui-dark-mode {

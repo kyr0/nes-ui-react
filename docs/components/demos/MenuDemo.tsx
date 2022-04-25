@@ -41,7 +41,7 @@ export const MenuDemo = () => {
 
             <Heading size="medium" centered>Dropdown menu</Heading>
 
-            <Button onClick={() => setShowMoreMenu(true)}>More...</Button>
+            <Button borderInverted color="warning" fontColor="black" onClick={() => setShowMoreMenu(true)}>More...</Button>
 
             <Menu open={showMoreMenu} modal onClose={() => setShowMoreMenu(false)}>
                 

@@ -1,6 +1,8 @@
 $grid-width: 100em !default;
-$gutter-vertical: 2em !default;
-$gutter-horizontal: 2em !default;
+$gutter-vertical: 8px !default;
+$gutter-horizontal: 8px !default;
+$mobile-breakpoint: 450px !default;
+$tablet-breakpoint: 768px !default;
 
 .nes-ui-row {
   max-width: $grid-width;
@@ -25,32 +27,55 @@ $gutter-horizontal: 2em !default;
   }
 
   .nes-ui-col-1-of-2 {
+    word-break: break-all;
     width: calc(((100% - #{$gutter-horizontal}) / 2));
   }
 
   .nes-ui-col-1-of-3 {
+    word-break: break-all;
     width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
   }
 
   .nes-ui-col-2-of-3 {
+    word-break: break-all;
     width: calc(
       2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
     );
   }
 
   .nes-ui-col-1-of-4 {
+    word-break: break-all;
     width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
   }
 
   .nes-ui-col-2-of-4 {
+    word-break: break-all;
     width: calc(
       2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal}
     );
   }
 
   .nes-ui-col-3-of-4 {
+    word-break: break-all; 
     width: calc(
       3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
     );
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    [class^='nes-ui-col-'] {
+      clear: both;
+      width: 100%;
+
+    }
+  }
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    .nes-ui-col-1-of-4,
+    .nes-ui-col-2-of-4,
+    .nes-ui-col-3-of-4 {
+      clear: both;
+      width: 100%;
+    }
   }
 }

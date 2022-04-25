@@ -1,7 +1,4 @@
-import { A, Container, Heading, PixelIcon, Text } from "../../dist";
-
-// @ts-ignore
-import styles from '../../styles/Index.module.css';
+import { A, Br, Container, Heading, PixelIcon, Text } from "../../dist";
 import { SourceCodeButton } from "../SourceCodeButton";
 
 export const PixelatedImages = () => (
@@ -12,7 +9,9 @@ export const PixelatedImages = () => (
             If you're using Pixilart, the NES color palette has already been created: <A target="_blank" href="https://www.pixilart.com/palettes/nes-52668">NES Color Palette</A>.
         </Text>
 
-        <img alt="pixelated cursor icon" src="assets/cat_and_person.gif" width={400} height={400} />
+        <img alt="pixelated cursor icon" src="assets/cat_and_person.gif" width={"50%"} />
+        <Br />
+        <A href="https://www.pixilart.com/electroslag" target="_blank">created by @electroslag</A>
 
         <Heading>Scaling imagex 2x with: .nes-ui-scale-2x</Heading>
 
@@ -21,7 +20,15 @@ export const PixelatedImages = () => (
                 <PixelIcon inverted={false} name={"pixelicon-nes-ui-logo"} size='small' style={{ marginRight: 5 }} />
             </div>
         </div>
-        
+
+        <Heading>Inverting image colors with: .nes-ui-is-inverted </Heading>
+
+        <Text>The color of any element can be inverted using the CSS helper class .nes-ui-is-inverted:</Text>
+
+        <img className="nes-ui-is-inverted" alt="pixelated cursor icon" src="assets/cat_and_person.gif" width="50%" />
+        <Br />
+        <A href="https://www.pixilart.com/electroslag" target="_blank">created by @electroslag</A>
+
         <SourceCodeButton path="/docs/components/demos/PixelatedImages.tsx#L15" />
     </Container>
 )
