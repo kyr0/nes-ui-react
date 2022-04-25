@@ -23,7 +23,8 @@ class MyDocument extends Document {
     return (
       <Html className='nes-ui'>
         <Head>
-          <meta name="description" content="A design system that paints the web in 8 bits." />
+          <title>nes-ui-react</title>
+          <meta name="description" content="A React component library and design system that paints the web in 8 bits." />
           <link rel="icon" href="favicon.png" />
           <link
             href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=additional"
