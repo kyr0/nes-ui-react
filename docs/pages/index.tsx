@@ -43,7 +43,6 @@ const Home = (): JSX.Element => {
     setDarkModeActivation(!darkMode);
   }, [darkMode]);
 
-  // TODO: include https://www.youtube.com/watch?v=1_BnF67v58M as hero or https://www.youtube.com/watch?v=pYFjUj80ZEA
   // TODO: demo canvas pixelized rendering
   return (
     <main className={styles.main}>
@@ -103,6 +102,11 @@ const Home = (): JSX.Element => {
         <Text color='primary'>&nbsp;&nbsp;yarn add nes-ui-react</Text>
         <Text color='white'>or:</Text>
         <Text color='success'>&nbsp;&nbsp;npm install nes-ui-react</Text>
+
+        <Br />
+        <A transparent href="https://www.npmjs.com/package/nes-ui-react" target={"_blank"}>
+          <img alt="npm" src="https://img.shields.io/npm/v/nes-ui-react?style=for-the-badge" />
+        </A>
 
         <Heading size='medium' centered>Usage</Heading>
 

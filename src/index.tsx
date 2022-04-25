@@ -1,3 +1,5 @@
+import { rememberDarkModeUserSetting, setDarkModeActivation } from './lib/darkMode';
+
 export * from './components/A';
 export * from './components/Badge';
 export * from './components/BlockText';
@@ -35,3 +37,12 @@ export * from './components/interface/Color';
 export * from './components/interface/PixelIconName';
 export * from './components/interface/OnChangeHandler';
 export * from './lib/darkMode';
+
+if (typeof document !== 'undefined') {
+  
+  // set nes-ui class
+  document.documentElement.classList.toggle('nes-ui', true);
+
+  // remember dark mode and set accordingly
+  setDarkModeActivation(rememberDarkModeUserSetting())
+}

@@ -10,15 +10,20 @@ $cursor-click-url: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCA
 @import 'components/_index.scss';
 @import 'form/_index.scss';
 
-// TODO: dark mode support 
 
 html.nes-ui {
-   padding: 0;
-    margin: 0;
-    font-family: 'Press Start 2P', monospace;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
-    line-height: 1.5;
+
+  font-size: 0.75rem;
+  padding: 0;
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.5;
+
+  * {
+    font-size: 0.75rem;
+  }
 
   body {
     padding: 0;

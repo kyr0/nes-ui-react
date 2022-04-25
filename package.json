@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A design system that paints the web in 8 bits.",
   "keywords": [
     "NES",
@@ -21,9 +21,10 @@
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
+  "style": "./dist/nes-ui.css",
   "scripts": {
     "clean": "rimraf dist && rimraf docs/dist",
-    "prebuild": "yarn clean && sass src/scss/nes-ui.scss:dist/nes-ui.css",
+    "prebuild": "yarn clean && sass src/scss/nes-ui.scss:dist/nes-ui.debug.css",
     "build": "ts-node build.ts",
     "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs",
     "watch": "ts-node runOnChanged.ts",

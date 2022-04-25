@@ -10,7 +10,7 @@ export const ToastDemo = () => (
             <Text>Toasts can be used to inform the user about context information. They are great for tutorials and story-telling.</Text>
         </Toast>
 
-        <Toast id="foo" style={{ float: 'right' }} bubblePostion='right' cursor='pointer'>
+        <Toast id="foo" style={{ float: 'right' }} bubblePostion='right'>
             <Text size="small" color='white'>
                 Okay, okay, I got it... 
             </Text>
