@@ -113,7 +113,7 @@ const Home = (): JSX.Element => {
 
         <iframe src={`https://codesandbox.io/embed/nes-ui-react-usage-r5yudo?autoresize=1&fontsize=14&theme=${darkMode ? 'dark' : 'light'}`}
           style={{ border: 0, width: '100%', height: 400 }}
-          title="Usage (forked)"
+          title="nes-ui-react usage demo"
           allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
           sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
         ></iframe>
