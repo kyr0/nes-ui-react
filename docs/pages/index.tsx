@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer } from '../dist';
+import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer, A } from '../dist';
 import { BadgeDmeo } from '../components/demos/BadgeDemo';
 import { ButtonDemo } from '../components/demos/ButtonDemo';
 import { CheckboxDemo } from '../components/demos/CheckboxDemo';
@@ -101,6 +101,7 @@ const Home = (): JSX.Element => {
 
         <Br size='large' />
 
+        <A name="color-palette-demo" />
         <ColorPaletteDemo />
 
         <Br size='large' />
@@ -112,26 +113,32 @@ const Home = (): JSX.Element => {
 
         <Br size='large' />
 
+        <A name="hero-demo" />
         <HeroDemo />
 
         <Br size='large' />
 
+        <A name="hr-demo" />
         <HrDemo />
 
         <Br size='large' />
 
+        <A name="container-demo" />
         <ContainerDemo />   
 
         <Br size='medium' />     
 
+        <A name="grid-demo" />
         <GridDemo />
 
         <Br size="large" />
 
+        <A name="typography-demo" />
         <TypographyDemo />        
         
         <Br size="large" />
 
+        <A name="badge-demo" />
         <BadgeDmeo />
 
         <Br size="large" />
@@ -139,17 +146,21 @@ const Home = (): JSX.Element => {
       </Row>
         
       <Row>
+        <A name="pixelicon-demo" />
         <PixelIconDemo />
       </Row>
 
       <Row>
+        <A name="pixelated-images-demo" />
         <PixelatedImages />
       </Row>
 
       <Br size="large" />
 
+      <A name="button-demo" />
       <ButtonDemo />
 
+      <A name="iconbutton-demo" />
       <IconButtonDemo />
 
       <Br size="large" />
@@ -157,10 +168,12 @@ const Home = (): JSX.Element => {
       <Row>
 
         <Col type='1-of-2'>
+          <A name="radio-demo" />
           <RadioDemo />
         </Col>
 
         <Col type='1-of-2'>
+          <A name="checkbox-demo" />
           <CheckboxDemo />
         </Col>
 
@@ -170,46 +183,57 @@ const Home = (): JSX.Element => {
 
       <Row>
        
+        <A name="input-demo" />
         <InputDemo />
 
         <Br size="large" />
 
+        <A name="textarea-demo" />
         <TextAreaDemo />
 
         <Br size="large" />
 
+        <A name="toast-demo" />
         <ToastDemo />
 
         <Br size="large" />
 
+        <A name="select-demo" />
         <SelectDemo />
 
         <Br size="large" />
 
+        <A name="list-demo" />
         <ListDemo />
 
         <Br size="large" />
         
+        <A name="table-demo" />
         <TableDemo />
 
         <Br size="large" />
 
+        <A name="progress-demo" />
         <ProgressDemo />
 
         <Br size='large' />
 
+        <A name="pixelborder-demo" />
         <PixelBorderDemo />
 
         <Br size='large' />
 
+        <A name="toolbar-demo" />
         <ToolbarDemo />
 
         <Br size='large' />
 
+        <A name="menu-demo" />
         <MenuDemo />
 
         <Br size='large' />
 
+        <A name="modal-demo" />
         <ModalDemo />
 
         <Br size='large' />
