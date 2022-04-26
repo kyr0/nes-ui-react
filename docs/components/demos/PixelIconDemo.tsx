@@ -77,7 +77,7 @@ export const PixelIconDemo = () => {
                         <Heading size="medium" style={{ marginTop: 20 }} dense>SVG</Heading>
                         <TextArea  color="success" style={{ backgroundColor: '#000', marginBottom: 25 }} rows={6} value={svgImage.svg} />
                         
-                        <img className={darkMode ? 'nes-ui-is-inverted' : ''} style={{ maxWidth: '100%', marginRight: 20 }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
+                        <img style={{ maxWidth: '100%', marginRight: 20 }} src={svgDataUrl} width={svgImage.width} height={svgImage.height} />
                     </>
                 )}
 
