@@ -9,9 +9,9 @@ export const PixelatedImages = () => (
             If you're using Pixilart, the NES color palette has already been created: <A target="_blank" href="https://www.pixilart.com/palettes/nes-52668">NES Color Palette</A>.
         </Text>
 
-        <img alt="pixelated cursor icon" src="assets/cat_and_person.gif" width={"50%"} />
+        <img alt="pixelated cursor icon" src="https://art.pixilart.com/sr240aba1a82f28.png" width={"50%"} />
         <Br />
-        <A href="https://www.pixilart.com/electroslag" target="_blank">created by @electroslag</A>
+        <A href="https://www.pixilart.com/yowack" target="_blank">created by @yowack</A>
 
         <Heading>Scaling imagex 2x with: .nes-ui-scale-2x</Heading>
 
@@ -25,9 +25,9 @@ export const PixelatedImages = () => (
 
         <Text>The color of any element can be inverted using the CSS helper class .nes-ui-is-inverted:</Text>
 
-        <img className="nes-ui-is-inverted" alt="pixelated cursor icon" src="assets/cat_and_person.gif" width="50%" />
+        <img className="nes-ui-is-inverted" alt="pixelated cursor icon" src="https://art.pixilart.com/sr240aba1a82f28.png" width="25%" />
         <Br />
-        <A href="https://www.pixilart.com/electroslag" target="_blank">created by @electroslag</A>
+        <A href="https://www.pixilart.com/yowack" target="_blank">created by @yowack</A>
 
         <SourceCodeButton path="/docs/components/demos/PixelatedImages.tsx#L15" />
     </Container>
