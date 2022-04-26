@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
 import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer, A, Toast } from '../dist';
 import { BadgeDmeo } from '../components/demos/BadgeDemo';
 import { ButtonDemo } from '../components/demos/ButtonDemo';
@@ -34,7 +34,7 @@ const Home = (): JSX.Element => {
 
   const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const userDarkModeSetting = rememberDarkModeUserSetting();
     setDarkMode(userDarkModeSetting);
     setDarkModeActivation(userDarkModeSetting);
