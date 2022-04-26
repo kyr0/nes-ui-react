@@ -28,10 +28,11 @@ import { TypographyDemo } from '../components/demos/TypographyDemo';
 // @ts-ignore
 import styles from '../styles/Index.module.css';
 import { SourceCodeButton } from '../components/SourceCodeButton';
+import Head from 'next/head';
 
 const Home = (): JSX.Element => {
 
-  const [darkMode, setDarkMode] = useState(!!window.matchMedia("(prefers-color-scheme: dark)"));
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const userDarkModeSetting = rememberDarkModeUserSetting();
@@ -47,8 +48,10 @@ const Home = (): JSX.Element => {
   // TODO: demo canvas pixelized rendering
   return (
     <main className={styles.main}>
+      <Head>
+          <title>nes-ui-react</title>
+      </Head>
 
-    
       <Toolbar borderless className={styles.headerToolbar}>
         <Spacer />
         <PixelIcon inverted={false} name={"pixelicon-nes-ui-logo"} size='medium' style={{ marginRight: 8 }} />
