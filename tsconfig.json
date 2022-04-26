@@ -9,7 +9,7 @@
       "es2017"
     ],
     "jsx": "react-jsx",
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,

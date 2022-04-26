@@ -1,7 +1,6 @@
 import { watch } from "chokidar"
 import { execSync } from 'child_process'
 
-
 // One-liner for current directory
 watch('./src/**/*', {
     ignoreInitial: true,
@@ -12,5 +11,3 @@ watch('./src/**/*', {
   })
 
 });
-
-export const foo = 134;

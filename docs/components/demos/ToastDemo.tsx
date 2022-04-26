@@ -11,7 +11,7 @@ export const ToastDemo = () => (
         </Toast>
 
         <Toast id="foo" style={{ float: 'right' }} bubblePostion='right'>
-            <Text size="small" color='white'>
+            <Text size="small" color='disabled'>
                 Okay, okay, I got it... 
             </Text>
             <PixelIcon name={styles.pixeliconMeowAnimated} size='small' style={{ marginLeft: 10 }} />

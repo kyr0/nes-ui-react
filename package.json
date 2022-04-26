@@ -4,7 +4,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.7",
+  "type": "module",
+  "version": "0.2.8",
   "description": "A design system that paints the web in 8 bits.",
   "keywords": [
     "NES",
@@ -25,9 +26,9 @@
   "scripts": {
     "clean": "rimraf dist && rimraf docs/dist",
     "prebuild": "yarn clean && sass src/scss/nes-ui.scss:dist/nes-ui.debug.css",
-    "build": "ts-node build.ts",
+    "build": "ts-node --esm build.ts",
     "postbuild": "tsc && cp -R src/scss dist/scss && cp -R dist docs",
-    "watch": "ts-node runOnChanged.ts",
+    "watch": "ts-node --esm runOnChanged.ts",
     "predeploy": "yarn build && yarn build:docs",
     "deploy": "npm publish",
     "prebuild:docs": "rimraf docs/out && yarn build",
