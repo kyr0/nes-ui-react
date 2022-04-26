@@ -1,4 +1,4 @@
-import { isDarkModeActive, Container, Row, PixelIcon, A, Text, List, Heading, TextArea, Button, Colors, IconButton } from "../../dist";
+import { isDarkModeActive, Container, Row, PixelIcon, A, Text, List, Heading, TextArea, Button, Colors, IconButton, rememberDarkModeUserSetting } from "../../dist";
 
 import { FileUploader } from "react-drag-drop-files";
 
@@ -17,7 +17,6 @@ export const PixelIconDemo = () => {
     const handleChange = (file) => {
         setFile(file);
     };
-    const darkMode = isDarkModeActive();
 
     useEffect(() => {
         ;(async() => {
@@ -41,9 +40,9 @@ export const PixelIconDemo = () => {
                 </Row>
 
                 <Row style={{ display: 'flex' }}>
-                    <PixelIcon inverted={darkMode} name="pixelicon-checkmark" size="small" style={{ marginRight: 10 }} />
-                    <PixelIcon inverted={darkMode} name="pixelicon-checkmark" size="medium" style={{ marginRight: 10 }}  />
-                    <PixelIcon inverted={darkMode} name="pixelicon-checkmark" size="large" style={{ marginRight: 10 }}  />
+                    <PixelIcon name="pixelicon-checkmark" size="small" style={{ marginRight: 10 }} />
+                    <PixelIcon name="pixelicon-checkmark" size="medium" style={{ marginRight: 10 }}  />
+                    <PixelIcon name="pixelicon-checkmark" size="large" style={{ marginRight: 10 }}  />
                 </Row>
 
                 <Text>Sizes:</Text>

@@ -1,15 +1,4 @@
 .nes-ui-anchor {
-  @include pixel-borders(
-    $corner-size: 1,
-    $border-size: calc($border-size / 2),
-    $border-color: 'primary-color-normal',
-    $border-inset-color: false
-  );
-  
-  padding: 2px;
-  padding-left: 4px;
-  padding-top: 2px;
-  background-color: var(--primary-color-normal);
   color: var(--color-white);
   text-decoration: underline;
 
@@ -23,10 +12,9 @@
   }
 
   &:hover {
-    background-color: var(--primary-color-hover);
     text-decoration: underline;
     color: var(--color-white);
-
+ 
     &.nes-ui-is-transparent {
       background: none;
       border: none;
