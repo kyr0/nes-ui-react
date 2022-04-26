@@ -1,5 +1,5 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
-import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer, A, Toast } from '../dist';
+import { useCallback, useEffect, useState } from 'react';
+import { rememberDarkModeUserSetting, setDarkModeActivation, Text, IconButton, PixelIcon, Row, Br, Heading, List, Hr, Col, Toolbar, Spacer, A, Toast, onDarkModeChange, PixelBorder } from '../dist';
 import { BadgeDmeo } from '../components/demos/BadgeDemo';
 import { ButtonDemo } from '../components/demos/ButtonDemo';
 import { CheckboxDemo } from '../components/demos/CheckboxDemo';
@@ -34,7 +34,7 @@ const Home = (): JSX.Element => {
 
   const [darkMode, setDarkMode] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const userDarkModeSetting = rememberDarkModeUserSetting();
     setDarkMode(userDarkModeSetting);
     setDarkModeActivation(userDarkModeSetting);
@@ -44,6 +44,10 @@ const Home = (): JSX.Element => {
     setDarkMode(!darkMode);
     setDarkModeActivation(!darkMode);
   }, [darkMode]);
+
+  useEffect(() => {
+    onDarkModeChange(setDarkMode)
+  }, [])
 
   // TODO: demo canvas pixelized rendering
   return (
@@ -60,14 +64,14 @@ const Home = (): JSX.Element => {
       </Toolbar>
       
       <IconButton borderInverted size="small" color="primary" className={styles.scrollToTop} onClick={() => window.scrollTo(0, 0)}>
-        <PixelIcon size='small' name='pixelicon-arrow-up' />
+        <PixelIcon inverted size='small' name='pixelicon-arrow-up' />
       </IconButton>
       
       <Row style={{ marginTop: '2em' }}>
         
         <Br size='large'/>
 
-          <IconButton style={{ float: 'right', marginTop: -8, marginRight: -12 }} onClick={toggleDarkMode} color="warning">
+          <IconButton borderInverted style={{ float: 'right', marginTop: -8, marginRight: -12 }} onClick={toggleDarkMode} color="warning">
             <PixelIcon name={darkMode ? "pixelicon-sun" : 'pixelicon-moon'} inverted={false} size='medium' />
           </IconButton>
 
@@ -77,9 +81,13 @@ const Home = (): JSX.Element => {
           but refactored and bug-fixed.
         </Text>
 
+        <Text>
+          This framework can also be used "CSS-only". Every class is global, but scoped ("nes-ui"). 
+          The npm package contains the source Sass files together with bundled CSS builds.
+        </Text>
 
         <Toast className={styles.forkOnGithub} onClick={() => window.open('https://github.com/kyr0/nes-ui-react', '_blank')}>
-          <Text color="white">
+          <Text color="disabled">
             Fork me <br />on GitHub!
           </Text>
           <div className={styles.octocatIcon} />
@@ -104,13 +112,15 @@ const Home = (): JSX.Element => {
 
         <Text>Simply run:</Text>
         <Text color='primary'>&nbsp;&nbsp;yarn add nes-ui-react</Text>
-        <Text color='white'>or:</Text>
+        <Text color='disabled'>or:</Text>
         <Text color='success'>&nbsp;&nbsp;npm install nes-ui-react</Text>
 
         <Br />
-        <A transparent href="https://www.npmjs.com/package/nes-ui-react" target={"_blank"}>
-          <img alt="npm" src="https://img.shields.io/npm/v/nes-ui-react?style=for-the-badge" />
-        </A>
+        <PixelBorder style={{ display: 'inline-block' }}>
+          <A transparent href="https://www.npmjs.com/package/nes-ui-react" target={"_blank"}>
+            <img alt="npm" src="https://img.shields.io/npm/v/nes-ui-react?style=for-the-badge" />
+          </A>
+        </PixelBorder>
 
         <Heading size='medium' centered>Usage</Heading>
 
@@ -136,7 +146,6 @@ const Home = (): JSX.Element => {
         <Heading size='xlarge' centered>Components</Heading>
 
         <Text>The library consists of typical, anachronistic and futuristic NES-style UI components. Every component comes with limited functionality that helps limiting the risk to introduce too much modern flavor.</Text>
-        <Text>However, there is always an id, className and style attribute available for whenever you&lsquo;d like to alter a components behaviour from the outside.</Text>
 
         <Br size='large' />
 

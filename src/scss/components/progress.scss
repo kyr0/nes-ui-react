@@ -30,7 +30,7 @@
   -webkit-appearance: none;
   appearance: none;
 
-  @include progress-style($base-color, 'color-white-absolute', 'color-black-absolute');
+  @include progress-style($color-black, 'color-white-absolute', 'color-black-absolute');
 
   &.nes-ui-is-rounded {
     @include rounded-corners();
@@ -51,6 +51,38 @@
   &.nes-ui-is-error {
     @include progress-style($error-color-normal, 'color-white-absolute', 'color-black-absolute');
   }
+
+}
+
+.nes-ui-dark-mode {
+  .nes-ui-progress {
+    background-color: transparent;
+
+    @include progress-style($color-white, 'color-black-absolute', 'color-white-absolute');
+
+    &.nes-ui-is-rounded {
+      @include rounded-corners();
+    }
+
+    &.nes-ui-is-primary {
+      @include progress-style($primary-color-normal, 'color-black-absolute', 'color-white-absolute');
+    }
+
+    &.nes-ui-is-success { 
+      @include progress-style($success-color-normal, 'color-black-absolute', 'color-white-absolute');
+    }
+
+    &.nes-ui-is-warning {
+      @include progress-style($warning-color-normal, 'color-black-absolute', 'color-white-absolute');
+    }
+
+    &.nes-ui-is-error {
+      @include progress-style($error-color-normal, 'color-black-absolute', 'color-white-absolute');
+    }
+  }
+}
+
+.nes-ui-progress {
 
   &.nes-ui-is-pattern {
     &::-webkit-progress-value {
@@ -112,35 +144,6 @@
       background-position: 0 0, 10px 10px;
       background-size: 20px 20px;
       border: none;
-    }
-  }
-}
-
-
-.nes-ui-dark-mode {
-  .nes-ui-progress {
-    background-color: transparent;
-
-    @include progress-style($base-color, 'color-black-absolute', 'color-white-absolute');
-
-    &.nes-ui-is-rounded {
-      @include rounded-corners();
-    }
-
-    &.nes-ui-is-primary {
-      @include progress-style($primary-color-normal, 'color-black-absolute', 'color-white-absolute');
-    }
-
-    &.nes-ui-is-success { 
-      @include progress-style($success-color-normal, 'color-black-absolute', 'color-white-absolute');
-    }
-
-    &.nes-ui-is-warning {
-      @include progress-style($warning-color-normal, 'color-black-absolute', 'color-white-absolute');
-    }
-
-    &.nes-ui-is-error {
-      @include progress-style($error-color-normal, 'color-black-absolute', 'color-white-absolute');
     }
   }
 }

@@ -4,7 +4,7 @@ import { StyleProps } from "./interface/StyleProps";
 import { PixelIconName } from './interface/PixelIconName';
 import { useEffect } from "react";
 import React from "react";
-import { rememberDarkModeUserSetting } from "src/lib/darkMode";
+import { onDarkModeChange } from "../lib/darkMode";
 
 export interface PixelIconProps extends StyleProps, IdProps {
     name: PixelIconName | string // custom pixelicon
@@ -15,16 +15,21 @@ export interface PixelIconProps extends StyleProps, IdProps {
 export const PixelIcon = (props: PixelIconProps) => {
 
     const [isInverted, setIsInverted] = React.useState(props.inverted);
+    const [darkMode, setDarkMode] = React.useState(false);
+
+    useEffect(() => {
+        onDarkModeChange(setDarkMode)
+    }, [])
     
     useEffect(() => {
         if (props.inverted) {
             setIsInverted(true)
         } else if (typeof props.inverted === 'undefined') {
-            setIsInverted(rememberDarkModeUserSetting())
+            setIsInverted(darkMode)
         } else {
             setIsInverted(false)
         }
-    }, [props.inverted]) 
+    }, [props.inverted, darkMode]) 
  
     return (
         <span id={props.id} className={`nes-ui-pixelicon nes-ui-is-size-${props.size || 'medium'}`} >

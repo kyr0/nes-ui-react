@@ -50,6 +50,14 @@
   &.nes-ui-is-disabled {
     color: var(--disabled-color-normal);
   }
+
+  &.nes-ui-is-black {
+    color: var(--color-black);
+  }
+
+  &.nes-ui-is-white {
+    color: var(--color-white);
+  }
 }
 
 .nes-ui-block-text {

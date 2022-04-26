@@ -70,8 +70,7 @@ $radio-checked-focus: (
       color: $color-white;
     }
 
-    // prettier-ignore
-    + span::before { /* stylelint-disable-line no-descending-specificity */
+    + span::before {
       color: $color-white;
     }
  

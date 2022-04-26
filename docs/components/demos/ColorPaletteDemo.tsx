@@ -5,10 +5,9 @@ export const ColorPaletteDemo = () => (
     <>
         <Heading size='xlarge' centered>Color Palette</Heading>
 
-        <Text>Any NES UI had a distinct color palette that you&lsquo;ll find resembled here.</Text>
-        <Text>For the sake of simplicity, the colors are named intrinsically, like: primary, success, warning, error, disabled, dark, black, white.</Text>
-
-        <Text>On top of that, the whole NES color palette is exported for programmatic use:</Text>
+        <Text>NES UIs had a distinct color palette that you&lsquo;ll find implemented here.</Text>
+      
+        <Text>They are also exported to TypeScript via the Colors enum:</Text>
 
         <Table bordered centered>
             <thead>
@@ -119,11 +118,7 @@ export const ColorPaletteDemo = () => (
 
         <Br />
 
-        <Text>For example, a color can be constructed by choosing the first character of the color index from the row, such as: 0, 1, 2 or 3 and the second character from the column such as 0 to 9 or A to F:</Text>
-
-        <Br />
-
-        <Text>A few examples:</Text>
+        <Text>The color name is a combination of the row index followed by the column index. e.g.: 0, 1, 2 or 3 in combination with 0 to 9 or A to F:</Text>
 
         <Br />
 
@@ -151,7 +146,7 @@ export const ColorPaletteDemo = () => (
 
         <Heading size="medium">Named colors</Heading>
 
-        <Text>The NES color palette comes handy for picking primary colors of an app. However in web development, named colors:</Text>
+        <Text>The NES color palette comes handy for picking artistic colors. However there are also some named colors which are brighter and don't collide with the palette:</Text>
         <Badge backgroundColor={"primary"} text="primary" />
         <Badge backgroundColor={"disabled"} text="disabled" />
         <Badge backgroundColor={"success"} text="success" />

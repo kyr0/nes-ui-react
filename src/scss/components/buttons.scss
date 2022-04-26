@@ -71,7 +71,7 @@
 
   & .nes-ui-text {
     margin: 0;
-    color: var(--color-white-absolute) !important;
+    color: var(--color-white-absolute);
     margin-left: 4px;
     margin-top: 2px;
 
@@ -143,6 +143,10 @@
     pointer-events: none;
     opacity: 0;
   }
+
+}
+
+.nes-ui-btn {
 
   &.nes-ui-is-size-small {
     font-size: 75%;
@@ -266,13 +270,21 @@ html.nes-ui {
 
 .nes-ui-icon-btn {
   padding: 0;
-  padding-bottom: 4px;
-  padding-right: 4px;
   margin: 0;
   display: flex;
   align-items: center;
 
   &.nes-ui-is-size-small {
+    padding-bottom: 4px;
+    padding-right: 4px;
+  }
+
+  &.nes-ui-is-size-medium {
+    padding-bottom: 4px;
+    padding-right: 4px;
+  }
+
+  &.nes-ui-is-size-large {
     padding-bottom: 4px;
     padding-right: 4px;
   }
@@ -288,22 +300,18 @@ html.nes-ui {
     display: block;
     left: 0;
     top: 0;
-  } 
+  }
 
   &:active:not(.nes-ui-btn-disabled) {
     padding: 0;
     padding-top: 4px;
     padding-left: 4px;
 
-    &.nes-ui-is-size-small {
-      padding-top: 4px;
-      padding-left: 4px; 
-    }
-
-    & .pixelicon:not(.nes-ui-btn-disabled) {
+    & .nes-ui-pixelicon {
       position: relative;
-      left: -4px;
-      top: -4px;
+      display: block;
+      left: -2px;
+      top: -2px;
     }
   }
 }

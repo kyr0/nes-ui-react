@@ -1,3 +1,5 @@
+import { watchForClassChanges } from "./watchForChanges";
+
 export const DARK_MODE_KEY = 'nes-ui-dark-mode';
 
 export const isDarkModeActive = () => typeof document !== 'undefined' && document.documentElement.classList.contains(DARK_MODE_KEY)
@@ -23,4 +25,10 @@ export const rememberDarkModeUserSetting = (): boolean => {
     userDarkModeSetting = prefersDarkMode;
   }
   return userDarkModeSetting
+}
+
+export type IsDarkModeActiveListener = (isActive: boolean) => void;
+
+export const onDarkModeChange = (cb: IsDarkModeActiveListener, initial = true) => {
+  watchForClassChanges(document.documentElement, DARK_MODE_KEY, cb, initial)
 }

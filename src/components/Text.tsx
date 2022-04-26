@@ -11,7 +11,7 @@ export interface TextProps extends StyleProps, React.PropsWithChildren<any>, IdP
 }
 
 export const Text = ({ id, children, style, color, size, className, centered, heading }: TextProps) => (
-    <p id={id} className={`nes-ui-text nes-ui-is-${color || (heading ? '' : 'disabled')} nes-ui-is-${heading ? 'heading-' : ''}${size || 'medium'} ${className || ''}`} style={{...style, textAlign: centered && 'center' || 'left'}}>
+    <p id={id} className={`nes-ui-text nes-ui-is-${heading ? '' : 'disabled'} nes-ui-is-${heading ? 'heading-' : ''} nes-ui-is-${size ? size : 'medium'} ${className ? className : ''}`} style={{...style, textAlign: centered ? 'center' : 'left', color: color || 'inherit'}}>
         {children}
     </p>
 )
