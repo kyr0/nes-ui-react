@@ -4,7 +4,7 @@ import { Size } from "./interface/Size";
 import { StyleProps } from "./interface/StyleProps";
 
 export interface TextProps extends StyleProps, React.PropsWithChildren<any>, IdProps {
-    color?: NamedColor
+    color?: NamedColor | string
     size?: Size
     centered?: boolean
     heading?: boolean
