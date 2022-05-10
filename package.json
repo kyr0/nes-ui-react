@@ -5,7 +5,7 @@
     "access": "public"
   },
   "type": "module",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "A design system that paints the web in 8 bits.",
   "keywords": [
     "NES",

@@ -1,15 +1,17 @@
 import { Br } from "./Br";
 import { IdProps } from "./interface/IdProps";
+import { StyleProps } from "./interface/StyleProps";
 import { Text, TextProps } from "./Text";
 
-export interface HeadingProps extends TextProps, IdProps {
+export interface HeadingProps extends StyleProps, TextProps, IdProps {
     topSpacing?: boolean
     bottomSpacing?: boolean
     dense?: boolean
+    className?: string
 }
 
 // TODO: move to CSS!
-export const Heading = ({ id, children, style, color, size, centered, topSpacing, bottomSpacing, dense }: HeadingProps) => (
+export const Heading = ({ id, children, style, color, size, centered, topSpacing, bottomSpacing, dense, className }: HeadingProps) => (
     <>
         {(typeof topSpacing === 'undefined' || topSpacing) && !dense && <Br size="small" />}
         <Text id={id} style={{
@@ -19,7 +21,7 @@ export const Heading = ({ id, children, style, color, size, centered, topSpacing
             paddingTop: '0.5em',
             textDecoration: size === 'xlarge' ? 'underline' : 'none',
             display: 'block'
-        }} centered={centered} color={color} size={size || 'small'} heading>{children || ''}</Text>
+        }} centered={centered} color={color} className={className} size={size || 'small'} heading>{children || ''}</Text>
         {(typeof bottomSpacing === 'undefined' || bottomSpacing) && !dense && <Br size="small" />}
     </>
 )
