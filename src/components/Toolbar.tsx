@@ -8,6 +8,6 @@ export interface ToolbarProps extends StyleProps, React.PropsWithChildren<any>, 
 
 export const Toolbar = ({ id, children, style, className, borderless, roundedCorners }: ToolbarProps) => (
     <div className={`nes-ui-toolbar-wrapper ${roundedCorners === false ? '' : 'nes-ui-has-rounded-corners'}`}>
-        <div id={id} className={`nes-ui-toolbar ${className || ''} ${borderless && 'nes-ui-is-borderless'}`} style={style}>{children}</div>
+        <div id={id} className={`nes-ui-toolbar ${className ? className : ''} ${borderless ? 'nes-ui-is-borderless' : ''}`} style={style}>{children}</div>
     </div>
 )
