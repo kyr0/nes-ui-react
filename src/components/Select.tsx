@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import { FormEvent, useCallback, useEffect, useState } from "react"
 
 export interface SelectProps extends React.HTMLProps<HTMLSelectElement> {
     color?: 'none' | 'success' | 'warning' | 'error'
@@ -23,6 +23,9 @@ export const Select = (props: SelectProps) => {
             setValue([(evt.target as HTMLSelectElement).value])
         } else {
             setValue((evt.target as HTMLSelectElement).value)
+        }
+        if (typeof props.onChange === 'function') {
+            props.onChange(evt as FormEvent<HTMLSelectElement>)
         }
     }, [props.multiple])
 
