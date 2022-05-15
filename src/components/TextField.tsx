@@ -8,6 +8,7 @@ export interface TextFieldDerivedProps extends StyleProps, IdProps, InputProps {
 }
 
 export interface TextFieldProps extends TextFieldDerivedProps {
+    onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) => void
     type: 'text' | 'password' | 'number' | 'file' | 'color' | 'date' | 'datetime-local' | 'email' | 'month' | 'url' | 'week' | 'search' | 'tel'
 }
 
@@ -30,7 +31,7 @@ export const TextField = (props: TextFieldProps) => {
     return (
         <div className="nes-ui-field">
             <label htmlFor={props.name}>{props.label}</label> 
-            <input id={props.id} autoComplete={props.autoComplete} type={props.type} className={`nes-ui-input ${props.disabled ? 'nes-ui-is-disabled' : ''} ${props.color ? 'nes-ui-is-' + props.color : 'nes-ui-is-none'} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} onChange={props.disabled ? () => {} : onValueChange} />
+            <input id={props.id} autoComplete={props.autoComplete} type={props.type} className={`nes-ui-input ${props.disabled ? 'nes-ui-is-disabled' : ''} ${props.color ? 'nes-ui-is-' + props.color : 'nes-ui-is-none'} ${props.className || ''}`} disabled={props.disabled} name={props.name} style={props.style} value={value} onKeyUp={props.disabled ? () => {} : props.onKeyUp} onChange={props.disabled ? () => {} : onValueChange} />
         </div>
     )
 }
