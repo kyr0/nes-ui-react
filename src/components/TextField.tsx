@@ -8,7 +8,7 @@ export interface TextFieldDerivedProps extends StyleProps, IdProps, InputProps {
 }
 
 export interface TextFieldProps extends TextFieldDerivedProps {
-    onKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) => void
+    onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void
     type: 'text' | 'password' | 'number' | 'file' | 'color' | 'date' | 'datetime-local' | 'email' | 'month' | 'url' | 'week' | 'search' | 'tel'
 }
 
